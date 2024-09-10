@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5ew46nswyplk"]
+
+[ext_resource type="Script" path="res://Scripts/Input.Reload.gd" id="1"]
+
+[node name="ReloadInput" type="Node"]
+script = ExtResource("1")
+action = "Reload"

@@ -1,0 +1,135 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvwsv0r5r6hry"]
+
+[ext_resource type="FontFile" uid="uid://ncw5gi15q1li" path="res://Fonts/Xolonium-Regular.ttf" id="1"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/Menu.Options.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bq41cluavf1fr" path="res://Scenes/UI/Menu.Checkbox.tscn" id="3"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="Theme" id="3"]
+default_font = SubResource("2")
+
+[node name="Player1" type="VBoxContainer"]
+offset_right = 298.0
+offset_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="."]
+offset_right = 476.0
+offset_bottom = 25.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource("1")
+text = "Player 1"
+autowrap = true
+max_lines_visible = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_top = 33.0
+offset_right = 476.0
+offset_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CharacterSelector" parent="." instance=ExtResource("2")]
+offset_top = 41.0
+offset_right = 476.0
+offset_bottom = 78.0
+
+[node name="Label" parent="CharacterSelector" index="0"]
+offset_top = 6.0
+offset_right = 115.0
+offset_bottom = 31.0
+text = "Character: "
+
+[node name="OptionButton" parent="CharacterSelector" index="1"]
+offset_left = 123.0
+offset_right = 476.0
+offset_bottom = 37.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_top = 86.0
+offset_right = 476.0
+offset_bottom = 131.0
+
+[node name="HP" type="SpinBox" parent="HBoxContainer"]
+offset_right = 196.0
+offset_bottom = 45.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("3")
+max_value = 400.0
+step = 10.0
+value = 100.0
+rounded = true
+prefix = "HP:"
+
+[node name="Team" parent="HBoxContainer" instance=ExtResource("2")]
+offset_left = 204.0
+offset_right = 476.0
+offset_bottom = 45.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" parent="HBoxContainer/Team" index="0"]
+offset_top = 10.0
+offset_right = 73.0
+offset_bottom = 35.0
+text = "Team: "
+
+[node name="OptionButton" parent="HBoxContainer/Team" index="1"]
+offset_left = 81.0
+offset_right = 272.0
+offset_bottom = 45.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+offset_top = 139.0
+offset_right = 476.0
+offset_bottom = 171.0
+
+[node name="AutoAim" parent="HBoxContainer2" instance=ExtResource("3")]
+offset_right = 234.0
+offset_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CheckBox" parent="HBoxContainer2/AutoAim" index="0"]
+offset_right = 136.0
+offset_bottom = 32.0
+text = "Auto Aim"
+
+[node name="Bot" parent="HBoxContainer2" instance=ExtResource("3")]
+offset_left = 242.0
+offset_right = 476.0
+offset_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CheckBox" parent="HBoxContainer2/Bot" index="0"]
+offset_right = 77.0
+offset_bottom = 32.0
+text = "Bot"
+
+[editable path="CharacterSelector"]
+[editable path="HBoxContainer/Team"]
+[editable path="HBoxContainer2/AutoAim"]
+[editable path="HBoxContainer2/Bot"]

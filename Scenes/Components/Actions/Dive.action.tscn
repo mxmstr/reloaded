@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwan16xsva34x"]
+
+[ext_resource type="Script" path="res://Scripts/Action.Dive.gd" id="1"]
+
+[node name="DiveAction" type="Node"]
+script = ExtResource("1")
+schema = "Dive"
+state = "Dive"

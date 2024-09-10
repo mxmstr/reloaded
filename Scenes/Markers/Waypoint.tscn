@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8ujdlvx3qequ"]
+
+[ext_resource type="PrismMesh" path="res://Scenes/Markers/Waypoint.tres" id="2"]
+
+[node name="Waypoint" type="Node3D"]
+script = null
+__meta__ = {}
+next = null
+
+[node name="MeshPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+__meta__ = {}
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshPivot"]
+transform = Transform3D(-0.163805, 1.05745e-07, -0.472486, -1.50636e-08, -0.5, -1.06715e-07, -0.472486, -2.07195e-08, 0.163805, 0, 0, 0)
+mesh = ExtResource("2")
+material/0 = null
+__meta__ = {}
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+enabled = true
+target_position = Vector3(0, -100, 0)
+__meta__ = {}

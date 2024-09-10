@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckl134nmf36yh"]
+
+[ext_resource type="Script" path="res://Scripts/Action.FireProjectile.gd" id="1"]
+
+[node name="FireProjectileAction" type="Node"]
+script = ExtResource("1")
+__meta__ = {}
+schema = "FireProjectile"
+state = "FireProjectile"

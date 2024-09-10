@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://jdpajaghuqxq"]
+
+[ext_resource type="AudioStream" uid="uid://0udceywqfr56" path="res://Sounds/Payne/weapons/reload_ingram.wav" id="1"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="2"]
+
+[sub_resource type="Animation" id="1"]
+length = 0.895828
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/reload_ingram = SubResource("1")
+script = ExtResource("2")
+__meta__ = {
+"_editor_description_": ""
+}
+attributes = "{
+	\"*\": {
+		\"switch_mode\": \"End\",
+		\"level\": -10
+	}
+}"

@@ -1,0 +1,155 @@
+[gd_scene load_steps=18 format=3 uid="uid://vwy1na38dc2p"]
+
+[ext_resource type="PackedScene" uid="uid://db1la83vn4yrk" path="res://Scenes/Actors/CharacterBody.Human.tscn" id="1_1657p"]
+[ext_resource type="PackedScene" uid="uid://b5b1hr6d10ylq" path="res://Scenes/Components/Properties/Locomotion.property.tscn" id="2_e0kb6"]
+[ext_resource type="PackedScene" uid="uid://dai2hsclv3n6i" path="res://Scenes/Components/Properties/Inventory.property.tscn" id="2_hir4c"]
+[ext_resource type="PackedScene" uid="uid://ep8iba5bew2n" path="res://Scenes/Components/Properties/CameraRig.property.tscn" id="2_r0oiu"]
+[ext_resource type="PackedScene" uid="uid://b14wb70au1fv7" path="res://Scenes/Components/Properties/Container.property.tscn" id="3_868j0"]
+[ext_resource type="PackedScene" uid="uid://ferksbhpfiif" path="res://Scenes/Components/Properties/BulletTime.property.tscn" id="3_oveyn"]
+[ext_resource type="PackedScene" uid="uid://bxiymkvnn3vrr" path="res://Scenes/Components/Properties/Stamina.property.tscn" id="4_vnnn8"]
+[ext_resource type="PackedScene" uid="uid://5almq67kg5s2" path="res://Scenes/Components/Properties/AnimLayer.Movement.property.tscn" id="5_1wece"]
+[ext_resource type="PackedScene" uid="uid://dxrq7bjr4hrjg" path="res://Scenes/Components/Actions/Action.Human.action.tscn" id="6_re3n3"]
+[ext_resource type="PackedScene" uid="uid://d3fofdvdehtpi" path="res://Scenes/Components/Stimuli/Raycast.stimulus.tscn" id="9_igtvc"]
+[ext_resource type="PackedScene" uid="uid://d3ipxybuh7v7t" path="res://Scenes/Components/Actions/UseReact.action.tscn" id="10_e5edp"]
+[ext_resource type="PackedScene" uid="uid://cwa8sykm65wey" path="res://Scenes/Components/Responses/Damage.Human.response.tscn" id="10_qlqbs"]
+[ext_resource type="PackedScene" uid="uid://x13arwubon6b" path="res://Scenes/Components/Actions/UseItem.action.tscn" id="11_p6d0g"]
+[ext_resource type="PackedScene" uid="uid://bumm2l00n6fmq" path="res://Scenes/Components/Responses/EmptyWeaponReact.Human.response.tscn" id="11_su5dy"]
+[ext_resource type="PackedScene" uid="uid://dwfi4n6ewgqey" path="res://Scenes/Components/Responses/PickMeUp.Human.response.tscn" id="12_51fbd"]
+[ext_resource type="PackedScene" uid="uid://v8xiemfudcr1" path="res://Scenes/Components/Actions/ShootIdle.action.tscn" id="12_pses0"]
+[ext_resource type="PackedScene" uid="uid://b6frxa10v3omb" path="res://Scenes/Components/Responses/UseReact.Human.response.tscn" id="13_hja0g"]
+
+[node name="Human" instance=ExtResource("1_1657p")]
+collision_layer = 2
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." index="0"]
+aabb = AABB(-0.119958, 0.162489, -0.0613593, 0.231916, 1.58002, 0.114907)
+
+[node name="RightHandContainer" parent="." index="1" instance=ExtResource("3_868j0")]
+bone_name = "Gun"
+release_exclude_parent = true
+release_exclude_parent_lifetime = 2.0
+max_quantity = 1
+required_tags = "Item"
+
+[node name="InventoryContainer" parent="." index="2" instance=ExtResource("3_868j0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1.45686)
+release_exclude_parent = true
+release_exclude_parent_lifetime = 2.0
+invisible = true
+required_tags = "Item"
+
+[node name="LeftHandContainer" parent="." index="3" instance=ExtResource("3_868j0")]
+release_exclude_parent = true
+release_exclude_parent_lifetime = 2.0
+required_tags = "Item"
+
+[node name="RightPunchContainer" parent="." index="4" instance=ExtResource("3_868j0")]
+factory_mode = true
+release_direction = Vector3(0, 0, 0)
+release_lifetime = 0.1
+release_exclude_parent = true
+required_tags = "Punch"
+
+[node name="LeftPunchContainer" parent="." index="5" instance=ExtResource("3_868j0")]
+factory_mode = true
+release_direction = Vector3(0, 0, 0)
+release_lifetime = 0.1
+release_exclude_parent = true
+required_tags = "Punch"
+
+[node name="RightKickContainer" parent="." index="6" instance=ExtResource("3_868j0")]
+factory_mode = true
+release_direction = Vector3(0, 0, 0)
+release_lifetime = 0.1
+release_exclude_parent = true
+required_tags = "Punch"
+
+[node name="LeftKickContainer" parent="." index="7" instance=ExtResource("3_868j0")]
+factory_mode = true
+release_direction = Vector3(0, 0, 0)
+release_lifetime = 0.1
+release_exclude_parent = true
+required_tags = "Punch"
+
+[node name="Bullet9mmContainer" parent="." index="8" instance=ExtResource("3_868j0")]
+factory_mode = true
+invisible = true
+required_tags = "Bullet 9mm"
+
+[node name="BulletRifleContainer" parent="." index="9" instance=ExtResource("3_868j0")]
+factory_mode = true
+invisible = true
+required_tags = "Bullet Rifle"
+
+[node name="BulletMagnumContainer" parent="." index="10" instance=ExtResource("3_868j0")]
+factory_mode = true
+invisible = true
+required_tags = "Bullet Magnum"
+
+[node name="BulletShotgunContainer" parent="." index="11" instance=ExtResource("3_868j0")]
+factory_mode = true
+invisible = true
+required_tags = "Bullet Shotgun"
+
+[node name="BulletSniperContainer" parent="." index="12" instance=ExtResource("3_868j0")]
+factory_mode = true
+invisible = true
+required_tags = "Bullet Sniper"
+
+[node name="GrenadeContainer" parent="." index="13" instance=ExtResource("3_868j0")]
+factory_mode = true
+invisible = true
+required_tags = "Grenade"
+
+[node name="ImpactGrenadeContainer" parent="." index="14" instance=ExtResource("3_868j0")]
+factory_mode = true
+invisible = true
+required_tags = "ImpactGrenade"
+
+[node name="CameraRig" parent="." index="15" instance=ExtResource("2_r0oiu")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.256868, 1.93211, 0)
+camera_offset = Vector3(0, 0, 3.75)
+
+[node name="BulletTime" parent="." index="16" instance=ExtResource("3_oveyn")]
+
+[node name="Stamina" parent="." index="17" instance=ExtResource("4_vnnn8")]
+
+[node name="Inventory" parent="." index="18" instance=ExtResource("2_hir4c")]
+
+[node name="Locomotion" parent="." index="19" instance=ExtResource("2_e0kb6")]
+
+[node name="AnimLayerMovement" parent="." index="20" instance=ExtResource("5_1wece")]
+speed = 4.0
+schema = "Locomotion"
+
+[node name="CameraRaycastStim" parent="." index="21" instance=ExtResource("9_igtvc")]
+target_position = Vector3(0, 0, -50)
+collision_mask = 21
+auto = false
+path = NodePath("../CameraRig/Camera3D")
+required_tags = ""
+
+[node name="DefaultAction" parent="Behavior" index="1" instance=ExtResource("6_re3n3")]
+state = "Default"
+schema = "DefaultAction"
+
+[node name="JumpUpAction" parent="Behavior" index="2" instance=ExtResource("6_re3n3")]
+layer = 0
+state = "JumpUp"
+schema = "JumpUp"
+
+[node name="UseItemAction" parent="Behavior" index="3" instance=ExtResource("11_p6d0g")]
+
+[node name="UseReactAction" parent="Behavior" index="4" instance=ExtResource("10_e5edp")]
+
+[node name="ShootIdleAction" parent="Behavior" index="5" instance=ExtResource("12_pses0")]
+
+[node name="DamageResponse" parent="Reception" index="0" instance=ExtResource("10_qlqbs")]
+
+[node name="EmptyReactResponse" parent="Reception" index="1" instance=ExtResource("11_su5dy")]
+
+[node name="PickMeUpResponse" parent="Reception" index="2" instance=ExtResource("12_51fbd")]
+
+[node name="UseReactResponse" parent="Reception" index="3" instance=ExtResource("13_hja0g")]
+
+[editable path="CameraRig"]

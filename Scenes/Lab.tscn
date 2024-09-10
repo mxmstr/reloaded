@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2u1o3p8qh1l7"]
+
+[ext_resource type="Script" path="res://Scripts/Mission.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://bbqj7a6xlanrf" path="res://Scenes/Markers/PickupMarker.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://dk41ua5th2adq" path="res://Scenes/Links/PVPPlayerFactory.link.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://b2wxmflugoxsb" path="res://Scenes/Markers/Waypoint2.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://ct2dufyllg6e2" path="res://Scenes/Links/PVPPickupFactory.link.tscn" id="11"]
+[ext_resource type="PackedScene" uid="uid://cat2t45bagjst" path="res://Scenes/Maps/Lab.map.tscn" id="12"]
+
+[node name="Mission" type="Node3D"]
+script = ExtResource("1")
+
+[node name="Actors" type="Node3D" parent="."]
+
+[node name="Markers" type="Node3D" parent="."]
+
+[node name="Links" type="Node" parent="."]
+
+[node name="PVPPlayerFactory" parent="Links" instance=ExtResource("9")]
+
+[node name="RespawnMarker1" parent="Links/PVPPlayerFactory" instance=ExtResource("10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6095, 0.772238, -7.05482)
+
+[node name="RespawnMarker2" parent="Links/PVPPlayerFactory" instance=ExtResource("10")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -10.6095, 0.772238, -4.38297)
+
+[node name="RespawnMarker3" parent="Links/PVPPlayerFactory" instance=ExtResource("10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.66832, 0.772238, -7.05482)
+
+[node name="RespawnMarker4" parent="Links/PVPPlayerFactory" instance=ExtResource("10")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.78309, 0.772238, -4.38297)
+
+[node name="PVPPickupFactory" parent="Links" instance=ExtResource("11")]
+
+[node name="PickupMarker1" parent="Links/PVPPickupFactory" instance=ExtResource("2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3988, 0.238943, -2.28007)
+
+[node name="PickupMarker2" parent="Links/PVPPickupFactory" instance=ExtResource("2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.93, 0.238943, -2.28007)
+
+[node name="PickupMarker3" parent="Links/PVPPickupFactory" instance=ExtResource("2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.01974, 0.238943, -2.28007)
+
+[node name="PickupMarker4" parent="Links/PVPPickupFactory" instance=ExtResource("2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.89097, 0.238943, -2.28007)
+
+[node name="Static" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Static"]
+transform = Transform3D(0.707107, -0.578505, 0.40661, 0, 0.575033, 0.81813, -0.707107, -0.578505, 0.40661, 15.5091, 10.4849, 16.3808)
+shadow_enabled = true
+shadow_bias = 0.05
+
+[node name="Map" parent="Static" instance=ExtResource("12")]

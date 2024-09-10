@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://wp84ibawysnc"]
+
+[ext_resource type="PackedScene" uid="uid://bl5j665v37lrb" path="res://Scenes/Actors/Area.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Stimuli/Contact.Area.stimulus.tscn" id="2"]
+[ext_resource type="Material" uid="uid://donu4vhuuigo6" path="res://Scenes/Actors/Projectiles/Explosions/material.tres" id="3"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Properties/Particles.property.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://cffk8jt4nghgj" path="res://Scenes/Components/Actions/Action.action.tscn" id="6"]
+
+[sub_resource type="ParticleProcessMaterial" id="1"]
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="QuadMesh" id="2"]
+size = Vector2(8, 8)
+
+[sub_resource type="SphereShape3D" id="3"]
+radius = 3.0
+
+[node name="Explosion1" instance=ExtResource("1")]
+collision_layer = 8
+collision_mask = 2
+monitorable = false
+tags = "Actor Explosion"
+
+[node name="Particles" parent="." index="0" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.493841, 0)
+material_override = ExtResource("3")
+emitting = false
+amount = 1
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.91
+randomness = 0.84
+process_material = SubResource("1")
+draw_pass_1 = SubResource("2")
+
+[node name="Collision" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.924501, 0)
+shape = SubResource("3")
+
+[node name="ContactStim" parent="." index="2" instance=ExtResource("2")]
+stim_type = "Damage"
+stim_intensity = 125.0
+one_shot = true
+raycast = true
+raycast_collision_mask = 1
+
+[node name="SoundSet" parent="." index="3"]
+tree = NodePath("../Audio")
+
+[node name="ExplosionSound" parent="SoundSet" index="0" instance=ExtResource("6")]
+state = "Explosion"
+tree = NodePath("../../Audio")
+schema = "ExplosionSound"
+random = true
+
+[node name="Audio" parent="." index="7"]
+default_state = "Explosion"

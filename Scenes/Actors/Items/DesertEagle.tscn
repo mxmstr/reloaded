@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bub6vp6pfepsb"]
+
+[ext_resource type="PackedScene" uid="uid://qyc1rotj2v4e" path="res://Scenes/Actors/Items/Firearm.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dfhb0yov23ywp" path="res://Models/Items/Max Payne Weapons/Desert Eagle/Desert Eagle.obj" id="2"]
+
+[sub_resource type="BoxShape3D" id="1"]
+size = Vector3(0.0227914, 0.0918072, 0.155839)
+
+[node name="DesertEagle" instance=ExtResource("1")]
+tags = "Item Firearm DesertEagle Stackable AutoAim DualWield DualWieldFireDelay:0.15 Rank:11 UseAction:FireProjectile FireRate:6.0 Offset-position-1:neo_reference_skeleton:Gun:0,-0.004,0.006 Offset-rotation-1:neo_reference_skeleton:Gun:-89.1,89.4,-89.9 Offset-position-2:neo_reference_skeleton:Hand-L:0.004,0.061,0.0006 Offset-rotation-2:neo_reference_skeleton:Hand-L:-90,0,0"
+
+[node name="Model" parent="." index="0" instance=ExtResource("2")]
+transform = Transform3D(5.55116e-17, 1.09278e-09, -0.025, 0.025, -1.09278e-09, 7.74447e-18, -1.09278e-09, -0.025, -1.09278e-09, 0, 0, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0305072, 0.103516)
+shape = SubResource("1")
+
+[node name="Magazine" parent="." index="2"]
+max_quantity = 8
+required_tags = "Bullet Magnum"
+
+[node name="Chamber" parent="." index="3"]
+transform = Transform3D(1, -0.000872665, 0, 0.000872665, 1, 0, 0, 0, 1, 0, 0.098566, 0.273738)
+release_speed = 30.0
+release_angular_spread = Vector2(0.075, 0.075)

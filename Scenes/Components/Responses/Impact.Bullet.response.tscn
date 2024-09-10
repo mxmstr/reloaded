@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://o173vl32nsou"]
+
+[ext_resource type="Script" path="res://Scripts/Response.Impact.Bullet.gd" id="1"]
+
+[node name="ImpactResponse" type="Node"]
+script = ExtResource("1")

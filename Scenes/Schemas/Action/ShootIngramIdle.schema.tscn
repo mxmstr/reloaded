@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyj6xfdhdsqji"]
+
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="1"]
+[ext_resource type="Animation" uid="uid://den20o2msl260" path="res://Animations/Human/Action/Shoot/Ingram/ShootIngram.tres" id="2"]
+[ext_resource type="Animation" uid="uid://dq1rq50apbvql" path="res://Animations/Human/Action/Shoot/Ingram/ShootIngram_Down.tres" id="3"]
+[ext_resource type="Animation" uid="uid://6lba477kmlpf" path="res://Animations/Human/Action/Shoot/Ingram/ShootIngram_Up.tres" id="4"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/ShootIngram = ExtResource("2")
+anims/ShootIngram_Down = ExtResource("3")
+anims/ShootIngram_Up = ExtResource("4")
+script = ExtResource("1")
+attributes = "{
+	\"*\": {
+		\"layer\": \"MIXED\",
+		\"align_model_to_aim\": true,
+		\"can_use_item\": true
+	}
+}"

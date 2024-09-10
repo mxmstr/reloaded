@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5comwbe5qwsg"]
+
+[ext_resource type="PackedScene" uid="uid://dgr338hruvsy0" path="res://Scenes/Actors/Items/Bullet.tscn" id="1"]
+
+[node name="Bullet9mm" instance=ExtResource("1")]
+tags = "Actor Bullet 9mm Pooled Damage:10 Force:2"
+
+[node name="Model" parent="." index="0"]
+visible = false
+
+[node name="Behavior" parent="." index="5"]
+process_mode = 1

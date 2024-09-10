@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://bcvs2tay42o81"]
+
+[node name="Toolbox" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LoadMap2" type="Button" parent="."]
+layout_mode = 2
+text = "Load Map"
+
+[node name="Floor" type="Button" parent="."]
+layout_mode = 2
+text = "Floor"
+
+[node name="ConvertInput" type="TextEdit" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "res://.raw/"
+
+[node name="ConvertOutput" type="TextEdit" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "res://Animations/Human/"
+
+[node name="Convert" type="Button" parent="."]
+layout_mode = 2
+text = "Convert"
+
+[node name="RevertInput" type="TextEdit" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "res://Scenes/Actors/Humans/Players/"
+
+[node name="Revert" type="Button" parent="."]
+layout_mode = 2
+text = "Convert"
+
+[node name="LoadAnimInput" type="TextEdit" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "res://Animations/Player/"
+
+[node name="LoadAnim" type="Button" parent="."]
+layout_mode = 2
+text = "Load Animations"
+
+[node name="LoadAudioInput" type="TextEdit" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "res://Sounds/"
+
+[node name="LoadAudioOutput" type="TextEdit" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "res://Animations/Audio/"
+
+[node name="LoadAudio" type="Button" parent="."]
+layout_mode = 2
+text = "Load Audio"
+
+[node name="LoadMapInput" type="TextEdit" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "res://Models/Maps/"
+
+[node name="LoadMap" type="Button" parent="."]
+layout_mode = 2
+text = "Load Map"
+
+[node name="ExpressionInput" type="TextEdit" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="ArgumentsInput" type="TextEdit" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "{}"
+
+[node name="Evaluate" type="Button" parent="."]
+layout_mode = 2
+text = "Evaluate"
+
+[node name="PrintTransform" type="Button" parent="."]
+layout_mode = 2
+text = "Print Transform3D"
+
+[node name="ConvertAnimInput" type="TextEdit" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "res://Animations/Converted/"
+
+[node name="ConvertAnimButton" type="Button" parent="."]
+layout_mode = 2
+text = "Convert anim"

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl4ru2lwpijj"]
+
+[ext_resource type="PackedScene" uid="uid://dgr338hruvsy0" path="res://Scenes/Actors/Items/Bullet.tscn" id="1"]
+
+[node name="BulletMagnum" instance=ExtResource("1")]
+tags = "Actor Bullet Magnum Pooled Damage:20 Force:3"

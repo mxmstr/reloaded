@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://mxle26mybha8"]
+
+[ext_resource type="AudioStream" uid="uid://8mak5ronedp8" path="res://Sounds/Thief/Feet/FTROC_P1.wav" id="1"]
+[ext_resource type="AudioStream" uid="uid://dpotm6ebj33hs" path="res://Sounds/Thief/Feet/FTROC_P2.wav" id="2"]
+[ext_resource type="AudioStream" uid="uid://bshd12nyn8utt" path="res://Sounds/Thief/Feet/FTROC_P3.wav" id="3"]
+[ext_resource type="AudioStream" uid="uid://5lrokq3dcctt" path="res://Sounds/Thief/Feet/FTROC_P4.wav" id="4"]
+
+[sub_resource type="Animation" id="1"]
+resource_name = "StepRock0"
+length = 0.35
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="2"]
+resource_name = "StepRock1"
+length = 0.33
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="3"]
+resource_name = "StepRock2"
+length = 0.39
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="4"]
+resource_name = "StepRock3"
+length = 0.31
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/StepRock0 = SubResource("1")
+anims/StepRock1 = SubResource("2")
+anims/StepRock2 = SubResource("3")
+anims/StepRock3 = SubResource("4")
+__meta__ = {}

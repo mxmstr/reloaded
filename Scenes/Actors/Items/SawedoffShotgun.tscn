@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdtquxlevng0s"]
+
+[ext_resource type="PackedScene" uid="uid://qyc1rotj2v4e" path="res://Scenes/Actors/Items/Firearm.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://cbkwnrjxvre0j" path="res://Models/Items/Max Payne Weapons/Sawedoff Shotgun/Sawedoff Shotgun.obj" id="2"]
+
+[sub_resource type="BoxShape3D" id="1"]
+size = Vector3(0.0467498, 0.106254, 0.454442)
+
+[node name="SawedoffShotgun" instance=ExtResource("1")]
+tags = "Item Firearm Shotgun SawedoffShotgun DualWield DualWieldFireDelay:0.11 Stackable AutoAim Rank:31 UseAction:FireProjectile FireRate:4.0 Offset-position-1:neo_reference_skeleton:Gun:-0.022944,0.022833,0.015305 Offset-rotation-1:neo_reference_skeleton:Gun:-88.452492,51.422379,-60.47744 Offset-position-2:neo_reference_skeleton:Hand-L:0.021087,0.057996,-0.001338 Offset-rotation-2:neo_reference_skeleton:Hand-L:-87.276451,-83.756004,83.710358"
+
+[node name="Model" parent="." index="0" instance=ExtResource("2")]
+transform = Transform3D(5.55116e-17, 1.09278e-09, -0.025, 0.025, -1.09278e-09, 7.74447e-18, -1.09278e-09, -0.025, -1.09278e-09, 0, 0, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0163468, 0.277896)
+shape = SubResource("1")
+
+[node name="Magazine" parent="." index="2"]
+max_quantity = 2
+required_tags = "Bullet Shotgun"
+
+[node name="Chamber" parent="." index="3"]
+transform = Transform3D(1, -0.000872665, 0, 0.000872665, 1, 0, 0, 0, 1, 0, 0.0576052, 0.745377)
+release_speed = 20.0
+release_angular_spread = Vector2(0.1, 0.1)
+max_quantity = 6

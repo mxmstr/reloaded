@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://35ylwstbtf6j"]
+
+[ext_resource type="PackedScene" uid="uid://qyc1rotj2v4e" path="res://Scenes/Actors/Items/Firearm.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://bwuenx264c3d1" path="res://Models/Items/Max Payne Weapons/Ingram/Ingram.obj" id="2"]
+
+[sub_resource type="BoxShape3D" id="1"]
+size = Vector3(8, 7, 1)
+
+[node name="Ingram" instance=ExtResource("1")]
+tags = "Item Firearm Ingram AutoFire Stackable AutoAim DualWield DualWieldFireDelay:0.08 Rank:20 UseAction:FireProjectile FireRate:9.0 Offset-position-1:neo_reference_skeleton:Gun:-0.015986,0.006214,0.037872
+ Offset-rotation-1:neo_reference_skeleton:Gun:-89.179077,94.08503,-88.78389 Offset-position-2:neo_reference_skeleton:Hand-L:-0.020767,0.063171,0.019286
+ Offset-rotation-2:neo_reference_skeleton:Hand-L:-90,0,0"
+
+[node name="Model" parent="." index="0" instance=ExtResource("2")]
+transform = Transform3D(1.09278e-09, -9.55343e-17, 0.025, -2.18557e-09, -0.025, 0, 0.025, -2.18557e-09, -1.09278e-09, 0, 0, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(5.55112e-17, 1.09278e-09, -0.025, 0.025, -1.09278e-09, 0, -1.09278e-09, -0.025, -1.09278e-09, 0.024668, -0.0164821, 0.0267833)
+shape = SubResource("1")
+
+[node name="Magazine" parent="." index="2"]
+max_quantity = 20
+required_tags = "Bullet 9mm"
+
+[node name="Chamber" parent="." index="3"]
+transform = Transform3D(1, -0.000872665, 0, 0.000872665, 1, 0, 0, 0, 1, 0, 0.126944, 0.281379)
+release_speed = 20.0
+release_angular_spread = Vector2(0.2, 0.2)

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsj78odicyfib"]
+
+[ext_resource type="PackedScene" uid="uid://qyc1rotj2v4e" path="res://Scenes/Actors/Items/Firearm.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dx2w502qrtbho" path="res://Models/Items/Max Payne Weapons/Baretta/Baretta.obj" id="2"]
+
+[sub_resource type="BoxShape3D" id="1"]
+size = Vector3(0.3, 1, 1.5)
+
+[node name="Beretta" instance=ExtResource("1")]
+tags = "Item Firearm Beretta Stackable AutoAim DualWield DualWieldFireDelay:0.11 Rank:10 UseAction:FireProjectile FireRate:8.0 Offset-position-1:neo_reference_skeleton:Gun:-0.008487,0.005017,0.025809 Offset-rotation-1:neo_reference_skeleton:Gun:-90,0,0 Offset-position-2:neo_reference_skeleton:Hand-L:0.007063,0.036149,-0.000168 Offset-rotation-2:neo_reference_skeleton:Hand-L:-90,0,0
+"
+
+[node name="Model" parent="." index="0" instance=ExtResource("2")]
+transform = Transform3D(5.55112e-17, 1.09278e-09, -0.025, 0.025, -1.09278e-09, 0, -1.09278e-09, -0.025, -1.09278e-09, 0, 0, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(0.1, 0, 4.1631e-18, 0, 0.1, 0, -1.43166e-17, 0, 0.1, 0, 0.0278902, 0.104032)
+shape = SubResource("1")
+
+[node name="Magazine" parent="." index="2"]
+max_quantity = 12
+required_tags = "Bullet 9mm"
+
+[node name="Chamber" parent="." index="3"]
+transform = Transform3D(1, -0.000872665, 0, 0.000872665, 1, 0, 0, 0, 1, 0, 0.102109, 0.268156)
+release_speed = 20.0
+release_angular_spread = Vector2(0.05, 0.05)

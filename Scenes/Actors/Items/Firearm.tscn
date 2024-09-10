@@ -1,0 +1,76 @@
+[gd_scene load_steps=14 format=3 uid="uid://qyc1rotj2v4e"]
+
+[ext_resource type="Script" path="res://Scripts/Actor.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://b14wb70au1fv7" path="res://Scenes/Components/Properties/Container.property.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://ckl134nmf36yh" path="res://Scenes/Components/Actions/FireProjectile.action.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://cffk8jt4nghgj" path="res://Scenes/Components/Actions/Action.action.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://bwm8feos1secj" path="res://Scenes/Components/Responses/Use.Firearm.response.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://bxpwcadgwh12x" path="res://Scenes/Components/Sounds/FireProjectile.sound.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://u1x3v5q5dyby" path="res://Scenes/Components/Actions/LoadChamber.action.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://cjbblvt5l8ocw" path="res://Scenes/Components/Stimuli/Area.stimulus.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://v0igx037ao3" path="res://Scenes/Components/Properties/Physics.RigidBody.property.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://xcfmp6kwv8f" path="res://Scenes/Components/Properties/Behavior.property.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://do8c1niilqjas" path="res://Scenes/Components/Properties/Reception.property.tscn" id="11"]
+[ext_resource type="PackedScene" uid="uid://c7nap38q1wpbk" path="res://Scenes/Components/Properties/Audio.property.tscn" id="16"]
+
+[sub_resource type="SphereShape3D" id="1"]
+
+[node name="Firearm" type="RigidBody3D"]
+collision_layer = 4
+script = ExtResource("1")
+tags = "Item Firearm UseAction:FireProjectile FireRate:0.1"
+
+[node name="Magazine" parent="." instance=ExtResource("2")]
+factory_mode = true
+max_quantity = 1
+invisible = true
+required_tags = "Bullet"
+
+[node name="Chamber" parent="." instance=ExtResource("2")]
+transform = Transform3D(1, -0.000872665, 0, 0.000872665, 1, 0, 0, 0, 1, 0, 0, 0)
+release_speed = 10.0
+release_exclude_parent = true
+max_quantity = 1
+invisible = true
+required_tags = "Bullet"
+
+[node name="AreaStim" parent="." instance=ExtResource("8")]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+stim_data = "[
+	{
+		\"stim_type\": \"PickMeUp\",
+		\"stim_intensity\": 0
+	}
+]"
+
+[node name="Collision" type="CollisionShape3D" parent="AreaStim"]
+shape = SubResource("1")
+
+[node name="Physics" parent="." instance=ExtResource("9")]
+
+[node name="Behavior" parent="." instance=ExtResource("10")]
+
+[node name="FireProjectileAction" parent="Behavior" instance=ExtResource("3")]
+
+[node name="LoadChamberAction" parent="Behavior" instance=ExtResource("7")]
+
+[node name="Reception" parent="." instance=ExtResource("11")]
+
+[node name="UseResponse" parent="Reception" instance=ExtResource("5")]
+
+[node name="FireAudio" parent="." instance=ExtResource("16")]
+
+[node name="FireProjectileSound" parent="FireAudio" instance=ExtResource("6")]
+tree = NodePath("..")
+
+[node name="Audio" parent="." instance=ExtResource("16")]
+
+[node name="ReloadSound" parent="Audio" instance=ExtResource("4")]
+state = "Reload"
+schema = "ReloadSound"
+
+[node name="EmptySound" parent="Audio" instance=ExtResource("4")]
+state = "Empty"
+schema = "EmptySound"

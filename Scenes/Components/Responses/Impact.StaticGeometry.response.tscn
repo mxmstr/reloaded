@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl3tink74smup"]
+
+[ext_resource type="Script" path="res://Scripts/Response.Impact.StaticGeometry.gd" id="1_kfjxv"]
+
+[node name="ImpactResponse" type="Node"]
+script = ExtResource("1_kfjxv")

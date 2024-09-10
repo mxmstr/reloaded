@@ -1,0 +1,12 @@
+[gd_resource type="Animation" format=3 uid="uid://ccf6d75n87doh"]
+
+[resource]
+resource_name = "idle_sitting_at_tablekf2"
+length = 0.375
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:Gun")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 4.44195e-16, 0.0218153, 0.999762, 1.91898e-07, 0.0666667, 1, 4.47141e-09, 0.0218153, 0.999762, 1.94134e-07, 0.133333, 1, 7.45235e-09, -0.0218153, -0.999762, 1.95624e-07, 0.375, 1, 7.45235e-09, -0.0218153, -0.999762, 1.95624e-07)

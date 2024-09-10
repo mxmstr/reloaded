@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddcx3ga4qi7kl"]
+
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://m2k20td15hgx" path="res://Sounds/Payne/camera/camera_cut_02.wav" id="2"]
+
+[sub_resource type="Animation" id="1"]
+length = 1.54274
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/camera_cut_02 = SubResource("1")
+script = ExtResource("1")
+attributes = "{
+	\"*\": {
+		\"level\": 0
+	}
+}"

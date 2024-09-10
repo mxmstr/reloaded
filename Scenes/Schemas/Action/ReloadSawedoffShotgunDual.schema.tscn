@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbfpng0srdiai"]
+
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="2"]
+[ext_resource type="Animation" uid="uid://c6wwlbtpqyvot" path="res://Animations/Human/Action/Reload/ReloadBerettaDual.tres" id="3"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/ReloadBerettaDual = ExtResource("3")
+script = ExtResource("2")
+attributes = "{
+	\"*\": {
+		\"clip_start\": 0.05,
+		\"layer\": \"MIXED\",
+		\"switch_mode\": \"End\",
+		\"time_scaled\": false
+	}
+}"

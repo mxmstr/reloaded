@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccdtt7gusxdn8"]
+
+[ext_resource type="Animation" path="res://Animations/Item/FireProjectile.Firearm.9mm.tres" id="1"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="2"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/FireProjectile = ExtResource("1")
+script = ExtResource("2")
+attributes = "{
+	\"*\": {
+		\"switch_mode\": \"End\",
+		\"time_scaled\": false
+	}
+}"

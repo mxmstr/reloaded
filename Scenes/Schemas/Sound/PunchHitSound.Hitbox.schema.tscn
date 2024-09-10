@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://b01ufydy5aci0"]
+
+[ext_resource type="AudioStream" uid="uid://cb0ua2emoyv1h" path="res://Sounds/Goldeneye/fx/punch1.wav" id="1"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="2"]
+[ext_resource type="AudioStream" uid="uid://cb56yqikp45xi" path="res://Sounds/Goldeneye/fx/punch2.wav" id="3"]
+[ext_resource type="AudioStream" uid="uid://cir5yg35ou3wf" path="res://Sounds/Goldeneye/fx/punch3.wav" id="4"]
+
+[sub_resource type="Animation" id="1"]
+length = 0.204014
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="2"]
+length = 0.224082
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="3"]
+length = 0.255215
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/punch1 = SubResource("1")
+anims/punch2 = SubResource("2")
+anims/punch3 = SubResource("3")
+script = ExtResource("2")
+attributes = "{
+	\"*\": {
+		\"level\": -5
+	}
+}"

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://hgctqjx5ne5b"]
+
+[ext_resource type="Script" path="res://Scripts/Link.gd" id="1"]
+
+[node name="AINextWaypoint" type="Node" index="0"]
+script = ExtResource("1")

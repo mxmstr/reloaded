@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c365e4lejm28r"]
+
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="1"]
+[ext_resource type="Animation" uid="uid://s6ijfd3xmt2l" path="res://Animations/Human/Action/Shoot/Sniper/ShootSniper.tres" id="2"]
+[ext_resource type="Animation" uid="uid://cjbg5mmqup4og" path="res://Animations/Human/Action/Shoot/Sniper/ShootSniper_Down.tres" id="3"]
+[ext_resource type="Animation" uid="uid://cf2sj3ruacd" path="res://Animations/Human/Action/Shoot/Sniper/ShootSniper_Up.tres" id="4"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/ShootSniper = ExtResource("2")
+anims/ShootSniper_Down = ExtResource("3")
+anims/ShootSniper_Up = ExtResource("4")
+script = ExtResource("1")
+attributes = "{
+	\"*\": {
+		\"layer\": \"MIXED\",
+		\"align_model_to_aim\": true,
+		\"can_use_item\": true,
+		\"can_zoom\": true
+	}
+}"

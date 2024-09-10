@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4jyelfuy44su"]
+
+[ext_resource type="Script" path="res://Scripts/Action.gd" id="1"]
+
+[node name="DieAction" type="Node"]
+script = ExtResource("1")
+__meta__ = {}
+schema = "Die"
+state = "Die"

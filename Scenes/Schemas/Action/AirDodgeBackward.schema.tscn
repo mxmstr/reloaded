@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwguoy0xwg2v0"]
+
+[ext_resource type="Animation" uid="uid://bxygcqlqv4ajh" path="res://Animations/Human/backflip.tres" id="1_6x4tp"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="2"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q2flx"]
+_data = {
+"backflip": ExtResource("1_6x4tp")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_q2flx")
+}
+script = ExtResource("2")
+attributes = "{
+	\"*\": {
+		\"clip_start\": 0.05,
+		\"layer\": \"ACTION\",
+		\"switch_mode\": \"End\",
+		\"lock_movement\": true,
+		\"camera_mode\": \"HalfYaw\"
+	}
+}"

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqf05hvd4jbo3"]
+
+[ext_resource type="Animation" uid="uid://8ef4lrh7rfaj" path="res://Animations/Human/Action/Reload/ReloadM79.tres" id="1"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="2"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/ReloadM79 = ExtResource("1")
+script = ExtResource("2")
+attributes = "{
+	\"*\": {
+		\"speed\": 1.5,
+		\"clip_start\": 0.05,
+		\"layer\": \"MIXED\",
+		\"switch_mode\": \"End\",
+		\"time_scaled\": false
+	}
+}"

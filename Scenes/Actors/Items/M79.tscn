@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ejt5rcgisadr"]
+
+[ext_resource type="PackedScene" uid="uid://qyc1rotj2v4e" path="res://Scenes/Actors/Items/Firearm.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://drmhgywpeyht" path="res://Models/Items/Max Payne Weapons/M79/M79.obj" id="2"]
+
+[sub_resource type="BoxShape3D" id="1"]
+size = Vector3(0.0378588, 0.0702915, 0.45521)
+
+[node name="M79" instance=ExtResource("1")]
+tags = "Item Firearm M79 Rank:60 UseAction:FireProjectile FireRate:0.75 Stackable Offset-position:neo_reference_skeleton:Gun:0.000453,-0.03889,-0.053751
+ Offset-rotation:neo_reference_skeleton:Gun:-89.435593,-89.997627,89.346985
+"
+
+[node name="Model" parent="." index="0" instance=ExtResource("2")]
+transform = Transform3D(5.55116e-17, 1.09278e-09, -0.025, 0.025, -1.09278e-09, 7.74447e-18, -1.09278e-09, -0.025, -1.09278e-09, 0, 0, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.026155, 0.111159)
+shape = SubResource("1")
+
+[node name="Magazine" parent="." index="2"]
+required_tags = "ImpactGrenade"
+
+[node name="Chamber" parent="." index="3"]
+transform = Transform3D(1, -0.000872665, 0, 0.000872665, 1, 0, 0, 0, 1, 0, 0.0314283, 0.60911)
+release_speed = 40.0
+release_exclude_parent = false
+required_tags = "ImpactGrenade"

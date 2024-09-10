@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2ihci4l3tfp4"]
+
+[ext_resource type="Script" path="res://Scripts/Input.MoveHorizontal.gd" id="1"]
+
+[node name="MoveRightInput" type="Node"]
+script = ExtResource("1")
+__meta__ = {}
+action = "Right"
+strength_multiplier = -1.0

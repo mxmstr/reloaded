@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7tf2jwbvj0la"]
+
+[ext_resource type="PackedScene" uid="uid://dcq0iy07b456v" path="res://Scenes/Actors/KinematicBody.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Stimuli/Contact.stimulus.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://o173vl32nsou" path="res://Scenes/Components/Responses/Impact.Bullet.response.tscn" id="3"]
+
+[sub_resource type="SphereMesh" id="1"]
+
+[sub_resource type="SphereShape3D" id="2"]
+
+[node name="BulletPunch" instance=ExtResource("1")]
+collision_layer = 8
+collision_mask = 17
+tags = "Actor Punch Damage:40 Force:100"
+
+[node name="Model" type="Node3D" parent="." index="0"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model" index="0"]
+visible = false
+mesh = SubResource("1")
+material/0 = null
+
+[node name="Collision" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("2")
+
+[node name="ContactStim" parent="." index="2" instance=ExtResource("2")]
+stim_type = "Touch"
+
+[node name="TouchResponse" parent="." index="3" instance=ExtResource("3")]
+tree_node = NodePath("../Reception")
+
+[node name="Physics" parent="." index="4"]
+gravity = 0.0
+accel = 0
+deaccel = 0
+projectile = true

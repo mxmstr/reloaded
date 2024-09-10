@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6fc3eef1belq"]
+
+[ext_resource type="PackedScene" uid="uid://qyc1rotj2v4e" path="res://Scenes/Actors/Items/Firearm.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://5vhtlhs1uc64" path="res://Models/Items/Max Payne Weapons/Colt Commando/Colt Commando.obj" id="2"]
+
+[sub_resource type="BoxShape3D" id="1"]
+size = Vector3(0.5, 1.5, 4.7)
+
+[node name="Colt" instance=ExtResource("1")]
+tags = "Item Firearm Colt AutoFire Stackable AutoAim Rank:40 UseAction:FireProjectile FireRate:6.0 Offset-position:neo_reference_skeleton:Gun:-0.05,-0.012,0 Offset-rotation:neo_reference_skeleton:Gun:-89.1,58.6,-62.6"
+
+[node name="Model" parent="." index="0" instance=ExtResource("2")]
+transform = Transform3D(5.68248e-10, -8.58031e-17, 0.013, -1.96295e-09, -0.013, 3.44107e-24, 0.013, -1.96295e-09, -5.68248e-10, 0, 0, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(0.1, 0, 4.1631e-18, 0, 0.1, 0, -1.43166e-17, 0, 0.1, 0.0353215, 0.0255374, 0.149729)
+shape = SubResource("1")
+
+[node name="Magazine" parent="." index="2"]
+max_quantity = 30
+required_tags = "Bullet Rifle"
+
+[node name="Chamber" parent="." index="3"]
+transform = Transform3D(1, -0.000872665, 0, 0.000872665, 1, 0, 0, 0, 1, 0, 0.0817747, 0.614824)
+release_speed = 40.0
+release_angular_spread = Vector2(0.1, 0.1)

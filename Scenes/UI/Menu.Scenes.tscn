@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://pegr7k670o0p"]
+
+[ext_resource type="Script" path="res://Scripts/Menu.Scenes.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bdy2p571qxl62" path="res://Textures/panel.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://bq41cluavf1fr" path="res://Scenes/UI/Menu.Checkbox.tscn" id="3"]
+[ext_resource type="FontFile" uid="uid://ncw5gi15q1li" path="res://Fonts/Xolonium-Regular.ttf" id="4"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("4")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="Scenes" type="MarginContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.0
+offset_top = -84.5
+offset_right = 230.0
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1")
+__meta__ = {}
+
+[node name="Background" type="NinePatchRect" parent="."]
+self_modulate = Color(0.890196, 1, 0.698039, 1)
+offset_right = 660.0
+offset_bottom = 163.0
+texture = ExtResource("2")
+region_rect = Rect2(0, 0, 512, 512)
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 40
+__meta__ = {}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 660.0
+offset_bottom = 163.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+custom_constants/offset_right = 30
+custom_constants/offset_top = 30
+custom_constants/offset_left = 30
+custom_constants/offset_bottom = 50
+__meta__ = {}
+
+[node name="ListContainer" type="VBoxContainer" parent="MarginContainer"]
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 630.0
+offset_bottom = 113.0
+custom_minimum_size = Vector2(600, 0)
+__meta__ = {}
+
+[node name="Multi" parent="MarginContainer/ListContainer" instance=ExtResource("3")]
+offset_right = 600.0
+offset_bottom = 25.0
+
+[node name="CheckBox" parent="MarginContainer/ListContainer/Multi" index="0"]
+offset_right = 214.0
+text = "Enable Multiplayer"
+
+[node name="Coop" parent="MarginContainer/ListContainer" instance=ExtResource("3")]
+offset_top = 29.0
+offset_right = 600.0
+offset_bottom = 54.0
+
+[node name="CheckBox" parent="MarginContainer/ListContainer/Coop" index="0"]
+offset_right = 161.0
+text = "Enable Co-op"
+
+[node name="Hint" type="Label" parent="MarginContainer/ListContainer"]
+offset_top = 58.0
+offset_right = 600.0
+offset_bottom = 83.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource("1")
+text = "Select a scene"
+clip_text = true
+__meta__ = {}
+
+[editable path="MarginContainer/ListContainer/Multi"]
+[editable path="MarginContainer/ListContainer/Coop"]

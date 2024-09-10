@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx6cg14nmwt03"]
+
+[ext_resource type="Animation" uid="uid://baskx2k8iia0w" path="res://Animations/Human/Action/Jump/JumpUp.tres" id="1"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="2"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mu7uj"]
+_data = {
+"JumpUp": ExtResource("1")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_mu7uj")
+}
+script = ExtResource("2")
+attributes = "{
+	\"*\": {
+		\"clip_start\": 0.05,
+		\"speed\": 1.75,
+		\"clip_end\": 1.1,
+		\"layer\": \"ACTION\",
+		\"switch_mode\": \"End\"
+	}
+}"

@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3 uid="uid://volebtvcdqc5"]
+
+[ext_resource type="Animation" uid="uid://bkdloijx6b7rd" path="res://Animations/Human/wall_shootdodgeforward.tres" id="1"]
+[ext_resource type="Animation" uid="uid://bvhbosce5u3kt" path="res://Animations/Human/wall_shootdodgeforwardright.tres" id="2"]
+[ext_resource type="Animation" uid="uid://qbcf0m7he4sq" path="res://Animations/Human/wall_shootdodgeright.tres" id="3"]
+[ext_resource type="Animation" uid="uid://bl7dwtsbrujfc" path="res://Animations/Human/wall_shootdodgebackwardright.tres" id="4"]
+[ext_resource type="Animation" uid="uid://bx3o8omif47ic" path="res://Animations/Human/wall_shootdodgebackward.tres" id="5"]
+[ext_resource type="Animation" uid="uid://cjfarsymy5vdr" path="res://Animations/Human/wall_shootdodgebackwardleft.tres" id="6"]
+[ext_resource type="Animation" uid="uid://cpcx2og837het" path="res://Animations/Human/wall_shootdodgeleft.tres" id="7"]
+[ext_resource type="Animation" uid="uid://baea3mu55o0mr" path="res://Animations/Human/wall_shootdodgeforwardleft.tres" id="8"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="9"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8odi8"]
+_data = {
+"wall_shootdodgebackward": ExtResource("5"),
+"wall_shootdodgebackwardleft": ExtResource("6"),
+"wall_shootdodgebackwardright": ExtResource("4"),
+"wall_shootdodgeforward": ExtResource("1"),
+"wall_shootdodgeforwardleft": ExtResource("8"),
+"wall_shootdodgeforwardright": ExtResource("2"),
+"wall_shootdodgeleft": ExtResource("7"),
+"wall_shootdodgeright": ExtResource("3")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_8odi8")
+}
+script = ExtResource("9")
+attributes = "{
+	\"*\": {
+		\"priority\": 1,
+		\"speed\": 1.5,
+		\"clip_start\": 1.65,
+		\"layer\": \"ACTION\",
+		\"can_use_item\": true
+	},
+	\"wall_shootdodgeforward\": {
+		\"direction\": 0
+	},
+	\"wall_shootdodgeforwardright\": {
+		\"direction\": 1
+	},
+	\"wall_shootdodgeright\": {
+		\"direction\": 2
+	},
+	\"wall_shootdodgebackwardright\": {
+		\"direction\": 3
+	},
+	\"wall_shootdodgebackward\": {
+		\"direction\": 4
+	},
+	\"wall_shootdodgebackwardleft\": {
+		\"direction\": 5
+	},
+	\"wall_shootdodgeleft\": {
+		\"direction\": 6
+	},
+	\"wall_shootdodgeforwardleft\": {
+		\"direction\": 7
+	}
+}"

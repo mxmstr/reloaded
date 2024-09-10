@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwm8feos1secj"]
+
+[ext_resource type="Script" path="res://Scripts/Response.Use.Firearm.gd" id="1"]
+
+[node name="UseResponse" type="Node"]
+script = ExtResource("1")
+__meta__ = {}

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx4lkcteiutab"]
+
+[ext_resource type="Animation" uid="uid://w7ujvoxt3588" path="res://Animations/Human/Movement/StrafeLeft.tres" id="1"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/StrafeLeft = ExtResource("1")
+__meta__ = {}

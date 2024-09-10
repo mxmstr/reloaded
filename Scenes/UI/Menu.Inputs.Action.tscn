@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy1wtqqkhcbw4"]
+
+[ext_resource type="FontFile" uid="uid://ncw5gi15q1li" path="res://Fonts/Xolonium-Regular.ttf" id="1"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="Action" type="HBoxContainer"]
+__meta__ = {}
+
+[node name="Label" type="Label" parent="."]
+offset_right = 59.0
+offset_bottom = 31.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource("1")
+text = "Label"
+valign = 1
+__meta__ = {}
+
+[node name="Button" type="Button" parent="."]
+offset_left = 63.0
+offset_right = 146.0
+offset_bottom = 31.0
+size_flags_horizontal = 10
+size_flags_vertical = 2
+custom_fonts/font = SubResource("1")
+text = "Button"
+__meta__ = {}

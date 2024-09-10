@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bh6w4koqshm57"]
+
+[ext_resource type="PackedScene" uid="uid://qyc1rotj2v4e" path="res://Scenes/Actors/Items/Firearm.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dtehm31hkm8b5" path="res://Models/Items/Max Payne Weapons/Pump Shotgun/Pump Shotgun.obj" id="2"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Sounds/FireProjectileCock.sound.tscn" id="3"]
+
+[sub_resource type="BoxShape3D" id="1"]
+size = Vector3(0.0335446, 0.118953, 0.639224)
+
+[node name="PumpShotgun" instance=ExtResource("1")]
+tags = "Item Firearm Shotgun PumpShotgun Stackable AutoAim Rank:30 UseAction:FireProjectile FireRate:0.8 Offset-position:neo_reference_skeleton:Gun:0.00044,0.007747,-0.00782 Offset-rotation:neo_reference_skeleton:Gun:-89.980209,-79.970055,76.587555"
+
+[node name="Model" parent="." index="0" instance=ExtResource("2")]
+transform = Transform3D(5.55116e-17, 1.09278e-09, -0.025, 0.025, -1.09278e-09, 7.74447e-18, -1.09278e-09, -0.025, -1.09278e-09, 0, 0, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.233101)
+shape = SubResource("1")
+
+[node name="Magazine" parent="." index="2"]
+max_quantity = 8
+required_tags = "Bullet Shotgun"
+
+[node name="Chamber" parent="." index="3"]
+transform = Transform3D(1, -0.000872665, 0, 0.000872665, 1, 0, 0, 0, 1, -0.000244141, 0.0875522, 0.906064)
+release_speed = 20.0
+release_angular_spread = Vector2(0.1, 0.1)
+max_quantity = 6
+
+[node name="FireProjectileCockSound" parent="Audio" index="4" instance=ExtResource("3")]

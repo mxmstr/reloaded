@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdwvt7e15yon8"]
+
+[ext_resource type="Animation" uid="uid://cgqg2mh0sp57e" path="res://Animations/Human/Action/Shoot/DesertEagle/ShootDesertEagle.tres" id="1"]
+[ext_resource type="Animation" uid="uid://cyym7tym5plcc" path="res://Animations/Human/Action/Shoot/DesertEagle/ShootDesertEagle_Down.tres" id="2"]
+[ext_resource type="Animation" uid="uid://drvul8q1sknhp" path="res://Animations/Human/Action/Shoot/DesertEagle/ShootDesertEagle_Up.tres" id="3"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="4"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/ShootDesertEagle = ExtResource("1")
+anims/ShootDesertEagle_Down = ExtResource("2")
+anims/ShootDesertEagle_Up = ExtResource("3")
+script = ExtResource("4")
+attributes = "{
+	\"*\": {
+		\"speed\": 3.0,
+		\"clip_start\": 0.05,
+		\"layer\": \"MIXED\",
+		\"align_model_to_aim\": true,
+		\"can_use_item\": true,
+		\"next\": \"ShootIdle\"
+	}
+}"

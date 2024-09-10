@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://dbwyac5gyta2u"]
+
+[ext_resource type="AudioStream" uid="uid://b8kgtoq4n6v5l" path="res://Sounds/Goldeneye/fx/reaction_female/female0.wav" id="1"]
+[ext_resource type="AudioStream" uid="uid://t2emdmmsjvv1" path="res://Sounds/Goldeneye/fx/reaction_female/female1.wav" id="2"]
+[ext_resource type="AudioStream" uid="uid://bp686gjtfocnw" path="res://Sounds/Goldeneye/fx/reaction_female/female2.wav" id="3"]
+[ext_resource type="AudioStream" uid="uid://cajpngl7onwta" path="res://Sounds/Goldeneye/fx/reaction_female/female_gasp.wav" id="4"]
+
+[sub_resource type="Animation" id="1"]
+length = 0.381338
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="2"]
+length = 0.142404
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="3"]
+length = 0.363061
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="4"]
+length = 0.248435
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/female0 = SubResource("1")
+anims/female1 = SubResource("2")
+anims/female2 = SubResource("3")
+anims/female_gasp = SubResource("4")
+__meta__ = {}

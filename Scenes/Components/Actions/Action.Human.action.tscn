@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxrq7bjr4hrjg"]
+
+[ext_resource type="Script" path="res://Scripts/Action.Human.gd" id="1_p0ao1"]
+
+[node name="Action" type="Node"]
+script = ExtResource("1_p0ao1")

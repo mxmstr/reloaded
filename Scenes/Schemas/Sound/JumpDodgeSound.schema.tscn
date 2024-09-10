@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmh80jwr5wi6n"]
+
+[ext_resource type="AudioStream" uid="uid://ctkqi6h7jf4x7" path="res://Sounds/Matrix/weapons/NewMatrix/Whoosh3.wav" id="1"]
+[ext_resource type="AudioStream" uid="uid://b3tfwi255gqjw" path="res://Sounds/Matrix/weapons/NewMatrix/Whoosh1.wav" id="2"]
+[ext_resource type="AudioStream" uid="uid://be6v2200lxctp" path="res://Sounds/Matrix/weapons/NewMatrix/Whoosh2.wav" id="3"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="9"]
+
+[sub_resource type="Animation" id="1"]
+length = 0.405419
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="2"]
+length = 0.454195
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="3"]
+length = 0.436667
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/Whoosh1 = SubResource("1")
+anims/Whoosh2 = SubResource("2")
+anims/Whoosh3 = SubResource("3")
+script = ExtResource("9")
+attributes = "{
+	\"*\": {
+		\"level\": -5
+	}
+}"

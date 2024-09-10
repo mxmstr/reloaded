@@ -1,0 +1,93 @@
+[gd_resource type="AnimationNodeBlendSpace1D" load_steps=17 format=3 uid="uid://c7d8lj865pl3t"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cypro"]
+resource_name = "LeftRun"
+animation = &"DefaultAnim"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p06i6"]
+resource_name = "RightRun"
+animation = &"DefaultAnim"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2sdaw"]
+resource_name = "BackwardWalk"
+animation = &"DefaultAnim"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qm5pt"]
+resource_name = "ForwardWalk"
+animation = &"DefaultAnim"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vclkx"]
+resource_name = "ForwardRun"
+animation = &"DefaultAnim"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m2l43"]
+resource_name = "BackwardRun"
+animation = &"DefaultAnim"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jluha"]
+resource_name = "Idle"
+animation = &"DefaultAnim"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tfrht"]
+resource_name = "ForwardSprint"
+animation = &"DefaultAnim"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_if84n"]
+resource_name = "BackwardSprint"
+animation = &"DefaultAnim"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_hnnkh"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_cypro")
+blend_point_0/pos = Vector2(-0.6, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_p06i6")
+blend_point_1/pos = Vector2(0.6, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_2sdaw")
+blend_point_2/pos = Vector2(0, -0.2)
+blend_point_3/node = SubResource("AnimationNodeAnimation_qm5pt")
+blend_point_3/pos = Vector2(0, 0.2)
+blend_point_4/node = SubResource("AnimationNodeAnimation_vclkx")
+blend_point_4/pos = Vector2(0, 0.6)
+blend_point_5/node = SubResource("AnimationNodeAnimation_m2l43")
+blend_point_5/pos = Vector2(0, -0.6)
+blend_point_6/node = SubResource("AnimationNodeAnimation_jluha")
+blend_point_6/pos = Vector2(0, 0)
+blend_point_7/node = SubResource("AnimationNodeAnimation_tfrht")
+blend_point_7/pos = Vector2(0, 1)
+blend_point_8/node = SubResource("AnimationNodeAnimation_if84n")
+blend_point_8/pos = Vector2(0, -1)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nsjp5"]
+resource_name = "Left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rasig"]
+resource_name = "Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_41n1m"]
+resource_name = "Forward"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ld6mq"]
+resource_name = "Backward"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_af54n"]
+resource_name = "Idle"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_engxp"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_nsjp5")
+blend_point_0/pos = Vector2(-0.2, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_rasig")
+blend_point_1/pos = Vector2(0.2, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_41n1m")
+blend_point_2/pos = Vector2(0, 0.2)
+blend_point_3/node = SubResource("AnimationNodeAnimation_ld6mq")
+blend_point_3/pos = Vector2(0, -0.2)
+blend_point_4/node = SubResource("AnimationNodeAnimation_af54n")
+blend_point_4/pos = Vector2(0, 0)
+
+[resource]
+blend_point_0/node = SubResource("AnimationNodeBlendSpace2D_hnnkh")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeBlendSpace2D_engxp")
+blend_point_1/pos = 1.0
+min_space = 0.0
+max_space = 4.0
+snap = 1.0

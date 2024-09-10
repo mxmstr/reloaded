@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://54kdh0ulkafw"]
+
+[ext_resource type="PackedScene" uid="uid://dgr338hruvsy0" path="res://Scenes/Actors/Items/Bullet.tscn" id="1"]
+
+[node name="BulletSniper" instance=ExtResource("1")]
+tags = "Actor Bullet Sniper Pooled Damage:75 Force:10"

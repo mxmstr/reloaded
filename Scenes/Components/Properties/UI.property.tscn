@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://clkb0bxqflo6d"]
+
+[ext_resource type="Script" path="res://Scripts/Prop.RespawnMenu.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://dv4nx47am1rxy" path="res://Scenes/Components/Properties/HUD.property.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/PauseMenu.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/VictoryMenu.tscn" id="8"]
+
+[node name="UI" type="SubViewportContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+handle_input_locally = false
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+size = Vector2i(1024, 600)
+render_target_update_mode = 4
+
+[node name="Control" type="Control" parent="SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1024.0
+offset_bottom = 600.0
+
+[node name="Panel" type="Panel" parent="SubViewport/Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HUD" parent="SubViewport/Control" instance=ExtResource("6")]
+anchors_preset = 0
+
+[node name="RespawnMenu" type="Control" parent="SubViewport/Control"]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+
+[node name="Hint" type="Label" parent="SubViewport/Control/RespawnMenu"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Press A to respawn"
+
+[node name="PauseMenu" parent="SubViewport/Control" instance=ExtResource("7")]
+anchors_preset = 0
+
+[node name="VictoryMenu" parent="SubViewport/Control" instance=ExtResource("8")]
+anchors_preset = 0

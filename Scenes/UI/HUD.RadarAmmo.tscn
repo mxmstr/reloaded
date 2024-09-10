@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://djqhmnadsoqqg"]
+
+[ext_resource type="Texture2D" uid="uid://c01cukojekqcm" path="res://Textures/UI/RadarAmmo.png" id="1"]
+
+[node name="TextureRect" type="Sprite2D"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhwqlj0cwwd60"]
+
+[ext_resource type="PackedScene" uid="uid://dgr338hruvsy0" path="res://Scenes/Actors/Items/Bullet.tscn" id="1"]
+
+[node name="BulletShotgun" instance=ExtResource("1")]
+tags = "Actor Bullet Shotgun Pooled Damage:10 Force:2"

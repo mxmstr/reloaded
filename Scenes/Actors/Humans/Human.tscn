@@ -1,0 +1,380 @@
+[gd_scene load_steps=32 format=3 uid="uid://6emy26bk6w7q"]
+
+[ext_resource type="PackedScene" uid="uid://j6bs3orxlcmo" path="res://Scenes/Actors/KinematicBody.Human.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://ep8iba5bew2n" path="res://Scenes/Components/Properties/CameraRig.property.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bxiymkvnn3vrr" path="res://Scenes/Components/Properties/Stamina.property.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://b5b1hr6d10ylq" path="res://Scenes/Components/Properties/Locomotion.property.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b14wb70au1fv7" path="res://Scenes/Components/Properties/Container.property.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://dm34gkx117m7h" path="res://Scenes/Components/Stimuli/Contact.stimulus.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://b7e1rxsrbdsd5" path="res://Scenes/Components/Stimuli/Airborne.stimulus.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://d3fofdvdehtpi" path="res://Scenes/Components/Stimuli/Raycast.stimulus.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://brsr7al53wfr6" path="res://Scenes/Components/Actions/JumpUp.action.tscn" id="13"]
+[ext_resource type="PackedScene" uid="uid://ch5qfgs0ir2xn" path="res://Scenes/Components/Actions/WallRun.action.tscn" id="14"]
+[ext_resource type="PackedScene" uid="uid://bup3ckyw1mpqf" path="res://Scenes/Components/Actions/Victory.action.tscn" id="15"]
+[ext_resource type="PackedScene" uid="uid://cip60mx60tfsk" path="res://Scenes/Components/Actions/ChangeItem.action.tscn" id="17"]
+[ext_resource type="PackedScene" uid="uid://d4jyelfuy44su" path="res://Scenes/Components/Actions/Die.action.tscn" id="18"]
+[ext_resource type="PackedScene" uid="uid://dxrq7bjr4hrjg" path="res://Scenes/Components/Actions/Action.Human.action.tscn" id="19"]
+[ext_resource type="PackedScene" uid="uid://c7m8txgnfhqo2" path="res://Scenes/Components/Actions/Punch.action.tscn" id="20"]
+[ext_resource type="PackedScene" uid="uid://bwan16xsva34x" path="res://Scenes/Components/Actions/Dive.action.tscn" id="21"]
+[ext_resource type="PackedScene" uid="uid://dw4kkd3veafh1" path="res://Scenes/Components/Actions/JumpRight.action.tscn" id="22"]
+[ext_resource type="PackedScene" uid="uid://5almq67kg5s2" path="res://Scenes/Components/Properties/AnimLayer.Movement.property.tscn" id="23"]
+[ext_resource type="PackedScene" uid="uid://dwfi4n6ewgqey" path="res://Scenes/Components/Responses/PickMeUp.Human.response.tscn" id="24"]
+[ext_resource type="PackedScene" uid="uid://b6frxa10v3omb" path="res://Scenes/Components/Responses/UseReact.Human.response.tscn" id="25"]
+[ext_resource type="PackedScene" uid="uid://bumm2l00n6fmq" path="res://Scenes/Components/Responses/EmptyWeaponReact.Human.response.tscn" id="26"]
+[ext_resource type="PackedScene" uid="uid://cwa8sykm65wey" path="res://Scenes/Components/Responses/Damage.Human.response.tscn" id="27"]
+[ext_resource type="PackedScene" uid="uid://c7nap38q1wpbk" path="res://Scenes/Components/Properties/Audio.property.tscn" id="28"]
+[ext_resource type="PackedScene" uid="uid://bn2m0r3nqm7u2" path="res://Scenes/Components/Actions/JumpLeft.action.tscn" id="30"]
+[ext_resource type="PackedScene" uid="uid://cjxrbbu38nwrr" path="res://Scenes/Components/Actions/SwordMelee.action.tscn" id="31"]
+[ext_resource type="PackedScene" uid="uid://ferksbhpfiif" path="res://Scenes/Components/Properties/BulletTime.property.tscn" id="32"]
+[ext_resource type="PackedScene" uid="uid://d3ipxybuh7v7t" path="res://Scenes/Components/Actions/UseReact.action.tscn" id="33"]
+[ext_resource type="PackedScene" uid="uid://ldmwe0dgq0nl" path="res://Scenes/Components/Actions/Reload.action.tscn" id="34"]
+[ext_resource type="PackedScene" uid="uid://di7qwnk6xihkv" path="res://Scenes/Components/Actions/Default.action.tscn" id="35"]
+[ext_resource type="PackedScene" uid="uid://dai2hsclv3n6i" path="res://Scenes/Components/Properties/Inventory.property.tscn" id="36"]
+[ext_resource type="PackedScene" uid="uid://bbyd7cwct1t2k" path="res://Scenes/Components/Actions/JumpBackward.action.tscn" id="37"]
+
+[node name="Human" instance=ExtResource("1")]
+tags = "Actor Human"
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." index="0"]
+aabb = AABB(-0.119958, 0.162489, -0.0613593, 0.231916, 1.58002, 0.114907)
+
+[node name="BulletTime" parent="." index="1" instance=ExtResource("32")]
+
+[node name="Stamina" parent="." index="2" instance=ExtResource("3")]
+
+[node name="Locomotion" parent="." index="3" instance=ExtResource("4")]
+
+[node name="Inventory" parent="." index="5" instance=ExtResource("36")]
+
+[node name="CameraRig" parent="." index="6" instance=ExtResource("2")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.177408, 1.93211, 0)
+camera_offset = Vector3(0, 0, 3.75)
+
+[node name="Camera3D" parent="CameraRig" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+fov = 90.0
+
+[node name="RightHandContainer" parent="." index="7" instance=ExtResource("6")]
+release_exclude_parent = true
+release_exclude_parent_lifetime = 2.0
+required_tags = "Item"
+
+[node name="InventoryContainer" parent="." index="8" instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1.45686)
+release_exclude_parent = true
+release_exclude_parent_lifetime = 2.0
+invisible = true
+required_tags = "Item"
+
+[node name="LeftHandContainer" parent="." index="9" instance=ExtResource("6")]
+release_exclude_parent = true
+release_exclude_parent_lifetime = 2.0
+required_tags = "Item"
+
+[node name="RightPunchContainer" parent="." index="10" instance=ExtResource("6")]
+factory_mode = true
+release_direction = Vector3(0, 0, 0)
+release_lifetime = 0.1
+release_exclude_parent = true
+required_tags = "Punch"
+
+[node name="LeftPunchContainer" parent="." index="11" instance=ExtResource("6")]
+factory_mode = true
+release_direction = Vector3(0, 0, 0)
+release_lifetime = 0.1
+release_exclude_parent = true
+required_tags = "Punch"
+
+[node name="RightKickContainer" parent="." index="12" instance=ExtResource("6")]
+factory_mode = true
+release_direction = Vector3(0, 0, 0)
+release_lifetime = 0.1
+release_exclude_parent = true
+required_tags = "Punch"
+
+[node name="LeftKickContainer" parent="." index="13" instance=ExtResource("6")]
+factory_mode = true
+release_direction = Vector3(0, 0, 0)
+release_lifetime = 0.1
+release_exclude_parent = true
+required_tags = "Punch"
+
+[node name="Bullet9mmContainer" parent="." index="14" instance=ExtResource("6")]
+factory_mode = true
+invisible = true
+required_tags = "Bullet 9mm"
+
+[node name="BulletRifleContainer" parent="." index="15" instance=ExtResource("6")]
+factory_mode = true
+invisible = true
+required_tags = "Bullet Rifle"
+
+[node name="BulletMagnumContainer" parent="." index="16" instance=ExtResource("6")]
+factory_mode = true
+invisible = true
+required_tags = "Bullet Magnum"
+
+[node name="BulletShotgunContainer" parent="." index="17" instance=ExtResource("6")]
+factory_mode = true
+invisible = true
+required_tags = "Bullet Shotgun"
+
+[node name="BulletSniperContainer" parent="." index="18" instance=ExtResource("6")]
+factory_mode = true
+invisible = true
+required_tags = "Bullet Sniper"
+
+[node name="GrenadeContainer" parent="." index="19" instance=ExtResource("6")]
+factory_mode = true
+invisible = true
+required_tags = "Grenade"
+
+[node name="ImpactGrenadeContainer" parent="." index="20" instance=ExtResource("6")]
+factory_mode = true
+invisible = true
+required_tags = "ImpactGrenade"
+
+[node name="ContactStim" parent="." index="21" instance=ExtResource("7")]
+stim_type = "Touch"
+
+[node name="AirborneStim" parent="." index="22" instance=ExtResource("8")]
+delay = 2.0
+
+[node name="CameraRaycastStim" parent="." index="23" instance=ExtResource("9")]
+target_position = Vector3(0, 0, -50)
+collision_mask = 17
+path = NodePath("../CameraRig/Camera3D")
+
+[node name="AnimLayerMovement" parent="." index="24" instance=ExtResource("23")]
+
+[node name="VoiceAudio" parent="." index="25" instance=ExtResource("28")]
+bus = "Voice"
+
+[node name="OofSound" parent="VoiceAudio" index="2" instance=ExtResource("19")]
+state = "Oof"
+tree = NodePath("..")
+schema = "Oof"
+random = true
+
+[node name="FoleyAudio" parent="." index="26" instance=ExtResource("28")]
+
+[node name="JumpUpSound" parent="FoleyAudio" index="2" instance=ExtResource("19")]
+state = "JumpUp"
+tree = NodePath("..")
+schema = "JumpUpSound"
+random = true
+
+[node name="JumpDodgeSound" parent="FoleyAudio" index="3" instance=ExtResource("19")]
+state = "JumpDodge"
+tree = NodePath("..")
+schema = "JumpDodgeSound"
+random = true
+
+[node name="JumpBackwardSound" parent="FoleyAudio" index="4" instance=ExtResource("19")]
+state = "JumpBackward"
+tree = NodePath("..")
+schema = "JumpBackwardSound"
+random = true
+
+[node name="RollSound" parent="FoleyAudio" index="5" instance=ExtResource("19")]
+state = "Roll"
+tree = NodePath("..")
+schema = "RollSound"
+
+[node name="PunchSound" parent="FoleyAudio" index="6" instance=ExtResource("19")]
+state = "Punch"
+tree = NodePath("..")
+schema = "PunchSound"
+
+[node name="KickSound" parent="FoleyAudio" index="7" instance=ExtResource("19")]
+state = "Kick"
+tree = NodePath("..")
+schema = "KickSound"
+
+[node name="SwordMeleeSound" parent="FoleyAudio" index="8" instance=ExtResource("19")]
+state = "SwordMelee"
+tree = NodePath("..")
+schema = "SwordMeleeSound"
+random = true
+
+[node name="ThrowGrenadeSound" parent="FoleyAudio" index="9" instance=ExtResource("19")]
+state = "ThrowGrenade"
+tree = NodePath("..")
+schema = "ThrowGrenadeSound"
+
+[node name="FeetAudio" parent="." index="27" instance=ExtResource("28")]
+
+[node name="UIAudio" parent="." index="28" instance=ExtResource("28")]
+time_scaled = false
+
+[node name="PickupWeaponSound" parent="UIAudio" index="2" instance=ExtResource("19")]
+state = "PickupWeapon"
+tree = NodePath("..")
+schema = "PickupWeaponSound"
+
+[node name="PickupAmmoSound" parent="UIAudio" index="3" instance=ExtResource("19")]
+state = "PickupAmmo"
+tree = NodePath("..")
+schema = "PickupAmmoSound"
+
+[node name="BulletTimeStartSound" parent="UIAudio" index="4" instance=ExtResource("19")]
+state = "BulletTimeStart"
+tree = NodePath("..")
+schema = "BulletTimeStartSound"
+
+[node name="BulletTimeEndSound" parent="UIAudio" index="5" instance=ExtResource("19")]
+state = "BulletTimeEnd"
+tree = NodePath("..")
+schema = "BulletTimeEndSound"
+
+[node name="StingerAudio" parent="." index="29" instance=ExtResource("28")]
+time_scaled = false
+
+[node name="ShootDodgeStingerSound" parent="StingerAudio" index="2" instance=ExtResource("19")]
+state = "ShootDodgeStinger"
+tree = NodePath("..")
+schema = "ShootDodgeStingerSound"
+
+[node name="DefaultAction" parent="Behavior" index="1" instance=ExtResource("35")]
+
+[node name="PrimaryAction" parent="Behavior" index="2" instance=ExtResource("33")]
+
+[node name="PunchAction" parent="Behavior" index="3" instance=ExtResource("20")]
+
+[node name="KickForwardAction" parent="Behavior" index="4" instance=ExtResource("19")]
+state = "KickForward"
+schema = "KickForward"
+
+[node name="KickForwardLeftAction" parent="Behavior" index="5" instance=ExtResource("19")]
+state = "KickForwardLeft"
+schema = "KickForwardLeft"
+
+[node name="KickForwardRightAction" parent="Behavior" index="6" instance=ExtResource("19")]
+state = "KickForwardRight"
+schema = "KickForwardRight"
+
+[node name="SwordMeleeAction" parent="Behavior" index="7" instance=ExtResource("31")]
+
+[node name="ChangeItemAction" parent="Behavior" index="8" instance=ExtResource("17")]
+
+[node name="DualWieldItemAction" parent="Behavior" index="9" instance=ExtResource("19")]
+state = "DualWieldItem"
+schema = "DualWieldItem"
+
+[node name="HolsterItemAction" parent="Behavior" index="10" instance=ExtResource("19")]
+state = "HolsterItem"
+schema = "HolsterItem"
+
+[node name="PreJumpAction" parent="Behavior" index="11" instance=ExtResource("19")]
+state = "PreJump"
+schema = "PreJump"
+
+[node name="JumpUpAction" parent="Behavior" index="12" instance=ExtResource("13")]
+
+[node name="JumpBackwardAction" parent="Behavior" index="13" instance=ExtResource("37")]
+
+[node name="JumpBackwardLeftAction" parent="Behavior" index="14" instance=ExtResource("30")]
+state = "JumpBackwardLeft"
+schema = "JumpBackwardLeft"
+
+[node name="JumpBackwardRightAction" parent="Behavior" index="15" instance=ExtResource("22")]
+state = "JumpBackwardRight"
+schema = "JumpBackwardRight"
+
+[node name="JumpLeftAction" parent="Behavior" index="16" instance=ExtResource("30")]
+
+[node name="JumpRightAction" parent="Behavior" index="17" instance=ExtResource("22")]
+
+[node name="AirDodgeLeftAction" parent="Behavior" index="18" instance=ExtResource("22")]
+state = "AirDodgeLeft"
+schema = "AirDodgeLeft"
+
+[node name="AirDodgeRightAction" parent="Behavior" index="19" instance=ExtResource("22")]
+state = "AirDodgeRight"
+schema = "AirDodgeRight"
+
+[node name="AirDodgeBackwardAction" parent="Behavior" index="20" instance=ExtResource("22")]
+state = "AirDodgeBackward"
+schema = "AirDodgeBackward"
+
+[node name="AirDodgeBackwardLeftAction" parent="Behavior" index="21" instance=ExtResource("22")]
+state = "AirDodgeBackwardLeft"
+schema = "AirDodgeBackwardLeft"
+
+[node name="AirDodgeBackwardRightAction" parent="Behavior" index="22" instance=ExtResource("22")]
+state = "AirDodgeBackwardRight"
+schema = "AirDodgeBackwardRight"
+
+[node name="RollForwardAction" parent="Behavior" index="23" instance=ExtResource("22")]
+state = "RollForward"
+schema = "RollForward"
+
+[node name="RollForwardLeftAction" parent="Behavior" index="24" instance=ExtResource("22")]
+state = "RollForwardLeft"
+schema = "RollForwardLeft"
+
+[node name="RollForwardRightAction" parent="Behavior" index="25" instance=ExtResource("22")]
+state = "RollForwardRight"
+schema = "RollForwardRight"
+
+[node name="RollBackwardAction" parent="Behavior" index="26" instance=ExtResource("22")]
+state = "RollBackward"
+schema = "RollBackward"
+
+[node name="RollBackwardLeftAction" parent="Behavior" index="27" instance=ExtResource("22")]
+state = "RollBackwardLeft"
+schema = "RollBackwardLeft"
+
+[node name="RollBackwardRightAction" parent="Behavior" index="28" instance=ExtResource("22")]
+state = "RollBackwardRight"
+schema = "RollBackwardRight"
+
+[node name="RollLeftAction" parent="Behavior" index="29" instance=ExtResource("22")]
+state = "RollLeft"
+schema = "RollLeft"
+
+[node name="RollRightAction" parent="Behavior" index="30" instance=ExtResource("22")]
+state = "RollRight"
+schema = "RollRight"
+
+[node name="WallRunStartAction" parent="Behavior" index="31" instance=ExtResource("19")]
+state = "WallRunStart"
+schema = "WallRunStart"
+
+[node name="WallRunAction" parent="Behavior" index="32" instance=ExtResource("14")]
+
+[node name="DiveAction" parent="Behavior" index="33" instance=ExtResource("21")]
+
+[node name="DiveGetUpAction" parent="Behavior" index="34" instance=ExtResource("19")]
+state = "DiveGetUp"
+schema = "DiveGetUp"
+
+[node name="ShootDodgeStandAction" parent="Behavior" index="35" instance=ExtResource("21")]
+state = "ShootDodgeStand"
+schema = "ShootDodgeStand"
+
+[node name="ReloadAction" parent="Behavior" index="36" instance=ExtResource("34")]
+
+[node name="DieAction" parent="Behavior" index="37" instance=ExtResource("18")]
+random = true
+
+[node name="DieExplosionAction" parent="Behavior" index="38" instance=ExtResource("18")]
+state = "DieExplosion"
+schema = "DieExplosion"
+random = true
+
+[node name="PostDeathAction" parent="Behavior" index="39" instance=ExtResource("19")]
+state = "PostDeath"
+schema = "PostDeath"
+
+[node name="VictoryAction" parent="Behavior" index="40" instance=ExtResource("15")]
+
+[node name="TouchResponse" parent="Reception" index="0" instance=ExtResource("24")]
+
+[node name="UseReactResponse" parent="Reception" index="1" instance=ExtResource("25")]
+
+[node name="EmptyReactResponse" parent="Reception" index="2" instance=ExtResource("26")]
+
+[node name="DamageResponse" parent="Reception" index="3" instance=ExtResource("27")]
+
+[editable path="CameraRig"]

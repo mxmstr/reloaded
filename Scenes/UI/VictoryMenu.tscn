@@ -1,0 +1,115 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4exrwasf2mwh"]
+
+[ext_resource type="Script" path="res://Scripts/UI.VictoryMenu.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bdy2p571qxl62" path="res://Textures/panel.png" id="2"]
+[ext_resource type="FontFile" uid="uid://ncw5gi15q1li" path="res://Fonts/Xolonium-Regular.ttf" id="3"]
+[ext_resource type="PackedScene" uid="uid://dn8ea74u6c6p3" path="res://Scenes/UI/Menu.Scenes.Item.tscn" id="4"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("3")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="VictoryMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1")
+
+[node name="MarginContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Background" type="NinePatchRect" parent="MarginContainer"]
+self_modulate = Color(0.890196, 1, 0.698039, 0.698039)
+offset_left = 162.0
+offset_top = 150.0
+offset_right = 862.0
+offset_bottom = 450.0
+custom_minimum_size = Vector2(700, 300)
+texture = ExtResource("2")
+region_rect = Rect2(0, 0, 512, 512)
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 40
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ListContainer" type="VBoxContainer" parent="MarginContainer"]
+offset_left = 212.0
+offset_top = 202.0
+offset_right = 812.0
+offset_bottom = 398.0
+custom_minimum_size = Vector2(600, 0)
+
+[node name="VictoryMessage" type="Label" parent="MarginContainer/ListContainer"]
+offset_right = 600.0
+offset_bottom = 49.0
+custom_colors/font_color_shadow = Color(0, 0, 0, 1)
+custom_fonts/font = SubResource("1")
+text = "Victory Message"
+align = 1
+
+[node name="Rank" type="Label" parent="MarginContainer/ListContainer"]
+offset_top = 57.0
+offset_right = 600.0
+offset_bottom = 106.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color_shadow = Color(0, 0, 0, 1)
+custom_fonts/font = SubResource("1")
+text = "Rank: 1st"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ListContainer"]
+offset_top = 114.0
+offset_right = 600.0
+offset_bottom = 163.0
+
+[node name="Kills" type="Label" parent="MarginContainer/ListContainer/HBoxContainer"]
+offset_right = 296.0
+offset_bottom = 49.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color_shadow = Color(0, 0, 0, 1)
+custom_fonts/font = SubResource("1")
+text = "Kills: 0"
+align = 1
+
+[node name="Deaths" type="Label" parent="MarginContainer/ListContainer/HBoxContainer"]
+offset_left = 304.0
+offset_right = 600.0
+offset_bottom = 49.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color_shadow = Color(0, 0, 0, 1)
+custom_fonts/font = SubResource("1")
+text = "Deaths: 0"
+align = 1
+
+[node name="Exit" parent="MarginContainer/ListContainer" instance=ExtResource("4")]
+offset_top = 171.0
+offset_right = 600.0
+offset_bottom = 196.0
+alignment = 1
+
+[node name="Button" parent="MarginContainer/ListContainer/Exit" index="0"]
+offset_right = 40.0
+text = "Exit"
+
+[editable path="MarginContainer/ListContainer/Exit"]

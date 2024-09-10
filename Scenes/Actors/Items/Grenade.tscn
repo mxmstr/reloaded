@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://i8yifskmyxdp"]
+
+[ext_resource type="PackedScene" uid="uid://qyc1rotj2v4e" path="res://Scenes/Actors/Items/Firearm.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://c66kcqbsujd0j" path="res://Models/Items/Max Payne Weapons/Grenade/Grenade.obj" id="2"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Stimuli/Contact.RigidBody.stimulus.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://bfgdodbg2u7gu" path="res://Scenes/Components/Responses/Impact.Grenade.response.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://cffk8jt4nghgj" path="res://Scenes/Components/Actions/Action.action.tscn" id="5"]
+
+[sub_resource type="PhysicsMaterial" id="2"]
+bounce = 0.75
+
+[sub_resource type="SphereShape3D" id="1"]
+radius = 0.109011
+
+[node name="Grenade" instance=ExtResource("1")]
+mass = 10.0
+physics_material_override = SubResource("2")
+tags = "Item Firearm Grenade Rank:70 UseAction:FireProjectile FireRate:0.33 Offset-position:neo_reference_skeleton:Gun:-0.023118,0.000963,0.024605 Offset-rotation:neo_reference_skeleton:Gun:-72.911118,-4.245605,-10.726698"
+
+[node name="Model" parent="." index="0" instance=ExtResource("2")]
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("1")
+
+[node name="ContactStim" parent="." index="2" instance=ExtResource("3")]
+stim_type = "Touch"
+
+[node name="Magazine" parent="." index="3"]
+max_quantity = 0
+required_tags = "Explosion"
+
+[node name="Chamber" parent="." index="4"]
+factory_mode = true
+release_speed = 0.0
+release_direction = Vector3(0, 0, 0)
+release_exclude_parent = false
+required_tags = "Explosion"
+
+[node name="TouchResponse" parent="Reception" index="1" instance=ExtResource("4")]
+
+[node name="FireProjectileSound" parent="FireAudio" index="2"]
+schema = ""
+
+[node name="ReloadSound" parent="Audio" index="2"]
+schema = ""
+
+[node name="ImpactSound" parent="Audio" index="4" instance=ExtResource("5")]
+schema = "GrenadeImpactSound"
+state = "Impact"

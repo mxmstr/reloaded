@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://brmtrj13oqlli"]
+
+[ext_resource type="PackedScene" uid="uid://qyc1rotj2v4e" path="res://Scenes/Actors/Items/Firearm.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://yxe2ky4eogh6" path="res://Models/Items/Max Payne Weapons/Sniper/Sniper.obj" id="2"]
+[ext_resource type="PackedScene" uid="uid://cffk8jt4nghgj" path="res://Scenes/Components/Actions/Action.action.tscn" id="3"]
+
+[sub_resource type="BoxShape3D" id="1"]
+size = Vector3(0.0363528, 0.116323, 0.641878)
+
+[node name="Sniper" instance=ExtResource("1")]
+tags = "Item Firearm Sniper Stackable Rank:50 ZoomFOV:15 UseAction:FireProjectile FireRate:0.5 Offset-position:neo_reference_skeleton:Gun:-0.000453,-0.025926,-0.015411 Offset-rotation:neo_reference_skeleton:Gun:-89.093445,-88.423607,89.908806"
+
+[node name="Model" parent="." index="0" instance=ExtResource("2")]
+transform = Transform3D(5.55116e-17, 1.09278e-09, -0.025, 0.025, -1.09278e-09, 7.74447e-18, -1.09278e-09, -0.025, -1.09278e-09, 0, 0, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0476503, 0.299917)
+shape = SubResource("1")
+
+[node name="Magazine" parent="." index="2"]
+max_quantity = 6
+required_tags = "Bullet Sniper"
+
+[node name="Chamber" parent="." index="3"]
+transform = Transform3D(1, -0.000872665, 0, 0.000872665, 1, 0, 0, 0, 1, 0, 0.0855157, 0.965106)
+release_speed = 90.0
+
+[node name="FireProjectileCockSound" parent="Audio" index="4" instance=ExtResource("3")]
+schema = "FireProjectileCockSound"
+state = "FireProjectileCock"

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd7kgt153j5fv"]
+
+[ext_resource type="Script" path="res://Scripts/Prop.Outline.gd" id="1"]
+
+[node name="Outline" type="Node"]
+script = ExtResource("1")

@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://1q6uwx521fce"]
+
+[ext_resource type="Animation" uid="uid://dv13dooi3dusu" path="res://Animations/Human/ShootDodgeRight.tres" id="1"]
+[ext_resource type="Animation" uid="uid://bl0aotia8kipn" path="res://Animations/Human/ShootDodgeBackward.tres" id="2"]
+[ext_resource type="Animation" uid="uid://cw47c26jtbrqm" path="res://Animations/Human/ShootDodgeForward.tres" id="3"]
+[ext_resource type="Animation" uid="uid://b3her3voeh8ch" path="res://Animations/Human/ShootDodgeForwardLeft.tres" id="4"]
+[ext_resource type="Animation" uid="uid://dxltdrcyrdjll" path="res://Animations/Human/ShootDodgeForwardRight.tres" id="5"]
+[ext_resource type="Animation" uid="uid://i0eedbdpk0xs" path="res://Animations/Human/ShootDodgeLeft.tres" id="6"]
+[ext_resource type="Animation" uid="uid://dqc46uebnxhoa" path="res://Animations/Human/ShootDodgeBackwardLeft.tres" id="7"]
+[ext_resource type="Animation" uid="uid://wmoa48c51tq8" path="res://Animations/Human/ShootDodgeBackwardRight.tres" id="8"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="9"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/ShootDodgeBackward = ExtResource("2")
+anims/ShootDodgeBackwardLeft = ExtResource("7")
+anims/ShootDodgeBackwardRight = ExtResource("8")
+anims/ShootDodgeForward = ExtResource("3")
+anims/ShootDodgeForwardLeft = ExtResource("4")
+anims/ShootDodgeForwardRight = ExtResource("5")
+anims/ShootDodgeLeft = ExtResource("6")
+anims/ShootDodgeRight = ExtResource("1")
+script = ExtResource("9")
+__meta__ = {
+"_editor_description_": ""
+}
+attributes = "{
+	\"*\": {
+		\"priority\": 1,
+		\"speed\": 1.0,
+		\"clip_start\": 0.05,
+		\"layer\": \"ACTION\",
+		\"switch_mode\": \"End\",
+		\"lock_movement\": true,
+		\"lock_stance\": true,
+		\"fp_skeleton_offset\": false,
+		\"camera_mode\": \"FullYaw\",
+		\"align_model_to_aim\": true,
+		\"root_motion_use_model\": true,
+		\"can_use_item\": true,
+		\"endless\": true
+	},
+	\"ShootDodgeForward\": {
+		\"direction\": 0
+	},
+	\"ShootDodgeForwardRight\": {
+		\"direction\": 1
+	},
+	\"ShootDodgeRight\": {
+		\"direction\": 2
+	},
+	\"ShootDodgeBackwardRight\": {
+		\"direction\": 3
+	},
+	\"ShootDodgeBackward\": {
+		\"direction\": 4
+	},
+	\"ShootDodgeBackwardLeft\": {
+		\"direction\": 5
+	},
+	\"ShootDodgeLeft\": {
+		\"direction\": 6
+	},
+	\"ShootDodgeForwardLeft\": {
+		\"direction\": 7
+	}
+}"

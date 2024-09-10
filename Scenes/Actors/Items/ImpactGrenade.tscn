@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8w5dtdmcot75"]
+
+[ext_resource type="PackedScene" uid="uid://bl5j665v37lrb" path="res://Scenes/Actors/Area.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://b1xu5bgifp35h" path="res://Scenes/Components/Responses/Impact.ImpactGrenade.response.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Stimuli/Contact.Area.stimulus.tscn" id="3"]
+
+[sub_resource type="SphereMesh" id="7"]
+radius = 0.1
+height = 0.2
+radial_segments = 8
+rings = 4
+
+[sub_resource type="StandardMaterial3D" id="8"]
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 1.0
+
+[sub_resource type="SphereShape3D" id="6"]
+radius = 0.25
+
+[node name="ImpactGrenade" instance=ExtResource("1")]
+collision_layer = 8
+collision_mask = 17
+tags = "Actor ImpactGrenade Damage:0 Force:0"
+
+[node name="Model" type="MeshInstance3D" parent="." index="0"]
+mesh = SubResource("7")
+material/0 = SubResource("8")
+
+[node name="Collision" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("6")
+
+[node name="ContactStim" parent="." index="2" instance=ExtResource("3")]
+stim_type = "Touch"
+
+[node name="Movement" parent="." index="3"]
+process_movement = true
+gravity = -3
+projectile = true
+
+[node name="TouchResponse" parent="Reception" index="0" instance=ExtResource("2")]

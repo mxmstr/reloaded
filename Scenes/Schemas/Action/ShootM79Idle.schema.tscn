@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsdsou2nb6cae"]
+
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="1"]
+[ext_resource type="Animation" uid="uid://deynubw2nbexl" path="res://Animations/Human/Action/Shoot/M79/ShootM79.tres" id="2"]
+[ext_resource type="Animation" uid="uid://dcwk0844m38x7" path="res://Animations/Human/Action/Shoot/M79/ShootM79_Down.tres" id="3"]
+[ext_resource type="Animation" uid="uid://c4yp683bbpk4n" path="res://Animations/Human/Action/Shoot/M79/ShootM79_Up.tres" id="4"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/ShootM79 = ExtResource("2")
+anims/ShootM79_Down = ExtResource("3")
+anims/ShootM79_Up = ExtResource("4")
+script = ExtResource("1")
+attributes = "{
+	\"*\": {
+		\"layer\": \"MIXED\",
+		\"align_model_to_aim\": true,
+		\"can_use_item\": true
+	}
+}"

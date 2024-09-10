@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwk40w846qvjf"]
+
+[ext_resource type="Texture2D" uid="uid://dffyjwa7wlces" path="res://Textures/UI/RadarDot_small.png" id="1"]
+
+[node name="TextureRect" type="Sprite2D"]
+z_index = 1
+texture = ExtResource("1")

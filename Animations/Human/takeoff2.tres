@@ -1,0 +1,40 @@
+[gd_resource type="Animation" format=3 uid="uid://kqa1ingunlgn"]
+
+[resource]
+resource_name = "neo_reference_skeleton|neo_reference_skeleton|takeoff2KF2|neo_"
+length = 0.458333
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:UpArm-R")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.97255, -0.117333, 0.105876, 0.170792, 0.0666667, 1, 0.972416, -0.117417, 0.105784, 0.171555, 0.4, 1, 0.970566, -0.118518, 0.104548, 0.181729, 0.458333, 1, 0.97047, -0.118573, 0.104486, 0.182237)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:Hand-R")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.198079, 0.00752727, -0.00152114, 0.980156, 0.0666667, 1, 0.202439, 0.00752043, -0.00155463, 0.979265, 0.4, 1, 0.260159, 0.00741497, -0.0019979, 0.965535, 0.458333, 1, 0.263023, 0.00740902, -0.00201992, 0.964759)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:UpArm-L")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.974541, 0.134794, -0.0941885, 0.152409, 0.0666667, 1, 0.974617, 0.134778, -0.0942634, 0.151895, 0.133333, 1, 0.974816, 0.134734, -0.0944631, 0.150524, 0.333333, 1, 0.975405, 0.134581, -0.0950654, 0.146407, 0.4, 1, 0.975561, 0.134545, -0.095232, 0.145293, 0.458333, 1, 0.97564, 0.13455, -0.0953256, 0.144696)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:Toe-R")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.0545145, -2.15559e-09, -2.05718e-08, 0.998513, 0.0666667, 1, -0.0505929, -3.44941e-09, -1.94708e-08, 0.998719, 0.333333, 1, -0.00872641, -4.2039e-09, -1.6992e-08, 0.999962, 0.4, 1, 0.00174549, -3.92929e-09, -1.70048e-08, 0.999999, 0.458333, 1, 0.00436348, -4.79201e-09, -1.70071e-08, 0.99999)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:Toe-L")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0.0109697, 3.54244e-06, 0.000322505, 0.99994, 0.0666667, 1, 0.00703895, 2.27014e-06, 0.000322513, 0.999975, 0.133333, 1, -0.00344402, -1.11024e-06, 0.000322521, 0.999994, 0.4, 1, -0.0453599, -1.46271e-05, 0.00032219, 0.998971, 0.458333, 1, -0.0479777, -1.54692e-05, 0.000322152, 0.998848)

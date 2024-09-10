@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://bl5j665v37lrb"]
+
+[ext_resource type="Script" path="res://Scripts/Actor.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://xcfmp6kwv8f" path="res://Scenes/Components/Properties/Behavior.property.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Properties/Reception.property.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Properties/Audio.property.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://7oxnw4ryxkrf" path="res://Scenes/Components/Properties/Physics.Static.property.tscn" id="6"]
+
+[node name="Area" type="Area3D"]
+collision_layer = 16
+collision_mask = 8
+script = ExtResource("1")
+tags = "Area"
+
+[node name="Physics" parent="." instance=ExtResource("6")]
+
+[node name="Behavior" parent="." instance=ExtResource("2")]
+
+[node name="Reception" parent="." instance=ExtResource("3")]
+
+[node name="Audio" parent="." instance=ExtResource("5")]

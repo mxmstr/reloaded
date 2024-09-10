@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw4kkd3veafh1"]
+
+[ext_resource type="Script" path="res://Scripts/Action.gd" id="1"]
+
+[node name="JumpRightAction" type="Node"]
+script = ExtResource("1")
+__meta__ = {}
+schema = "JumpRight"
+state = "JumpRight"

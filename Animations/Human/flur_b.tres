@@ -1,0 +1,19 @@
+[gd_resource type="Animation" format=3 uid="uid://lc7pbwa00ddc"]
+
+[resource]
+resource_name = "neo_reference_skeleton|neo_reference_skeleton|flur_bKF2|neo_re"
+length = 2.125
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:UpArm-R")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.187601, 0.0154809, 0.0184498, 0.98195, 0.0666667, 1, -0.297364, 0.0245388, 0.01793, 0.95428, 0.2, 1, -0.786197, 0.0648779, 0.0115448, 0.614452, 0.266667, 1, -0.808825, 0.0667451, 0.0109754, 0.584147, 2.125, 1, -0.808824, 0.0667451, 0.0109754, 0.584147)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:UpArm-L")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.167535, 0.00560258, -0.0296878, 0.985403, 0.0666667, 1, -0.266081, 0.00889824, -0.029027, 0.963473, 0.2, 1, -0.722804, 0.0241718, -0.0207972, 0.690317, 0.266667, 1, -0.745641, 0.0249355, -0.0200519, 0.665579, 2.125, 1, -0.745641, 0.0249355, -0.0200519, 0.665579)

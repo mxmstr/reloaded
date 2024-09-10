@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cacs0hts7xdft"]
+
+[ext_resource type="Animation" uid="uid://d3py1o8vtjpmu" path="res://Animations/Human/Action/Reload/ReloadSawedShotgun.tres" id="1"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="2"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/ReloadSawedShotgun = ExtResource("1")
+script = ExtResource("2")
+attributes = "{
+	\"*\": {
+		\"speed\": 1.25,
+		\"clip_start\": 0.05,
+		\"layer\": \"MIXED\",
+		\"switch_mode\": \"End\",
+		\"time_scaled\": false
+	}
+}"

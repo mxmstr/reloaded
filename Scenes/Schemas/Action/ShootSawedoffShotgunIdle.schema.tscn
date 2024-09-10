@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://6w4qt0vmjju5"]
+
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="1"]
+[ext_resource type="Animation" uid="uid://diwcffonerv6d" path="res://Animations/Human/Action/Shoot/SawedoffShotgun/ShootSawedShotgun.tres" id="2"]
+[ext_resource type="Animation" uid="uid://cbnvdk045vah2" path="res://Animations/Human/Action/Shoot/SawedoffShotgun/ShootSawedShotgun_Down.tres" id="3"]
+[ext_resource type="Animation" uid="uid://6wiws3uessqj" path="res://Animations/Human/Action/Shoot/SawedoffShotgun/ShootSawedShotgun_Up.tres" id="4"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/ShootSawedShotgun = ExtResource("2")
+anims/ShootSawedShotgun_Down = ExtResource("3")
+anims/ShootSawedShotgun_Up = ExtResource("4")
+script = ExtResource("1")
+attributes = "{
+	\"*\": {
+		\"layer\": \"MIXED\",
+		\"align_model_to_aim\": true,
+		\"can_use_item\": true
+	}
+}"

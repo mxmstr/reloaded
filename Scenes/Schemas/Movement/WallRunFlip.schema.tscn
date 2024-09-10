@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://cf5c6sxlshmn4"]
+
+[ext_resource type="Animation" uid="uid://y4pkcldxoml" path="res://Animations/Human/wall_shootdodgeflipright.tres" id="1"]
+[ext_resource type="Animation" uid="uid://do3lyjxniqdo" path="res://Animations/Human/wall_shootdodgeflipleft.tres" id="2"]
+[ext_resource type="Animation" uid="uid://b775cmb104hdv" path="res://Animations/Human/wall_shootdodgeflipforward.tres" id="3"]
+[ext_resource type="Animation" uid="uid://bmaewr2qo104e" path="res://Animations/Human/wall_shootdodgeflipbackward.tres" id="4"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="9"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/wall_shootdodgeflipbackward = ExtResource("4")
+anims/wall_shootdodgeflipforward = ExtResource("3")
+anims/wall_shootdodgeflipleft = ExtResource("2")
+anims/wall_shootdodgeflipright = ExtResource("1")
+script = ExtResource("9")
+__meta__ = {
+"_editor_description_": ""
+}
+attributes = "{
+	\"*\": {
+		\"clip_start\": 0.05,
+		\"layer\": \"ACTION\"
+	}
+}"

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://chykjo13aefdg"]
+
+[ext_resource type="Animation" uid="uid://84be3j0y6j4i" path="res://Animations/Human/maddodgebackwardLeft.tres" id="1"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="2"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/maddodgebackwardLeft = ExtResource("1")
+script = ExtResource("2")
+attributes = "{
+	\"*\": {
+		\"speed\": 1.50,
+		\"clip_start\": 0.05,
+		\"layer\": \"ACTION\",
+		\"switch_mode\": \"End\",
+		\"lock_movement\": true,
+		\"camera_mode\": \"HalfYaw\"
+	}
+}"

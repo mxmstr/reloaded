@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://diut80auunxdg"]
+
+[ext_resource type="PackedScene" uid="uid://qyc1rotj2v4e" path="res://Scenes/Actors/Items/Firearm.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://ghd3ewq88tbt" path="res://Models/Items/Max Payne Weapons/Jackhammer/Jackhammer.obj" id="2"]
+
+[sub_resource type="BoxShape3D" id="1"]
+size = Vector3(0.0761936, 0.134374, 0.378023)
+
+[node name="Jackhammer" instance=ExtResource("1")]
+tags = "Item Firearm Shotgun Jackhammer Stackable AutoAim AutoFire Rank:32 UseAction:FireProjectile FireRate:3.0 Offset-position:neo_reference_skeleton:Gun:0.028104,-0.029839,0.03769 Offset-rotation:neo_reference_skeleton:Gun:-89.282356,0.215681,7.986412"
+
+[node name="Model" parent="." index="0" instance=ExtResource("2")]
+transform = Transform3D(0.0019089, 0.00152663, 0.0127681, 0.000225728, -0.01291, 0.00150985, 0.0128571, -1.94137e-09, -0.0019222, -0.0604181, 0.00299062, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000637263, 0.0932846, 0.0855361)
+shape = SubResource("1")
+
+[node name="Magazine" parent="." index="2"]
+max_quantity = 12
+required_tags = "Bullet Shotgun"
+
+[node name="Chamber" parent="." index="3"]
+transform = Transform3D(1, -0.000872665, 0, 0.000872665, 1, 0, 0, 0, 1, 0, 0.141338, 0.479872)
+release_speed = 20.0
+release_angular_spread = Vector2(0.2, 0.2)
+max_quantity = 6
+required_tags = "Bullet Shotgun"

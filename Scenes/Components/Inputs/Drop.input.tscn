@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://e6uhp3ylk1gr"]
+
+[ext_resource type="Script" path="res://Scripts/Input.Drop.gd" id="1"]
+
+[node name="DropInput" type="Node"]
+script = ExtResource("1")
+action = "Drop"

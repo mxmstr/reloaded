@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cip60mx60tfsk"]
+
+[ext_resource type="Script" path="res://Scripts/Action.ChangeItem.gd" id="1"]
+
+[node name="ChangeItemAction" type="Node"]
+script = ExtResource("1")
+schema = "ChangeItem"
+state = "ChangeItem"

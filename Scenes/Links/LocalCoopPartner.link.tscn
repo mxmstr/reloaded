@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://do1y3k8me37ls"]
+
+[node name="LocalCoopPartner" type="Node"]
+script = null

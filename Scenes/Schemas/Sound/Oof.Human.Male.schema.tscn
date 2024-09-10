@@ -1,0 +1,545 @@
+[gd_scene load_steps=55 format=3 uid="uid://cqhwbrq5eupgk"]
+
+[ext_resource type="AudioStream" uid="uid://csdkldx2sb3gp" path="res://Sounds/Goldeneye/fx/reaction_male/reaction0.wav" id="1"]
+[ext_resource type="AudioStream" uid="uid://cd417gm4ol2wp" path="res://Sounds/Goldeneye/fx/reaction_male/reaction1.wav" id="2"]
+[ext_resource type="AudioStream" uid="uid://c8r8ju204uiwj" path="res://Sounds/Goldeneye/fx/reaction_male/reaction10.wav" id="3"]
+[ext_resource type="AudioStream" uid="uid://cx1jks8imv4vb" path="res://Sounds/Goldeneye/fx/reaction_male/reaction11.wav" id="4"]
+[ext_resource type="AudioStream" uid="uid://dxiybq15o21d4" path="res://Sounds/Goldeneye/fx/reaction_male/reaction12.wav" id="5"]
+[ext_resource type="AudioStream" uid="uid://dfh2yetqsgkht" path="res://Sounds/Goldeneye/fx/reaction_male/reaction13.wav" id="6"]
+[ext_resource type="AudioStream" uid="uid://d3vn1sdgq57qp" path="res://Sounds/Goldeneye/fx/reaction_male/reaction14.wav" id="7"]
+[ext_resource type="AudioStream" uid="uid://btq4cxf0dfopa" path="res://Sounds/Goldeneye/fx/reaction_male/reaction15.wav" id="8"]
+[ext_resource type="AudioStream" uid="uid://frx44e17myga" path="res://Sounds/Goldeneye/fx/reaction_male/reaction16.wav" id="9"]
+[ext_resource type="AudioStream" uid="uid://j6ypsi7b4miv" path="res://Sounds/Goldeneye/fx/reaction_male/reaction17.wav" id="10"]
+[ext_resource type="AudioStream" uid="uid://tapctsflqwov" path="res://Sounds/Goldeneye/fx/reaction_male/reaction18.wav" id="11"]
+[ext_resource type="AudioStream" uid="uid://b67eq5vhruaab" path="res://Sounds/Goldeneye/fx/reaction_male/reaction19.wav" id="12"]
+[ext_resource type="AudioStream" uid="uid://2scg1eacwbvm" path="res://Sounds/Goldeneye/fx/reaction_male/reaction2.wav" id="13"]
+[ext_resource type="AudioStream" uid="uid://ogeubedptl5" path="res://Sounds/Goldeneye/fx/reaction_male/reaction20.wav" id="14"]
+[ext_resource type="AudioStream" uid="uid://bkeg4altr5org" path="res://Sounds/Goldeneye/fx/reaction_male/reaction21.wav" id="15"]
+[ext_resource type="AudioStream" uid="uid://bflf87ofxs4fl" path="res://Sounds/Goldeneye/fx/reaction_male/reaction22.wav" id="16"]
+[ext_resource type="AudioStream" uid="uid://dmy68xqer3moy" path="res://Sounds/Goldeneye/fx/reaction_male/reaction23.wav" id="17"]
+[ext_resource type="AudioStream" uid="uid://uukgd7m2ig2s" path="res://Sounds/Goldeneye/fx/reaction_male/reaction24.wav" id="18"]
+[ext_resource type="AudioStream" uid="uid://7p5nhgbwvlkr" path="res://Sounds/Goldeneye/fx/reaction_male/reaction25.wav" id="19"]
+[ext_resource type="AudioStream" uid="uid://btxioh7v57j54" path="res://Sounds/Goldeneye/fx/reaction_male/reaction26.wav" id="20"]
+[ext_resource type="AudioStream" uid="uid://ely847a406a1" path="res://Sounds/Goldeneye/fx/reaction_male/reaction3.wav" id="21"]
+[ext_resource type="AudioStream" uid="uid://crfjpexb2c368" path="res://Sounds/Goldeneye/fx/reaction_male/reaction4.wav" id="22"]
+[ext_resource type="AudioStream" uid="uid://el6ryie0448w" path="res://Sounds/Goldeneye/fx/reaction_male/reaction5.wav" id="23"]
+[ext_resource type="AudioStream" uid="uid://br3nasahb3aqs" path="res://Sounds/Goldeneye/fx/reaction_male/reaction6.wav" id="24"]
+[ext_resource type="AudioStream" uid="uid://dk21mijuxggv1" path="res://Sounds/Goldeneye/fx/reaction_male/reaction7.wav" id="25"]
+[ext_resource type="AudioStream" uid="uid://dn4kx4s4o81a1" path="res://Sounds/Goldeneye/fx/reaction_male/reaction8.wav" id="26"]
+[ext_resource type="AudioStream" uid="uid://dlc5p1d3400gj" path="res://Sounds/Goldeneye/fx/reaction_male/reaction9.wav" id="27"]
+
+[sub_resource type="Animation" id="1"]
+length = 0.135578
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="2"]
+length = 0.164989
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="3"]
+length = 0.457687
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="4"]
+length = 0.431224
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="5"]
+length = 0.545941
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="6"]
+length = 0.468526
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="7"]
+length = 0.231565
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="8"]
+length = 0.383175
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="9"]
+length = 0.2461
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("9")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="10"]
+length = 0.218299
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="11"]
+length = 0.248776
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="12"]
+length = 0.319819
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="13"]
+length = 0.166871
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="14"]
+length = 0.282789
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("14")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="15"]
+length = 0.362857
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("15")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="16"]
+length = 0.445533
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("16")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="17"]
+length = 0.332744
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("17")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="18"]
+length = 0.330499
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("18")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="19"]
+length = 0.360454
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("19")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="20"]
+length = 0.505556
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("20")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="21"]
+length = 0.237234
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("21")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="22"]
+length = 0.323333
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("22")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="23"]
+length = 0.20644
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("23")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="24"]
+length = 0.180227
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="25"]
+length = 0.245215
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("25")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="26"]
+length = 0.434331
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("26")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="27"]
+length = 0.404512
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("27")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/reaction0 = SubResource("1")
+anims/reaction1 = SubResource("2")
+anims/reaction10 = SubResource("3")
+anims/reaction11 = SubResource("4")
+anims/reaction12 = SubResource("5")
+anims/reaction13 = SubResource("6")
+anims/reaction14 = SubResource("7")
+anims/reaction15 = SubResource("8")
+anims/reaction16 = SubResource("9")
+anims/reaction17 = SubResource("10")
+anims/reaction18 = SubResource("11")
+anims/reaction19 = SubResource("12")
+anims/reaction2 = SubResource("13")
+anims/reaction20 = SubResource("14")
+anims/reaction21 = SubResource("15")
+anims/reaction22 = SubResource("16")
+anims/reaction23 = SubResource("17")
+anims/reaction24 = SubResource("18")
+anims/reaction25 = SubResource("19")
+anims/reaction26 = SubResource("20")
+anims/reaction3 = SubResource("21")
+anims/reaction4 = SubResource("22")
+anims/reaction5 = SubResource("23")
+anims/reaction6 = SubResource("24")
+anims/reaction7 = SubResource("25")
+anims/reaction8 = SubResource("26")
+anims/reaction9 = SubResource("27")
+__meta__ = {}

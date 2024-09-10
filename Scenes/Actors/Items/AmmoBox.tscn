@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm46gk64h7t5u"]
+
+[ext_resource type="PackedScene" uid="uid://dcq0iy07b456v" path="res://Scenes/Actors/KinematicBody.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://cjbblvt5l8ocw" path="res://Scenes/Components/Stimuli/Area.stimulus.tscn" id="2"]
+
+[sub_resource type="SphereShape3D" id="6"]
+
+[node name="AmmoBox" instance=ExtResource("1")]
+collision_layer = 4
+tags = "Actor Ammo Kind:None Amount:0"
+
+[node name="AreaStim" parent="." index="0" instance=ExtResource("2")]
+collision_layer = 0
+collision_mask = 2
+stim_data = "[
+	{
+		\"stim_type\": \"PickMeUp\",
+		\"stim_intensity\": 0
+	}
+]"
+
+[node name="Collision" type="CollisionShape3D" parent="AreaStim" index="0"]
+shape = SubResource("6")
+
+[node name="Physics" parent="." index="1"]
+process_movement = false

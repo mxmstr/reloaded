@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://p5m6y77ct6a2"]
+
+[ext_resource type="Animation" uid="uid://cydp4jgh25711" path="res://Animations/Human/Action/Shoot/Beretta/ShootBeretta.tres" id="1"]
+[ext_resource type="Animation" uid="uid://cae7683erb3gd" path="res://Animations/Human/Action/Shoot/Beretta/ShootBeretta_Down.tres" id="2"]
+[ext_resource type="Animation" uid="uid://bq05fjwi41233" path="res://Animations/Human/Action/Shoot/Beretta/ShootBeretta_Up.tres" id="3"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="4"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vxya1"]
+_data = {
+"ShootBeretta": ExtResource("1"),
+"ShootBeretta_Down": ExtResource("2"),
+"ShootBeretta_Up": ExtResource("3")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_vxya1")
+}
+script = ExtResource("4")
+attributes = "{
+	\"*\": {
+		\"clip_start\": 2.0,
+		\"clip_end\": 2.0
+	}
+}"

@@ -1,0 +1,120 @@
+[gd_scene load_steps=20 format=3 uid="uid://ddlgi15ec0g76"]
+
+[ext_resource type="Script" path="res://Scripts/Actor.gd" id="1_llai0"]
+[ext_resource type="PackedScene" uid="uid://dlkwg7q7m0qsn" path="res://Models/Humans/anderson.blend" id="1_vvhq7"]
+[ext_resource type="PackedScene" uid="uid://5rcvkeef6okr" path="res://Scenes/Components/Properties/Behavior.Human.property.tscn" id="2_s0xuv"]
+[ext_resource type="PackedScene" uid="uid://5almq67kg5s2" path="res://Scenes/Components/Properties/AnimLayer.Movement.property.tscn" id="3_3lwxr"]
+[ext_resource type="Script" path="res://Scripts/Input.MoveVertical.gd" id="7_0mx41"]
+[ext_resource type="Script" path="res://Scripts/Input.MoveVerticalStop.gd" id="8_ee0of"]
+[ext_resource type="PackedScene" uid="uid://ep8iba5bew2n" path="res://Scenes/Components/Properties/CameraRig.property.tscn" id="8_ykmut"]
+[ext_resource type="Script" path="res://Scripts/Input.MoveHorizontal.gd" id="9_1o61n"]
+[ext_resource type="Script" path="res://Scripts/Input.MoveHorizontalStop.gd" id="10_xntuh"]
+[ext_resource type="PackedScene" uid="uid://dxrq7bjr4hrjg" path="res://Scenes/Components/Actions/Action.Human.action.tscn" id="11_gdeik"]
+[ext_resource type="Script" path="res://Scripts/InputContext.gd" id="12_3sqcp"]
+[ext_resource type="Script" path="res://Scripts/Input.gd" id="12_gy78h"]
+[ext_resource type="Script" path="res://Scripts/Input.RotateVertical.gd" id="13_ltgv4"]
+[ext_resource type="Script" path="res://Scripts/Input.RotateHorizontal.gd" id="14_scneo"]
+[ext_resource type="PackedScene" uid="uid://cj6w57cs5mmq3" path="res://Scenes/Components/Properties/Physics.Kinematic.Human.property.tscn" id="16_c8xwf"]
+[ext_resource type="PackedScene" uid="uid://b5b1hr6d10ylq" path="res://Scenes/Components/Properties/Locomotion.property.tscn" id="17_hchjt"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Properties/Container.property.tscn" id="28_mloxo"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/Jump.input.tscn" id="33_slexh"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bn7rg"]
+radius = 0.25
+height = 1.8
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_llai0")
+tags = "Human"
+
+[node name="Behavior" parent="." instance=ExtResource("2_s0xuv")]
+
+[node name="Default" parent="Behavior" instance=ExtResource("11_gdeik")]
+state = "Default"
+schema = "DefaultAction"
+
+[node name="JumpUp" parent="Behavior" instance=ExtResource("11_gdeik")]
+layer = 0
+state = "JumpUp"
+schema = "JumpUp"
+
+[node name="AnimLayerMovement" parent="." instance=ExtResource("3_3lwxr")]
+speed = 4.0
+tree = NodePath(".")
+schema = "Locomotion"
+
+[node name="Model" parent="." instance=ExtResource("1_vvhq7")]
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_bn7rg")
+
+[node name="Physics" parent="." instance=ExtResource("16_c8xwf")]
+
+[node name="Locomotion" parent="." instance=ExtResource("17_hchjt")]
+
+[node name="CameraRig" parent="." instance=ExtResource("8_ykmut")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.177408, 1.93211, 0)
+camera_offset = Vector3(0, 0, 3.75)
+
+[node name="InputContext" type="Node" parent="."]
+script = ExtResource("12_3sqcp")
+
+[node name="MoveForwardInput" type="Node" parent="InputContext"]
+script = ExtResource("7_0mx41")
+action = "Forward"
+
+[node name="MoveBackwardInput" type="Node" parent="InputContext"]
+script = ExtResource("7_0mx41")
+action = "Backward"
+strength_multiplier = -1.0
+
+[node name="MoveVerticalStop" type="Node" parent="InputContext"]
+script = ExtResource("8_ee0of")
+
+[node name="MoveLeftInput" type="Node" parent="InputContext"]
+script = ExtResource("9_1o61n")
+action = "Left"
+
+[node name="MoveRightInput" type="Node" parent="InputContext"]
+script = ExtResource("9_1o61n")
+action = "Right"
+strength_multiplier = -1.0
+
+[node name="MoveHorizontalStop" type="Node" parent="InputContext"]
+script = ExtResource("10_xntuh")
+
+[node name="RotateUpInput" type="Node" parent="InputContext"]
+script = ExtResource("12_gy78h")
+action = "RotateUp"
+
+[node name="RotateDownInput" type="Node" parent="InputContext"]
+script = ExtResource("12_gy78h")
+action = "RotateDown"
+
+[node name="RotateVerticalInput" type="Node" parent="InputContext"]
+script = ExtResource("13_ltgv4")
+positive_input = NodePath("../RotateUpInput")
+negative_input = NodePath("../RotateDownInput")
+
+[node name="RotateLeftInput" type="Node" parent="InputContext"]
+script = ExtResource("12_gy78h")
+action = "RotateLeft"
+
+[node name="RotateRightInput" type="Node" parent="InputContext"]
+script = ExtResource("12_gy78h")
+action = "RotateRight"
+
+[node name="RotateHorizontalInput" type="Node" parent="InputContext"]
+script = ExtResource("14_scneo")
+positive_input = NodePath("../RotateRightInput")
+negative_input = NodePath("../RotateLeftInput")
+
+[node name="JumpInput" parent="InputContext" instance=ExtResource("33_slexh")]
+
+[node name="RightHandContainer" parent="." instance=ExtResource("28_mloxo")]
+path = NodePath("../Model/Skeleton3D")
+bone_name = "Gun"
+required_tags = "Item"
+
+[editable path="Model"]

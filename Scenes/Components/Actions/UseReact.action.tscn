@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3ipxybuh7v7t"]
+
+[ext_resource type="Script" path="res://Scripts/Action.UseReact.gd" id="1"]
+
+[node name="UseReactAction" type="Node"]
+script = ExtResource("1")
+layer = 2
+state = "UseReact"
+schema = "Shoot"

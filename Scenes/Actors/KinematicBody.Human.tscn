@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://j6bs3orxlcmo"]
+
+[ext_resource type="Script" path="res://Scripts/Actor.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://cj6w57cs5mmq3" path="res://Scenes/Components/Properties/Physics.Kinematic.Human.property.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://5rcvkeef6okr" path="res://Scenes/Components/Properties/Behavior.Human.property.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Properties/Reception.property.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Properties/Audio.property.tscn" id="7"]
+
+[node name="KinematicBody" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1")
+tags = "Actor"
+
+[node name="Physics" parent="." instance=ExtResource("2")]
+
+[node name="Behavior" parent="." instance=ExtResource("3")]
+
+[node name="Reception" parent="." instance=ExtResource("4")]
+
+[node name="Audio" parent="." instance=ExtResource("7")]

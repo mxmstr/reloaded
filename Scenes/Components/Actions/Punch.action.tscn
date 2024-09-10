@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7m8txgnfhqo2"]
+
+[ext_resource type="Script" path="res://Scripts/Action.Punch.gd" id="1"]
+
+[node name="PunchAction" type="Node"]
+script = ExtResource("1")
+__meta__ = {}
+schema = "Punch"
+schema_idle = "PunchIdle"
+schema_kick = "Kick"

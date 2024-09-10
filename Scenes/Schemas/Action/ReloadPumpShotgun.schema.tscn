@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6f77s55kdwo6"]
+
+[ext_resource type="Animation" uid="uid://xmonh812p4a4" path="res://Animations/Human/Action/Reload/ReloadPumpShotgun.tres" id="1"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="2"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/ReloadPumpShotgun = ExtResource("1")
+script = ExtResource("2")
+attributes = "{
+	\"*\": {
+		\"speed\": 2.0,
+		\"clip_start\": 0.05,
+		\"layer\": \"MIXED\",
+		\"switch_mode\": \"Immediate\",
+		\"time_scaled\": false
+	}
+}"

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://5almq67kg5s2"]
+
+[ext_resource type="AnimationNodeBlendSpace1D" uid="uid://c7d8lj865pl3t" path="res://Scenes/Components/Properties/AnimLayer.Movement.Human.tres" id="1_62hv7"]
+[ext_resource type="Script" path="res://Scripts/Prop.AnimLayer.Movement.gd" id="2_0w1io"]
+[ext_resource type="Animation" uid="uid://cptybn6j7yrgf" path="res://Animations/DefaultAnim.tres" id="3"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xxgu8"]
+_data = {
+"DefaultAnim": ExtResource("3")
+}
+
+[node name="AnimLayerMovement" type="AnimationTree"]
+root_node = NodePath(".")
+callback_mode_process = 2
+tree_root = ExtResource("1_62hv7")
+anim_player = NodePath("AnimationPlayer")
+parameters/blend_position = 0
+parameters/0/blend_position = Vector2(-0.00127387, -0.032258)
+parameters/1/blend_position = Vector2(0, 0)
+script = ExtResource("2_0w1io")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xxgu8")
+}

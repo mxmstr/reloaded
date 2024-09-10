@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2wxmflugoxsb"]
+
+[sub_resource type="StandardMaterial3D" id="1"]
+albedo_color = Color(1, 0, 0, 1)
+roughness = 0.0
+
+[sub_resource type="PrismMesh" id="2"]
+material = SubResource("1")
+size = Vector3(0.5, 1, 0.1)
+
+[node name="Waypoint" type="Node3D"]
+__meta__ = {}
+
+[node name="MeshPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+__meta__ = {}
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshPivot"]
+transform = Transform3D(0.500093, 0, -2.18598e-08, -2.18598e-08, 9.55343e-16, -0.500093, 0, 0.5, 9.55521e-16, 0, 0, 0)
+mesh = SubResource("2")
+material/0 = null
+__meta__ = {}
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+enabled = true
+target_position = Vector3(0, -100, 0)
+__meta__ = {}

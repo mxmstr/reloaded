@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://xdv1re3t5md3"]
+
+[ext_resource type="Animation" uid="uid://bdxr0lxem817w" path="res://Animations/Human/DodgeForwardRight.tres" id="1"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="2"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/DodgeForwardRight = ExtResource("1")
+script = ExtResource("2")
+attributes = "{
+	\"*\": {
+		\"clip_start\": 0.05,
+		\"layer\": \"ACTION\",
+		\"switch_mode\": \"End\",
+		\"lock_movement\": true,
+		\"camera_mode\": \"HalfYaw\"
+	}
+}"

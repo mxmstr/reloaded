@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm34gkx117m7h"]
+
+[ext_resource type="Script" path="res://Scripts/Stimulus.Contact.gd" id="1"]
+
+[node name="ContactStim" type="Node"]
+script = ExtResource("1")
+__meta__ = {}

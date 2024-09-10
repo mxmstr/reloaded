@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7q36gqijv52v"]
+
+[ext_resource type="PackedScene" uid="uid://cm46gk64h7t5u" path="res://Scenes/Actors/Items/AmmoBox.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://bay1u2kkw3uif" path="res://Models/Items/Max Payne Weapons/Ammo Sniper/Ammo Sniper.obj" id="2"]
+
+[sub_resource type="BoxShape3D" id="1"]
+size = Vector3(0.128893, 0.130457, 0.118151)
+
+[node name="AmmoBoxSniper" instance=ExtResource("1")]
+tags = "Actor Ammo Kind:BulletSniper Path3D:Items/BulletSniper Amount:6"
+
+[node name="Model" parent="." index="0" instance=ExtResource("2")]
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.121732, 0)
+shape = SubResource("1")

@@ -1,0 +1,295 @@
+[gd_scene load_steps=6 format=3 uid="uid://17g78hsa1gjp"]
+
+[ext_resource type="Script" path="res://Scripts/Menu.Bindings.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bdy2p571qxl62" path="res://Textures/panel.png" id="2"]
+[ext_resource type="FontFile" uid="uid://ncw5gi15q1li" path="res://Fonts/Xolonium-Regular.ttf" id="3"]
+[ext_resource type="PackedScene" uid="uid://dy1wtqqkhcbw4" path="res://Scenes/UI/Menu.Inputs.Action.tscn" id="4"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("3")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="Inputs" type="MarginContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.0
+offset_top = -84.5
+offset_right = 230.0
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1")
+__meta__ = {}
+
+[node name="Background" type="NinePatchRect" parent="."]
+self_modulate = Color(0.890196, 1, 0.698039, 1)
+offset_right = 672.0
+offset_bottom = 480.0
+texture = ExtResource("2")
+region_rect = Rect2(0, 0, 512, 512)
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 40
+__meta__ = {}
+
+[node name="Hint" type="Label" parent="."]
+offset_right = 672.0
+offset_bottom = 480.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource("1")
+custom_colors/font_color = Color(0.992157, 1, 0, 1)
+align = 1
+autowrap = true
+max_lines_visible = 2
+__meta__ = {}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 672.0
+offset_bottom = 480.0
+custom_constants/offset_right = 30
+custom_constants/offset_top = 30
+custom_constants/offset_left = 30
+custom_constants/offset_bottom = 50
+__meta__ = {}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 642.0
+offset_bottom = 430.0
+custom_minimum_size = Vector2(600, 400)
+mouse_filter = 1
+scroll_horizontal_enabled = false
+__meta__ = {}
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+offset_right = 600.0
+offset_bottom = 550.0
+custom_minimum_size = Vector2(600, 0)
+custom_constants/separation = 25
+__meta__ = {}
+
+[node name="DevicesList" type="VBoxContainer" parent="MarginContainer/ScrollContainer/HBoxContainer"]
+offset_right = 600.0
+offset_bottom = 445.0
+custom_minimum_size = Vector2(600, 0)
+__meta__ = {}
+
+[node name="Hint" type="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList"]
+offset_right = 600.0
+offset_bottom = 25.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource("1")
+text = "Assign devices to each player."
+autowrap = true
+max_lines_visible = 2
+__meta__ = {}
+
+[node name="p1_mouse" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList" instance=ExtResource("4")]
+offset_top = 29.0
+offset_right = 600.0
+offset_bottom = 60.0
+
+[node name="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p1_mouse" index="0"]
+offset_right = 165.0
+text = "Player 1 Mouse"
+
+[node name="Button" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p1_mouse" index="1"]
+offset_left = 565.0
+offset_right = 600.0
+text = "-1"
+
+[node name="p1_keyboard" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList" instance=ExtResource("4")]
+offset_top = 64.0
+offset_right = 600.0
+offset_bottom = 95.0
+
+[node name="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p1_keyboard" index="0"]
+offset_right = 195.0
+text = "Player 1 Keyboard"
+
+[node name="Button" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p1_keyboard" index="1"]
+offset_left = 565.0
+offset_right = 600.0
+text = "-1"
+
+[node name="p1_gamepad" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList" instance=ExtResource("4")]
+offset_top = 99.0
+offset_right = 600.0
+offset_bottom = 130.0
+
+[node name="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p1_gamepad" index="0"]
+offset_right = 194.0
+text = "Player 1 Gamepad"
+
+[node name="Button" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p1_gamepad" index="1"]
+offset_left = 565.0
+offset_right = 600.0
+text = "-1"
+
+[node name="p2_mouse" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList" instance=ExtResource("4")]
+offset_top = 134.0
+offset_right = 600.0
+offset_bottom = 165.0
+
+[node name="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p2_mouse" index="0"]
+offset_right = 165.0
+text = "Player 2 Mouse"
+
+[node name="Button" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p2_mouse" index="1"]
+offset_left = 565.0
+offset_right = 600.0
+text = "-1"
+
+[node name="p2_keyboard" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList" instance=ExtResource("4")]
+offset_top = 169.0
+offset_right = 600.0
+offset_bottom = 200.0
+
+[node name="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p2_keyboard" index="0"]
+offset_right = 195.0
+text = "Player 2 Keyboard"
+
+[node name="Button" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p2_keyboard" index="1"]
+offset_left = 565.0
+offset_right = 600.0
+text = "-1"
+
+[node name="p2_gamepad" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList" instance=ExtResource("4")]
+offset_top = 204.0
+offset_right = 600.0
+offset_bottom = 235.0
+
+[node name="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p2_gamepad" index="0"]
+offset_right = 194.0
+text = "Player 2 Gamepad"
+
+[node name="Button" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p2_gamepad" index="1"]
+offset_left = 565.0
+offset_right = 600.0
+text = "-1"
+
+[node name="p3_mouse" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList" instance=ExtResource("4")]
+offset_top = 239.0
+offset_right = 600.0
+offset_bottom = 270.0
+
+[node name="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p3_mouse" index="0"]
+offset_right = 165.0
+text = "Player 3 Mouse"
+
+[node name="Button" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p3_mouse" index="1"]
+offset_left = 565.0
+offset_right = 600.0
+text = "-1"
+
+[node name="p3_keyboard" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList" instance=ExtResource("4")]
+offset_top = 274.0
+offset_right = 600.0
+offset_bottom = 305.0
+
+[node name="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p3_keyboard" index="0"]
+offset_right = 195.0
+text = "Player 3 Keyboard"
+
+[node name="Button" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p3_keyboard" index="1"]
+offset_left = 565.0
+offset_right = 600.0
+text = "-1"
+
+[node name="p3_gamepad" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList" instance=ExtResource("4")]
+offset_top = 309.0
+offset_right = 600.0
+offset_bottom = 340.0
+
+[node name="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p3_gamepad" index="0"]
+offset_right = 194.0
+text = "Player 3 Gamepad"
+
+[node name="Button" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p3_gamepad" index="1"]
+offset_left = 565.0
+offset_right = 600.0
+text = "-1"
+
+[node name="p4_mouse" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList" instance=ExtResource("4")]
+offset_top = 344.0
+offset_right = 600.0
+offset_bottom = 375.0
+
+[node name="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p4_mouse" index="0"]
+offset_right = 165.0
+text = "Player 4 Mouse"
+
+[node name="Button" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p4_mouse" index="1"]
+offset_left = 565.0
+offset_right = 600.0
+text = "-1"
+
+[node name="p4_keyboard" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList" instance=ExtResource("4")]
+offset_top = 379.0
+offset_right = 600.0
+offset_bottom = 410.0
+
+[node name="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p4_keyboard" index="0"]
+offset_right = 195.0
+text = "Player 4 Keyboard"
+
+[node name="Button" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p4_keyboard" index="1"]
+offset_left = 565.0
+offset_right = 600.0
+text = "-1"
+
+[node name="p4_gamepad" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList" instance=ExtResource("4")]
+offset_top = 414.0
+offset_right = 600.0
+offset_bottom = 445.0
+
+[node name="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p4_gamepad" index="0"]
+offset_right = 194.0
+text = "Player 4 Gamepad"
+
+[node name="Button" parent="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p4_gamepad" index="1"]
+offset_left = 565.0
+offset_right = 600.0
+text = "-1"
+
+[node name="ActionsList" type="VBoxContainer" parent="MarginContainer/ScrollContainer/HBoxContainer"]
+offset_top = 470.0
+offset_right = 600.0
+offset_bottom = 550.0
+custom_minimum_size = Vector2(600, 0)
+__meta__ = {}
+
+[node name="Hint" type="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/ActionsList"]
+offset_right = 600.0
+offset_bottom = 80.0
+custom_minimum_size = Vector2(0, 80)
+size_flags_vertical = 1
+custom_fonts/font = SubResource("1")
+text = "Click a key binding to reassign it, or press Escape.."
+autowrap = true
+max_lines_visible = 2
+__meta__ = {}
+
+[editable path="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p1_mouse"]
+[editable path="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p1_keyboard"]
+[editable path="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p1_gamepad"]
+[editable path="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p2_mouse"]
+[editable path="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p2_keyboard"]
+[editable path="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p2_gamepad"]
+[editable path="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p3_mouse"]
+[editable path="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p3_keyboard"]
+[editable path="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p3_gamepad"]
+[editable path="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p4_mouse"]
+[editable path="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p4_keyboard"]
+[editable path="MarginContainer/ScrollContainer/HBoxContainer/DevicesList/p4_gamepad"]

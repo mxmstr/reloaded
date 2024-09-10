@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbuuakuypfjqu"]
+
+[ext_resource type="PackedScene" uid="uid://cm46gk64h7t5u" path="res://Scenes/Actors/Items/AmmoBox.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://cd3wig861awmv" path="res://Models/Items/Max Payne Weapons/Ammo Desert Eagle/Ammo Desert Eagle.obj" id="2"]
+
+[sub_resource type="BoxShape3D" id="12"]
+size = Vector3(0.21487, 0.0996571, 0.167424)
+
+[node name="AmmoBoxMagnum" instance=ExtResource("1")]
+tags = "Actor Ammo Kind:BulletMagnum Path3D:Items/BulletMagnum Amount:8"
+
+[node name="Model" parent="." index="0" instance=ExtResource("2")]
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0945548, 0)
+shape = SubResource("12")

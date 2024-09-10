@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://j3ae7rw5anuh"]
+
+[node name="VisualEventStim" type="Node"]
+script = null
+__meta__ = {}

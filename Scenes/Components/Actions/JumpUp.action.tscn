@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://brsr7al53wfr6"]
+
+[ext_resource type="Script" path="res://Scripts/Action.Human.gd" id="1_e54qs"]
+
+[node name="JumpUpAction" type="Node"]
+script = ExtResource("1_e54qs")
+layer = 0
+state = "JumpUp"
+schema = "JumpUp"

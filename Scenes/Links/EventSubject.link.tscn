@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dgvpwklu34cqg"]
+
+[node name="EventSubject" type="Node"]
+script = null
+__meta__ = {}

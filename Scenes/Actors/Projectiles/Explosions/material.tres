@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://donu4vhuuigo6"]
+
+[ext_resource type="Shader" uid="uid://c57ng3cgqimlp" path="res://Scenes/Actors/Projectiles/Explosions/smokeshader.tres" id="1"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://y7cdydxsm63"]
+
+[ext_resource type="Animation" uid="uid://bf6bb0tfm1t58" path="res://Animations/Human/Action/Jump/longjump.tres" id="1"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/JumpLong = ExtResource("1")
+__meta__ = {}

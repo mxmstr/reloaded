@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://hljd5l3em1im"]
+
+[ext_resource type="FontFile" uid="uid://ncw5gi15q1li" path="res://Fonts/Xolonium-Regular.ttf" id="1"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="Label" type="Label"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 56.0
+offset_bottom = 35.0
+custom_fonts/font = SubResource("1")
+custom_colors/font_color = Color(0, 0, 0, 1)
+text = "asdf"
+__meta__ = {}

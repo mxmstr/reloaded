@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://5pf0klk2n2xd"]
+
+[ext_resource type="Animation" uid="uid://dqvbnnhl4wmr5" path="res://Animations/Human/Action/Shoot/PumpShotgun/ShootPumpShotgun.tres" id="1"]
+[ext_resource type="Animation" uid="uid://cwpirxu5pvxsd" path="res://Animations/Human/Action/Shoot/PumpShotgun/ShootPumpShotgun_Down.tres" id="2"]
+[ext_resource type="Animation" uid="uid://bm5q4atom182s" path="res://Animations/Human/Action/Shoot/PumpShotgun/ShootPumpShotgun_Up.tres" id="3"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="4"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/ShootPumpShotgun = ExtResource("1")
+anims/ShootPumpShotgun_Down = ExtResource("2")
+anims/ShootPumpShotgun_Up = ExtResource("3")
+script = ExtResource("4")
+attributes = "{
+	\"*\": {
+		\"clip_start\": 0.05,
+		\"layer\": \"MIXED\",
+		\"align_model_to_aim\": true,
+		\"can_use_item\": true,
+		\"next\": \"ShootIdle\"
+	}
+}"

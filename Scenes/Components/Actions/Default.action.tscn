@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://di7qwnk6xihkv"]
+
+[ext_resource type="Script" path="res://Scripts/Action.Human.gd" id="1_wv3yx"]
+
+[node name="DefaultAction" type="Node"]
+script = ExtResource("1_wv3yx")
+can_use_item = true
+align_model_to_aim = true
+state = "Default"
+endless = true
+schema = "DefaultAction"

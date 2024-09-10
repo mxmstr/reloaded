@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8mqr3oudgpv5"]
+
+[ext_resource type="Script" path="res://Scripts/Input.RotateHorizontal.gd" id="1"]
+
+[node name="RotateHorizontal" type="Node"]
+script = ExtResource("1")

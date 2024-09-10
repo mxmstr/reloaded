@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://btov4inefuhk"]
+
+[ext_resource type="Script" path="res://Scripts/Input.MoveVertical.gd" id="1"]
+
+[node name="MoveForwardInput" type="Node"]
+script = ExtResource("1")
+__meta__ = {}
+action = "Forward"

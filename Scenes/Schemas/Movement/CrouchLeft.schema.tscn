@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dihebxtr4j1f0"]
+
+[ext_resource type="Animation" uid="uid://bnqgurqa3jh88" path="res://Animations/Human/Movement/CrouchLeft.tres" id="1"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4i11t"]
+_data = {
+"CrouchSidestepLeft": ExtResource("1")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_4i11t")
+}

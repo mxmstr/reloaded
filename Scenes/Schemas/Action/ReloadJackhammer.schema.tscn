@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf0ngp03gwtbf"]
+
+[ext_resource type="Animation" uid="uid://pl6hbktqerxq" path="res://Animations/Human/Action/Reload/ReloadJackhammer.tres" id="1"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="2"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/ReloadJackhammer = ExtResource("1")
+script = ExtResource("2")
+attributes = "{
+	\"*\": {
+		\"speed\": 1.5,
+		\"clip_start\": 0.05,
+		\"layer\": \"MIXED\",
+		\"switch_mode\": \"End\",
+		\"time_scaled\": false
+	}
+}"

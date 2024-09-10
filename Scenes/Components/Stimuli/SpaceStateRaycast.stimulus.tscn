@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlk1de7a75x8d"]
+
+[ext_resource type="Script" path="res://Scripts/Stimulus.SpaceStateRaycast.gd" id="1"]
+
+[node name="SpaceStateRaycastStim" type="Node"]
+script = ExtResource("1")

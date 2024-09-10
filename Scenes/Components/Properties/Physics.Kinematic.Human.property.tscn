@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj6w57cs5mmq3"]
+
+[ext_resource type="Script" path="res://Scripts/Prop.Physics.Kinematic.Human.gd" id="1_nbe6p"]
+
+[node name="Physics" type="Node"]
+script = ExtResource("1_nbe6p")

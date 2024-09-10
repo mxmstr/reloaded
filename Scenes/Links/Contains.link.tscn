@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bisjcnk7hev3j"]
+
+[ext_resource type="Script" path="res://Scripts/Link.Contains.gd" id="1"]
+
+[node name="Contains" type="Node"]
+script = ExtResource("1")

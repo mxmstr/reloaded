@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://h1jjtp4kuvud"]
+
+[ext_resource type="AudioStream" uid="uid://bj7mvp24on8s5" path="res://Sounds/Payne/projectiles/Grenade_ricochet.wav" id="1"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="3"]
+
+[sub_resource type="Animation" id="1"]
+length = 0.273605
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/Grenade_ricochet = SubResource("1")
+script = ExtResource("3")
+attributes = "{
+	\"*\": {
+		\"level\": -5
+	}
+}"

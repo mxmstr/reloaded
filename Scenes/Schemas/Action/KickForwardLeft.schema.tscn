@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfvs73lgnsq6"]
+
+[ext_resource type="Animation" uid="uid://c0arth335m28s" path="res://Animations/Human/Action/Kick/leftjumpspinkick.tres" id="1"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="2"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/leftjumpspinkick = ExtResource("1")
+script = ExtResource("2")
+attributes = "{
+	\"*\": {
+		\"speed\": 2.0,
+		\"clip_start\": 0.05,
+		\"layer\": \"ACTION\",
+		\"switch_mode\": \"End\",
+		\"lock_movement\": true,
+		\"camera_mode\": \"HalfYaw\"
+	}
+}"

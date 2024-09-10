@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbqj7a6xlanrf"]
+
+[ext_resource type="AudioStream" uid="uid://d13hojt7cnevt" path="res://Sounds/Goldeneye/fx/regen7.wav" id="1"]
+
+[sub_resource type="StandardMaterial3D" id="1"]
+albedo_color = Color(0, 0.929412, 1, 1)
+roughness = 0.0
+
+[sub_resource type="PrismMesh" id="2"]
+material = SubResource("1")
+size = Vector3(0.5, 1, 0.1)
+
+[node name="PickupMarker" type="Node3D"]
+__meta__ = {}
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.500093, 0, 0, 0, -0.5, 4.37195e-08, 0, -4.37114e-08, -0.500093, 0, 0.25, 0)
+mesh = SubResource("2")
+material/0 = null
+__meta__ = {}
+
+[node name="RespawnSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1")
+bus = "SFX"
+__meta__ = {}

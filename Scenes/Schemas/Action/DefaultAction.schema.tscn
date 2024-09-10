@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://djckb781icu07"]
+
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="1"]
+
+[sub_resource type="Animation" id="1"]
+resource_name = "DefaultAction"
+length = 2.0
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/DefaultAction = SubResource("1")
+script = ExtResource("1")
+attributes = "{
+	\"*\": {
+		\"endless\": true,
+		\"layer\": \"MOVEMENT\",
+		\"align_model_to_aim\": true,
+		\"can_use_item\": true
+	}
+}"

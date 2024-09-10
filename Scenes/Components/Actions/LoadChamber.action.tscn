@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://u1x3v5q5dyby"]
+
+[ext_resource type="Script" path="res://Scripts/Action.LoadChamber.gd" id="1"]
+
+[node name="LoadChamberAction" type="Node"]
+script = ExtResource("1")
+__meta__ = {}

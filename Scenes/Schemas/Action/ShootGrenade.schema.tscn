@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://44sx7twf3b32"]
+
+[ext_resource type="Animation" uid="uid://cmnhtru1p7vwl" path="res://Animations/Human/ShootGrenade_Down.tres" id="1"]
+[ext_resource type="Animation" uid="uid://16ej3noy55ew" path="res://Animations/Human/ShootGrenade_Up.tres" id="2"]
+[ext_resource type="Animation" uid="uid://bauou7lvftspf" path="res://Animations/Human/ShootGrenade.tres" id="3"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="4"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/ShootGrenade = ExtResource("3")
+anims/ShootGrenade_Down = ExtResource("1")
+anims/ShootGrenade_Up = ExtResource("2")
+script = ExtResource("4")
+attributes = "{
+	\"*\": {
+		\"speed\": 1.5,
+		\"clip_start\": 0.05,
+		\"layer\": \"MIXED\",
+		\"align_model_to_aim\": true,
+		\"can_use_item\": true,
+		\"next\": \"ShootIdle\"
+	}
+}"

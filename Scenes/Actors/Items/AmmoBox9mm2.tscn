@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsr11agx6motx"]
+
+[ext_resource type="Script" path="res://Scripts/Actor.gd" id="6"]
+
+[node name="AmmoBox9mm" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("6")
+tags = "Actor Ammo Kind:Bullet9mm Path3D:Items/Bullet9mm Amount:12"

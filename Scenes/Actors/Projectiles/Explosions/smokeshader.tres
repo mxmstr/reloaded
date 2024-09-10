@@ -1,0 +1,336 @@
+[gd_resource type="VisualShader" load_steps=26 format=3 uid="uid://c57ng3cgqimlp"]
+
+[ext_resource type="Texture2D" uid="uid://j2hypdir8rbv" path="res://Scenes/Actors/Projectiles/Explosions/smokesprite.png" id="1"]
+
+[sub_resource type="VisualShaderNodeColorFunc" id="1"]
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="2"]
+parameter_name = "emission_color_ramp"
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeVectorOp" id="3"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(5, 5, 5)]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatOp" id="4"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatOp" id="5"]
+default_input_values = [0, 0.0, 1, 0.3]
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="6"]
+parameter_name = "emission_falloff_multiplier"
+
+[sub_resource type="VisualShaderNodeExpression" id="10"]
+size = Vector2(822.8, 299.6)
+expression = "float depth = textureLod(DEPTH_TEXTURE, SCREEN_UV, 0.0).r;
+vec4 upos = INV_PROJECTION_MATRIX * vec4(SCREEN_UV * 2.0 - 1.0, depth * 2.0 - 1.0, 1.0);
+float pixel_position = upos.z / upos.w;
+
+vec4 zpos = INV_PROJECTION_MATRIX * vec4(SCREEN_UV * 2.0 - 1.0, FRAGCOORD.z * 2.0 - 1.0, 1.0);
+float cur_pos = zpos.z/zpos.w;
+soft_limit = soft_limit+(1.0-blend)*blend_scale;
+float help = clamp(abs(cur_pos-pixel_position)*(1.0/soft_limit),0.0,1.0);
+alpha_opacity = help;
+//if (abs(cur_pos-pixel_position)<blend_scale*(1.0-blend))
+//	alpha_opacity = 0.0;
+//else
+//	alpha_opacity = 1.0;"
+
+[sub_resource type="VisualShaderNodeTexture" id="11"]
+texture = ExtResource("1")
+
+[sub_resource type="VisualShaderNodeFloatOp" id="12"]
+default_input_values = [0, 0.0, 1, 0.3]
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="13"]
+parameter_name = "blend_help"
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="14"]
+parameter_name = "Soft_limit"
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="15"]
+parameter_name = "blend_scale"
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="16"]
+parameter_name = "emission_falloff"
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeInput" id="17"]
+input_name = "color"
+
+[sub_resource type="VisualShaderNodeExpression" id="18"]
+size = Vector2(456, 182)
+expression = "uv.z = 0.0;
+uv.xy = vec2(color.y);"
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="20"]
+parameter_name = "Smoke_color_ramp"
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="21"]
+parameter_name = "still_frame"
+
+[sub_resource type="VisualShaderNodeExpression" id="22"]
+size = Vector2(727, 625)
+expression = "mat4 mat_world = mat4(normalize(INV_VIEW_MATRIX[0])*length(MODEL_MATRIX[0]),normalize(INV_VIEW_MATRIX[1])*length(MODEL_MATRIX[0]),normalize(INV_VIEW_MATRIX[2])*length(MODEL_MATRIX[2]),MODEL_MATRIX[3]);
+//mat_world = mat_world * mat4( vec4(cos(INSTANCE_CUSTOM.x),-sin(INSTANCE_CUSTOM.x), 0.0, 0.0), vec4(sin(INSTANCE_CUSTOM.x), cos(INSTANCE_CUSTOM.x), 0.0, 0.0),vec4(0.0, 0.0, 1.0, 0.0),vec4(0.0, 0.0, 0.0, 1.0));
+MODELVIEW_MATRIX = VIEW_MATRIX * mat_world;
+
+float h_frames = float(particles_anim_h_frames);
+float v_frames = float(particles_anim_v_frames);
+float particle_total_frames = float(particles_anim_h_frames * particles_anim_v_frames);
+float particle_frame = floor(INSTANCE_CUSTOM.y * float(particle_total_frames));
+if(still_frame > -0.01f){
+	particle_frame = floor(still_frame);
+}else if (!particles_anim_loop) {
+	particle_frame = clamp(particle_frame, 0.0, particle_total_frames - 1.0);
+} else {
+	particle_frame = mod(particle_frame, particle_total_frames);
+}
+UV /= vec2(h_frames, v_frames);
+UV += vec2(mod(particle_frame, h_frames) / h_frames, floor(particle_frame / h_frames) / v_frames);
+		
+c=INSTANCE_CUSTOM.xyz;"
+
+[sub_resource type="VisualShaderNodeInput" id="23"]
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="24"]
+parameter_name = "particle_h_frames"
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="25"]
+parameter_name = "particle_v_frames"
+
+[sub_resource type="VisualShaderNodeBooleanParameter" id="26"]
+parameter_name = "particles_anim_loop"
+
+[sub_resource type="VisualShaderNodeInput" id="27"]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeExpression" id="28"]
+size = Vector2(250, 150)
+expression = "v = INSTANCE_CUSTOM.xyz;"
+
+[resource]
+code = "shader_type spatial;
+render_mode depth_draw_never;
+
+uniform float particle_h_frames;
+uniform float particle_v_frames;
+uniform bool particles_anim_loop;
+uniform float still_frame;
+uniform sampler2D Smoke_color_ramp : source_color;
+uniform sampler2D blend_help;
+uniform float Soft_limit;
+uniform float blend_scale;
+uniform sampler2D emission_color_ramp : source_color;
+
+
+
+void vertex() {
+// Input:3
+	vec3 n_out3p0 = VERTEX;
+
+
+// FloatParameter:5
+	float n_out5p0 = particle_h_frames;
+
+
+// FloatParameter:6
+	float n_out6p0 = particle_v_frames;
+
+
+// BooleanParameter:7
+	bool n_out7p0 = particles_anim_loop;
+
+
+// Input:8
+	float n_out8p0 = TIME;
+
+
+// FloatParameter:10
+	float n_out10p0 = still_frame;
+
+
+	int n_out2p0;
+// Expression:2
+	n_out2p0 = 0;
+	{
+		mat4 mat_world = mat4(normalize(INV_VIEW_MATRIX[0])*length(MODEL_MATRIX[0]),normalize(INV_VIEW_MATRIX[1])*length(MODEL_MATRIX[0]),normalize(INV_VIEW_MATRIX[2])*length(MODEL_MATRIX[2]),MODEL_MATRIX[3]);
+		//mat_world = mat_world * mat4( vec4(cos(INSTANCE_CUSTOM.x),-sin(INSTANCE_CUSTOM.x), 0.0, 0.0), vec4(sin(INSTANCE_CUSTOM.x), cos(INSTANCE_CUSTOM.x), 0.0, 0.0),vec4(0.0, 0.0, 1.0, 0.0),vec4(0.0, 0.0, 0.0, 1.0));
+		MODELVIEW_MATRIX = VIEW_MATRIX * mat_world;
+		
+		float h_frames = float(n_out5p0);
+		float v_frames = float(n_out6p0);
+		float particle_total_frames = float(n_out5p0 * n_out6p0);
+		float particle_frame = floor(INSTANCE_CUSTOM.y * float(particle_total_frames));
+		if(n_out10p0 > -0.01f){
+			particle_frame = floor(n_out10p0);
+		}else if (!(n_out7p0 ? 1u : 0u)) {
+			particle_frame = clamp(particle_frame, 0.0, particle_total_frames - 1.0);
+		} else {
+			particle_frame = mod(particle_frame, particle_total_frames);
+		}
+		UV /= vec2(h_frames, v_frames);
+		UV += vec2(mod(particle_frame, h_frames) / h_frames, floor(particle_frame / h_frames) / v_frames);
+				
+		n_out2p0=INSTANCE_CUSTOM.xyz;
+	}
+
+
+// Output:0
+	COLOR.rgb = vec3(float(n_out2p0));
+
+
+}
+
+void fragment() {
+// FloatParameter:22
+	float n_out22p0 = Soft_limit;
+
+
+// FloatParameter:23
+	float n_out23p0 = blend_scale;
+
+
+	float n_out19p0;
+// Expression:19
+	n_out19p0 = 0.0;
+	{
+		float depth = textureLod(DEPTH_TEXTURE, SCREEN_UV, 0.0).r;
+		vec4 upos = INV_PROJECTION_MATRIX * vec4(SCREEN_UV * 2.0 - 1.0, depth * 2.0 - 1.0, 1.0);
+		float pixel_position = upos.z / upos.w;
+		
+		vec4 zpos = INV_PROJECTION_MATRIX * vec4(SCREEN_UV * 2.0 - 1.0, FRAGCOORD.z * 2.0 - 1.0, 1.0);
+		float cur_pos = zpos.z/zpos.w;
+		n_out22p0 = n_out22p0+(1.0-)*n_out23p0;
+		float help = clamp(abs(cur_pos-pixel_position)*(1.0/n_out22p0),0.0,1.0);
+		n_out19p0 = help;
+		//if (abs(cur_pos-pixel_position)<blend_scale*(1.0-))
+		//	n_out19p0 = 0.0;
+		//else
+		//	n_out19p0 = 1.0;
+	}
+
+
+// FloatOp:20
+	float n_in20p0 = 0.00000;
+	float n_out20p0 = n_in20p0 * n_out19p0;
+
+
+// VectorOp:12
+	vec3 n_in12p1 = vec3(5.00000, 5.00000, 5.00000);
+	vec3 n_out12p0 =  * n_in12p1;
+
+
+// Output:0
+	ALPHA = n_out20p0;
+	EMISSION = n_out12p0;
+
+
+}
+"
+graph_offset = Vector2(-358.391, -73.1382)
+modes/depth_draw = 2
+nodes/vertex/0/position = Vector2(500, 120)
+nodes/vertex/2/node = SubResource("22")
+nodes/vertex/2/position = Vector2(-720, -140)
+nodes/vertex/2/size = Vector2(727, 625)
+nodes/vertex/2/input_ports = "0,1,v;1,0,particles_anim_h_frames;2,0,particles_anim_v_frames;3,2,particles_anim_loop;4,0,time;5,0,still_frame;"
+nodes/vertex/2/output_ports = "0,1,c;"
+nodes/vertex/2/expression = "mat4 mat_world = mat4(normalize(INV_VIEW_MATRIX[0])*length(MODEL_MATRIX[0]),normalize(INV_VIEW_MATRIX[1])*length(MODEL_MATRIX[0]),normalize(INV_VIEW_MATRIX[2])*length(MODEL_MATRIX[2]),MODEL_MATRIX[3]);
+//mat_world = mat_world * mat4( vec4(cos(INSTANCE_CUSTOM.x),-sin(INSTANCE_CUSTOM.x), 0.0, 0.0), vec4(sin(INSTANCE_CUSTOM.x), cos(INSTANCE_CUSTOM.x), 0.0, 0.0),vec4(0.0, 0.0, 1.0, 0.0),vec4(0.0, 0.0, 0.0, 1.0));
+MODELVIEW_MATRIX = VIEW_MATRIX * mat_world;
+
+float h_frames = float(particles_anim_h_frames);
+float v_frames = float(particles_anim_v_frames);
+float particle_total_frames = float(particles_anim_h_frames * particles_anim_v_frames);
+float particle_frame = floor(INSTANCE_CUSTOM.y * float(particle_total_frames));
+if(still_frame > -0.01f){
+	particle_frame = floor(still_frame);
+}else if (!particles_anim_loop) {
+	particle_frame = clamp(particle_frame, 0.0, particle_total_frames - 1.0);
+} else {
+	particle_frame = mod(particle_frame, particle_total_frames);
+}
+UV /= vec2(h_frames, v_frames);
+UV += vec2(mod(particle_frame, h_frames) / h_frames, floor(particle_frame / h_frames) / v_frames);
+		
+c=INSTANCE_CUSTOM.xyz;"
+nodes/vertex/3/node = SubResource("23")
+nodes/vertex/3/position = Vector2(-1200, -320)
+nodes/vertex/5/node = SubResource("24")
+nodes/vertex/5/position = Vector2(-1080, -380)
+nodes/vertex/6/node = SubResource("25")
+nodes/vertex/6/position = Vector2(-1140, -100)
+nodes/vertex/7/node = SubResource("26")
+nodes/vertex/7/position = Vector2(-1120, -20)
+nodes/vertex/8/node = SubResource("27")
+nodes/vertex/8/position = Vector2(-1060, -220)
+nodes/vertex/9/node = SubResource("28")
+nodes/vertex/9/position = Vector2(40, 200)
+nodes/vertex/9/size = Vector2(250, 150)
+nodes/vertex/9/input_ports = ""
+nodes/vertex/9/output_ports = "0,1,v;"
+nodes/vertex/9/expression = "v = INSTANCE_CUSTOM.xyz;"
+nodes/vertex/10/node = SubResource("21")
+nodes/vertex/10/position = Vector2(-1024.74, 141.5)
+nodes/vertex/connections = PackedInt32Array(3, 0, 2, 0, 6, 0, 2, 2, 5, 0, 2, 1, 7, 0, 2, 3, 8, 0, 2, 4, 2, 0, 0, 6, 10, 0, 2, 5)
+nodes/fragment/0/position = Vector2(700, 180)
+nodes/fragment/2/node = SubResource("11")
+nodes/fragment/2/position = Vector2(-1380, -120)
+nodes/fragment/4/node = SubResource("16")
+nodes/fragment/4/position = Vector2(-480, 560)
+nodes/fragment/5/node = SubResource("17")
+nodes/fragment/5/position = Vector2(-1400, 580)
+nodes/fragment/6/node = SubResource("18")
+nodes/fragment/6/position = Vector2(-1060, 540)
+nodes/fragment/6/size = Vector2(456, 182)
+nodes/fragment/6/input_ports = "0,1,color;"
+nodes/fragment/6/output_ports = "0,1,uv;"
+nodes/fragment/6/expression = "uv.z = 0.0;
+uv.xy = vec2(color.y);"
+nodes/fragment/9/node = SubResource("20")
+nodes/fragment/9/position = Vector2(-480, -60)
+nodes/fragment/10/node = SubResource("1")
+nodes/fragment/10/position = Vector2(-1140, 140)
+nodes/fragment/11/node = SubResource("2")
+nodes/fragment/11/position = Vector2(-220, 220)
+nodes/fragment/12/node = SubResource("3")
+nodes/fragment/12/position = Vector2(80, 340)
+nodes/fragment/13/node = SubResource("4")
+nodes/fragment/13/position = Vector2(-580, 400)
+nodes/fragment/14/node = SubResource("5")
+nodes/fragment/14/position = Vector2(-400, 360)
+nodes/fragment/15/node = SubResource("6")
+nodes/fragment/15/position = Vector2(-920, 340)
+nodes/fragment/19/node = SubResource("10")
+nodes/fragment/19/position = Vector2(-1380, -600)
+nodes/fragment/19/size = Vector2(822.8, 299.6)
+nodes/fragment/19/input_ports = "0,0,blend;1,0,soft_limit;2,0,blend_scale;"
+nodes/fragment/19/output_ports = "0,0,alpha_opacity;"
+nodes/fragment/19/expression = "float depth = textureLod(DEPTH_TEXTURE, SCREEN_UV, 0.0).r;
+vec4 upos = INV_PROJECTION_MATRIX * vec4(SCREEN_UV * 2.0 - 1.0, depth * 2.0 - 1.0, 1.0);
+float pixel_position = upos.z / upos.w;
+
+vec4 zpos = INV_PROJECTION_MATRIX * vec4(SCREEN_UV * 2.0 - 1.0, FRAGCOORD.z * 2.0 - 1.0, 1.0);
+float cur_pos = zpos.z/zpos.w;
+soft_limit = soft_limit+(1.0-blend)*blend_scale;
+float help = clamp(abs(cur_pos-pixel_position)*(1.0/soft_limit),0.0,1.0);
+alpha_opacity = help;
+//if (abs(cur_pos-pixel_position)<blend_scale*(1.0-blend))
+//	alpha_opacity = 0.0;
+//else
+//	alpha_opacity = 1.0;"
+nodes/fragment/20/node = SubResource("12")
+nodes/fragment/20/position = Vector2(-260, 100)
+nodes/fragment/21/node = SubResource("13")
+nodes/fragment/21/position = Vector2(-1000, -120)
+nodes/fragment/22/node = SubResource("14")
+nodes/fragment/22/position = Vector2(-1460, -460)
+nodes/fragment/23/node = SubResource("15")
+nodes/fragment/23/position = Vector2(-1480, -340)
+nodes/fragment/connections = PackedInt32Array(2, 0, 10, 0, 9, 0, 0, 0, 20, 0, 0, 1, 19, 0, 20, 1, 22, 0, 19, 1, 21, 0, 19, 0, 23, 0, 19, 2, 5, 0, 6, 0, 4, 0, 13, 1, 15, 0, 13, 0, 13, 0, 14, 1, 11, 0, 12, 0, 12, 0, 0, 5, 10, 0, 14, 0)
+nodes/light/0/position = Vector2(260, 120)

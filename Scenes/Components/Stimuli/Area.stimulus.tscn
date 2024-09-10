@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjbblvt5l8ocw"]
+
+[ext_resource type="Script" path="res://Scripts/Stimulus.Area.gd" id="1"]
+
+[node name="AreaStim" type="Area3D"]
+script = ExtResource("1")

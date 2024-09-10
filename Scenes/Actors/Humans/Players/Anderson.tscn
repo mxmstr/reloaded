@@ -1,0 +1,59 @@
+[gd_scene load_steps=12 format=3 uid="uid://fhddflu57qj7"]
+
+[ext_resource type="PackedScene" uid="uid://d1xmjihs1ngcb" path="res://Scenes/Actors/Humans/Players/Player.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dlkwg7q7m0qsn" path="res://Models/Humans/anderson.blend" id="2_a4iaa"]
+[ext_resource type="PackedScene" uid="uid://ck1yo6rk5juxe" path="res://Models/Humans/DefaultHumanCollision.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://dd7kgt153j5fv" path="res://Scenes/Components/Properties/Outline.property.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Properties/Hitboxes.property.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://c8sffohrvud6w" path="res://Scenes/Actors/Humans/Human.Hitboxes.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://cj6w57cs5mmq3" path="res://Scenes/Components/Properties/Physics.Kinematic.Human.property.tscn" id="8_vj42g"]
+[ext_resource type="PackedScene" uid="uid://5rcvkeef6okr" path="res://Scenes/Components/Properties/Behavior.Human.property.tscn" id="9_erks3"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Properties/Reception.property.tscn" id="10_svtr2"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Properties/Audio.property.tscn" id="11_bgq7l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hypeq"]
+size = Vector3(0.25, 1.8, 0.25)
+
+[node name="Anderson" instance=ExtResource("1")]
+tags = "Actor Human Male Team:0 Skeleton3D:Default"
+
+[node name="Model" parent="." index="1" instance=ExtResource("2_a4iaa")]
+
+[node name="Collision" parent="." index="2" instance=ExtResource("3")]
+shape = SubResource("BoxShape3D_hypeq")
+
+[node name="Outline" parent="." index="3" instance=ExtResource("4")]
+
+[node name="Hitboxes" parent="." index="4" instance=ExtResource("5")]
+source = ExtResource("6")
+
+[node name="Physics2" parent="." index="10" instance=ExtResource("8_vj42g")]
+
+[node name="RightHandContainer" parent="." index="14"]
+bone_name = "Gun"
+max_quantity = 1
+
+[node name="LeftHandContainer" parent="." index="16"]
+bone_name = "Hand-L"
+
+[node name="RightPunchContainer" parent="." index="17"]
+bone_name = "Hand-R"
+
+[node name="LeftPunchContainer" parent="." index="18"]
+bone_name = "Hand-L"
+
+[node name="RightKickContainer" parent="." index="19"]
+bone_name = "Foot-R"
+
+[node name="LeftKickContainer" parent="." index="20"]
+bone_name = "Foot-L"
+
+[node name="Behavior2" parent="." index="36" instance=ExtResource("9_erks3")]
+
+[node name="Reception2" parent="." index="37" instance=ExtResource("10_svtr2")]
+
+[node name="Audio2" parent="." index="38" instance=ExtResource("11_bgq7l")]
+
+[editable path="Model"]
+[editable path="CameraRig"]
+[editable path="CameraRaycastStim"]

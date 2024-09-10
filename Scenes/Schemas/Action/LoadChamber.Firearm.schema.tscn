@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://crdeetkh6xfqw"]
+
+[sub_resource type="Animation" id="1"]
+resource_name = "LoadChamber"
+length = 0.001
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["_get_meta().CreateLink(self,  get_node(MAGAZINE).items[0].get_node(CONTAINER)._release_front(), CONTAINS, { ATTRIBUTE: CHAMBER } )", {
+"ATTRIBUTE": "container",
+"CHAMBER": "Chamber",
+"CONTAINER": "Container",
+"CONTAINS": "Contains",
+"MAGAZINE": "Magazine"
+}],
+"method": &"_evaluate"
+}]
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/LoadChamber = SubResource("1")
+__meta__ = {}

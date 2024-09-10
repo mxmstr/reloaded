@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5hrtuaywea8c"]
+
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="2"]
+[ext_resource type="Animation" uid="uid://c7kes7t5heund" path="res://Animations/Human/wild_strikes.tres" id="3"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/wild_strikes_left = ExtResource("3")
+anims/wild_strikes_right = ExtResource("3")
+script = ExtResource("2")
+attributes = "{
+	\"*\": {
+		\"layer\": \"MIXED\",
+		\"switch_mode\": \"End\"
+	},
+	\"wild_strikes_right\": {
+		\"clip_start\": 0.5,
+		\"clip_end\": 0.9
+	},
+	\"wild_strikes_left\": {
+		\"clip_start\": 1.0,
+		\"clip_end\": 1.4
+	}
+}"

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bro0wyer7rc06"]
+
+[ext_resource type="PackedScene" uid="uid://qyc1rotj2v4e" path="res://Scenes/Actors/Items/Firearm.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://6i6k5c0vm4pb" path="res://Models/Items/Max Payne Weapons/MP5/MP5.obj" id="2"]
+
+[sub_resource type="BoxShape3D" id="1"]
+size = Vector3(0.0348302, 0.177936, 0.389188)
+
+[node name="MP5" instance=ExtResource("1")]
+tags = "Item Firearm MP5 AutoAim AutoFire Stackable Rank:21 UseAction:FireProjectile FireRate:8.0 Offset-position:neo_reference_skeleton:Gun:0.000177,0.019284,-0.004731 Offset-rotation:neo_reference_skeleton:Gun:-89.85598,88.23381,-87.078941"
+
+[node name="Model" parent="." index="0" instance=ExtResource("2")]
+transform = Transform3D(4.77671e-17, 1.09278e-09, 0.025, 0.025, -1.09278e-09, 0, 1.09278e-09, 0.025, -1.09278e-09, 0, 0, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.272583)
+shape = SubResource("1")
+
+[node name="Magazine" parent="." index="2"]
+max_quantity = 25
+required_tags = "Bullet 9mm"
+
+[node name="Chamber" parent="." index="3"]
+transform = Transform3D(1, -0.000872665, 0, 0.000872665, 1, 0, 0, 0, 1, 0, 0.108228, 0.698247)
+release_speed = 20.0
+release_angular_spread = Vector2(0.1, 0.1)

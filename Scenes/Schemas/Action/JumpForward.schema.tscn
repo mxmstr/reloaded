@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr11ql6bgsana"]
+
+[ext_resource type="Animation" uid="uid://baskx2k8iia0w" path="res://Animations/Human/Action/Jump/JumpUp.tres" id="1"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/JumpUp = ExtResource("1")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ghnksfbieg7v"]
+
+[ext_resource type="PackedScene" uid="uid://cpgyjda16b6qk" path="res://Scenes/Actors/StaticGeometry.tscn" id="1_e32l1"]
+[ext_resource type="PackedScene" uid="uid://nomq7ycj37wu" path="res://Scenes/Actors/Humans/Players/Anderson2.tscn" id="2_5w0qn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8vagm"]
+size = Vector3(10, 0.1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yntov"]
+size = Vector3(10, 0.1, 10)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticGeometry" parent="." instance=ExtResource("1_e32l1")]
+
+[node name="Model" type="MeshInstance3D" parent="StaticGeometry"]
+mesh = SubResource("BoxMesh_8vagm")
+
+[node name="Collision" type="CollisionShape3D" parent="StaticGeometry"]
+shape = SubResource("BoxShape3D_yntov")
+
+[node name="Anderson" parent="." instance=ExtResource("2_5w0qn")]

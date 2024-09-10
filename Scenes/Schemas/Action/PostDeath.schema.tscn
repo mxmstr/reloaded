@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkj76di7luap1"]
+
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="1"]
+
+[sub_resource type="Animation" id="1"]
+resource_name = "PostDeath"
+length = 2.0
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/PostDeath = SubResource("1")
+script = ExtResource("1")
+attributes = "{
+	\"*\": {
+		\"priority\": 2,
+		\"endless\": true,
+		\"layer\": \"ACTION\",
+		\"lock_movement\": true,
+		\"camera_mode\": \"BoneParent\",
+		\"hud_mode\": \"PostDeath\"
+	}
+}"

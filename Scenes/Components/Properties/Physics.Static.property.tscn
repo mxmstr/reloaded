@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://7oxnw4ryxkrf"]
+
+[ext_resource type="Script" path="res://Scripts/Prop.Physics.Static.gd" id="1_8gtu1"]
+
+[node name="Physics" type="Node"]
+script = ExtResource("1_8gtu1")

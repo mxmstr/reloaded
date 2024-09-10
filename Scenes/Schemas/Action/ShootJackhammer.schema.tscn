@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmtihpe1435ru"]
+
+[ext_resource type="Animation" uid="uid://c8h38wflba2tj" path="res://Animations/Human/Action/Shoot/Jackhammer/ShootJackhammer.tres" id="1"]
+[ext_resource type="Animation" uid="uid://cxl4qe0rsc7kl" path="res://Animations/Human/Action/Shoot/Jackhammer/ShootJackhammer_Down.tres" id="2"]
+[ext_resource type="Animation" uid="uid://bciyujsue8i6i" path="res://Animations/Human/Action/Shoot/Jackhammer/ShootJackhammer_Up.tres" id="3"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="4"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/ShootJackhammer = ExtResource("1")
+anims/ShootJackhammer_Down = ExtResource("2")
+anims/ShootJackhammer_Up = ExtResource("3")
+script = ExtResource("4")
+attributes = "{
+	\"*\": {
+		\"clip_start\": 0.05,
+		\"layer\": \"MIXED\",
+		\"align_model_to_aim\": true,
+		\"can_use_item\": true,
+		\"next\": \"ShootIdle\"
+	}
+}"

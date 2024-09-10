@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtuqlin0gqw76"]
+
+[ext_resource type="Animation" uid="uid://cqykent1k7qsk" path="res://Animations/Human/cartbackright.tres" id="1"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="2"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/cartbackright = ExtResource("1")
+script = ExtResource("2")
+attributes = "{
+	\"*\": {
+		\"clip_start\": 0.05,
+		\"layer\": \"ACTION\",
+		\"switch_mode\": \"End\",
+		\"lock_movement\": true,
+		\"camera_mode\": \"HalfYaw\"
+	}
+}"

@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://nomq7ycj37wu"]
+
+[ext_resource type="PackedScene" uid="uid://bjro87a60vmku" path="res://Scenes/Actors/Humans/Players/Player2.tscn" id="1_xft26"]
+[ext_resource type="PackedScene" uid="uid://dlkwg7q7m0qsn" path="res://Models/Humans/anderson.blend" id="2_clqdo"]
+[ext_resource type="PackedScene" uid="uid://ck1yo6rk5juxe" path="res://Models/Humans/DefaultHumanCollision.tscn" id="3_nmjdi"]
+[ext_resource type="PackedScene" uid="uid://dfmdyr0ye8xhl" path="res://Scenes/Components/Properties/Hitboxes.property.tscn" id="4_xsma0"]
+[ext_resource type="PackedScene" uid="uid://c8sffohrvud6w" path="res://Scenes/Actors/Humans/Human.Hitboxes.tscn" id="5_ut6vn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x8d6e"]
+resource_local_to_scene = true
+size = Vector3(0.25, 1.8, 0.25)
+
+[node name="Anderson" instance=ExtResource("1_xft26")]
+tags = "Actor Human Male Team:0 Skeleton3D:Default"
+
+[node name="Model" parent="." index="0" instance=ExtResource("2_clqdo")]
+
+[node name="Collision" parent="." index="1" instance=ExtResource("3_nmjdi")]
+shape = SubResource("BoxShape3D_x8d6e")
+
+[node name="Hitboxes" parent="." index="2" instance=ExtResource("4_xsma0")]
+source = ExtResource("5_ut6vn")
+
+[node name="RightHandContainer" parent="." index="5"]
+path = NodePath("../Model/Skeleton3D")
+
+[node name="LeftHandContainer" parent="." index="7"]
+path = NodePath("../Model/Skeleton3D")
+bone_name = "Hand-L"
+
+[editable path="Model"]

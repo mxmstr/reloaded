@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpmxpr0o0772t"]
+
+[ext_resource type="Script" path="res://Scripts/Response.Impact.Hitbox.gd" id="1_138h3"]
+
+[node name="ImpactResponse" type="Node"]
+script = ExtResource("1_138h3")

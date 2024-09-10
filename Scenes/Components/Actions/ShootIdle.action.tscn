@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://v8xiemfudcr1"]
+
+[ext_resource type="Script" path="res://Scripts/Action.ShootIdle.gd" id="1_ekc0b"]
+
+[node name="ShootIdleAction" type="Node"]
+script = ExtResource("1_ekc0b")
+layer = 2
+state = "ShootIdle"
+schema = "Shoot"

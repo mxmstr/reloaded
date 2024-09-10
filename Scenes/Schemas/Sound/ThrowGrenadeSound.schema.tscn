@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://b05c05tttwyas"]
+
+[ext_resource type="AudioStream" uid="uid://dl5miugk1j8mm" path="res://Sounds/Payne/weapons/shoot_throwable.wav" id="1"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="3"]
+
+[sub_resource type="Animation" id="1"]
+length = 0.242744
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2tft0"]
+_data = {
+"shoot_throwable": SubResource("1")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_2tft0")
+}
+script = ExtResource("3")
+attributes = "{
+	\"*\": {
+		\"level\": -5
+	}
+}"

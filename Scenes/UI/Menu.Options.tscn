@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1nwg83oau0kh"]
+
+[ext_resource type="FontFile" uid="uid://ncw5gi15q1li" path="res://Fonts/Xolonium-Regular.ttf" id="1"]
+
+[sub_resource type="FontFile" id="3"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="HBoxContainer" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+__meta__ = {}
+
+[node name="Label" type="Label" parent="."]
+offset_top = 7.0
+offset_right = 71.0
+offset_bottom = 32.0
+custom_fonts/font = SubResource("3")
+text = "Label: "
+__meta__ = {}
+
+[node name="OptionButton" type="OptionButton" parent="."]
+offset_left = 75.0
+offset_right = 249.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource("2")
+text = "No Selection"
+__meta__ = {}

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://lb8nf1onkhw0"]
+
+[ext_resource type="Animation" uid="uid://c1n5t8aps286p" path="res://Animations/Human/Action/Kick/SNAPKICK.tres" id="1"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="2"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/SNAPKICK = ExtResource("1")
+script = ExtResource("2")
+attributes = "{
+	\"*\": {
+		\"speed\": 1.25,
+		\"clip_start\": 0.05,
+		\"clip_end\": 1.0,
+		\"layer\": \"ACTION\",
+		\"switch_mode\": \"End\",
+		\"lock_movement\": true,
+		\"camera_mode\": \"HalfYaw\"
+	}
+}"

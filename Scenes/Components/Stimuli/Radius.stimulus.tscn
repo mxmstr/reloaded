@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdpnearfqkee"]
+
+[ext_resource type="Script" path="res://Scripts/Stimulus.Radius.gd" id="1"]
+
+[node name="RadiusStim" type="RayCast3D"]
+target_position = Vector3(0, 0, 0)
+script = ExtResource("1")
+__meta__ = {}

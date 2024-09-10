@@ -1,0 +1,52 @@
+[gd_scene load_steps=13 format=3 uid="uid://bjro87a60vmku"]
+
+[ext_resource type="PackedScene" uid="uid://vwy1na38dc2p" path="res://Scenes/Actors/Humans/Human2.tscn" id="1_waqtl"]
+[ext_resource type="PackedScene" uid="uid://ddtxvta74dswn" path="res://Scenes/Components/Inputs/InputContext.tscn" id="2_r0xxq"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/MoveBackward.input.tscn" id="3_triqi"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/MoveForward.input.tscn" id="4_nfjvu"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/MoveHorizontalStop.input.tscn" id="5_al2i1"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/MoveLeft.input.tscn" id="6_v1rm1"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/MoveRight.input.tscn" id="7_tqlf6"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/MoveVerticalStop.input.tscn" id="8_i8hb5"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/Input.input.tscn" id="9_78xx8"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/RotateHorizontal.input.tscn" id="10_t4otl"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/RotateVertical.input.tscn" id="11_7ny4y"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/Jump.input.tscn" id="12_0cvu6"]
+
+[node name="Player" instance=ExtResource("1_waqtl")]
+
+[node name="InputContext" parent="." index="0" instance=ExtResource("2_r0xxq")]
+
+[node name="MoveBackwardInput" parent="InputContext" index="0" instance=ExtResource("3_triqi")]
+
+[node name="MoveForwardInput" parent="InputContext" index="1" instance=ExtResource("4_nfjvu")]
+
+[node name="MoveHorizontalStop" parent="InputContext" index="2" instance=ExtResource("5_al2i1")]
+
+[node name="MoveLeftInput" parent="InputContext" index="3" instance=ExtResource("6_v1rm1")]
+
+[node name="MoveRightInput" parent="InputContext" index="4" instance=ExtResource("7_tqlf6")]
+
+[node name="MoveVerticalStop" parent="InputContext" index="5" instance=ExtResource("8_i8hb5")]
+
+[node name="RotateLeftInput" parent="InputContext" index="6" instance=ExtResource("9_78xx8")]
+action = "RotateLeft"
+
+[node name="RotateRightInput" parent="InputContext" index="7" instance=ExtResource("9_78xx8")]
+action = "RotateRight"
+
+[node name="RotateHorizontal" parent="InputContext" index="8" instance=ExtResource("10_t4otl")]
+positive_input = NodePath("../RotateRightInput")
+negative_input = NodePath("../RotateLeftInput")
+
+[node name="RotateUpInput" parent="InputContext" index="9" instance=ExtResource("9_78xx8")]
+action = "RotateUp"
+
+[node name="RotateDownInput" parent="InputContext" index="10" instance=ExtResource("9_78xx8")]
+action = "RotateDown"
+
+[node name="RotateVertical" parent="InputContext" index="11" instance=ExtResource("11_7ny4y")]
+positive_input = NodePath("../RotateUpInput")
+negative_input = NodePath("../RotateDownInput")
+
+[node name="JumpInput" parent="InputContext" index="12" instance=ExtResource("12_0cvu6")]

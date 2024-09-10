@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c5jshxhg4aq8u"]
+
+[node name="AudibleEventStim" type="Node"]
+script = null
+__meta__ = {}
+stim_type = "Event"

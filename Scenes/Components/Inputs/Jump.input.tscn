@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b52pm8t0jperp"]
+
+[ext_resource type="Script" path="res://Scripts/Input.Jump.gd" id="1"]
+
+[node name="JumpInput" type="Node"]
+script = ExtResource("1")
+__meta__ = {}
+action = "Jump"

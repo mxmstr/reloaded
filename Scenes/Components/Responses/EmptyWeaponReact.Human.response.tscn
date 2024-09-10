@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bumm2l00n6fmq"]
+
+[ext_resource type="Script" path="res://Scripts/Response.EmptyWeaponReact.Human.gd" id="1"]
+
+[node name="EmptyReactResponse" type="Node"]
+script = ExtResource("1")
+__meta__ = {}

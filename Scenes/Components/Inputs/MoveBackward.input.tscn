@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://y56krgjwnb53"]
+
+[ext_resource type="Script" path="res://Scripts/Input.MoveVertical.gd" id="1"]
+
+[node name="MoveBackwardInput" type="Node"]
+script = ExtResource("1")
+__meta__ = {}
+action = "Backward"
+strength_multiplier = -1.0

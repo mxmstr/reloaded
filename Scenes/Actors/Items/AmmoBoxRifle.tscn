@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://2tos63cw53aq"]
+
+[ext_resource type="PackedScene" uid="uid://cm46gk64h7t5u" path="res://Scenes/Actors/Items/AmmoBox.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://bdolq74sacnys" path="res://Models/Items/Max Payne Weapons/Ammo Colt Commando/Ammo Colt Commando.obj" id="2"]
+
+[sub_resource type="BoxShape3D" id="6"]
+size = Vector3(0.193722, 0.129446, 0.156228)
+
+[node name="AmmoBoxRifle" instance=ExtResource("1")]
+tags = "Actor Ammo Kind:BulletRifle Path3D:Items/BulletRifle Amount:30"
+
+[node name="Model" parent="." index="0" instance=ExtResource("2")]
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123643, 0)
+shape = SubResource("6")

@@ -1,0 +1,84 @@
+[gd_scene load_steps=16 format=3 uid="uid://dsfjs0xskxjur"]
+
+[ext_resource type="Script" path="res://Scripts/Actor.gd" id="1"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Properties/Container.property.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Actions/FireProjectile.action.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Actions/LoadChamber.action.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Responses/Use.Firearm.response.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Sounds/FireProjectile.sound.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://cffk8jt4nghgj" path="res://Scenes/Components/Actions/Action.action.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://cjbblvt5l8ocw" path="res://Scenes/Components/Stimuli/Area.stimulus.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://v0igx037ao3" path="res://Scenes/Components/Properties/Physics.RigidBody.property.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://xcfmp6kwv8f" path="res://Scenes/Components/Properties/Behavior.property.tscn" id="10"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Properties/Reception.property.tscn" id="11"]
+[ext_resource type="PackedScene" uid="uid://dx2w502qrtbho" path="res://Models/Items/Max Payne Weapons/Baretta/Baretta.obj" id="12"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Properties/Audio.property.tscn" id="16"]
+
+[sub_resource type="BoxShape3D" id="1"]
+size = Vector3(0.3, 1, 1.5)
+
+[sub_resource type="SphereShape3D" id="28"]
+
+[node name="Firearm" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 3
+continuous_cd = true
+script = ExtResource("1")
+tags = "Item Firearm B Beretta UseAction:FireProjectile FireRate:0.1"
+
+[node name="Model" type="Node3D" parent="." instance=ExtResource("12")]
+transform = Transform3D(5.55112e-17, 1.09278e-09, -0.025, 0.025, -1.09278e-09, 0, -1.09278e-09, -0.025, -1.09278e-09, 0, 0, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.1, 0, 4.1631e-18, 0, 0.1, 0, -1.43166e-17, 0, 0.1, 0, 0.0278902, 0.104032)
+shape = SubResource("1")
+
+[node name="Magazine" parent="." instance=ExtResource("2")]
+factory_mode = true
+max_quantity = 1
+invisible = true
+required_tags = "Bullet"
+
+[node name="Chamber" parent="." instance=ExtResource("2")]
+transform = Transform3D(1, -0.000872665, 0, 0.000872665, 1, 0, 0, 0, 1, 0, 0, 0)
+release_speed = 10.0
+release_exclude_parent = true
+max_quantity = 1
+invisible = true
+required_tags = "Bullet"
+
+[node name="FireProjectileAction" parent="." instance=ExtResource("3")]
+tree = NodePath("../Behavior")
+
+[node name="LoadChamberAction" parent="." instance=ExtResource("4")]
+
+[node name="UseResponse" parent="." instance=ExtResource("5")]
+tree_node = NodePath("../Reception")
+
+[node name="FireProjectileSound" parent="." instance=ExtResource("6")]
+tree = NodePath("../Audio")
+
+[node name="ReloadSound" parent="." instance=ExtResource("7")]
+tree = NodePath("../Audio")
+schema = "ReloadSound"
+state = "Reload"
+
+[node name="EmptySound" parent="." instance=ExtResource("7")]
+tree = NodePath("../Audio")
+schema = "EmptySound"
+state = "Empty"
+
+[node name="AreaStim" parent="." instance=ExtResource("8")]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape3D" parent="AreaStim"]
+shape = SubResource("28")
+
+[node name="Physics" parent="." instance=ExtResource("9")]
+
+[node name="Behavior" parent="." instance=ExtResource("10")]
+
+[node name="Reception" parent="." instance=ExtResource("11")]
+
+[node name="Audio" parent="." instance=ExtResource("16")]

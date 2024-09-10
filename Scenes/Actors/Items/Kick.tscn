@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcydlp2w3pjsl"]
+
+[ext_resource type="PackedScene" uid="uid://dcq0iy07b456v" path="res://Scenes/Actors/KinematicBody.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/Stimuli/Contact.stimulus.tscn" id="3"]
+
+[sub_resource type="BoxShape3D" id="7"]
+size = Vector3(0.534458, 0.194551, 1.07103)
+
+[node name="Kick" instance=ExtResource("1")]
+collision_layer = 8
+collision_mask = 17
+tags = "Actor Melee Punch Kick Damage:40 Force:2.0 DisarmChance:0.75 HitSound:PunchHit"
+
+[node name="Collision" type="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.255219)
+shape = SubResource("7")
+
+[node name="ContactStim" parent="." index="1" instance=ExtResource("3")]
+stim_type = "Touch"
+
+[node name="Physics" parent="." index="2"]
+gravity = 0.0

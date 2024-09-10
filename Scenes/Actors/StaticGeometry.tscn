@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpgyjda16b6qk"]
+
+[ext_resource type="PackedScene" uid="uid://bf4lrln5bto84" path="res://Scenes/Actors/StaticBody.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://cl3tink74smup" path="res://Scenes/Components/Responses/Impact.StaticGeometry.response.tscn" id="2"]
+
+[node name="StaticGeometry" instance=ExtResource("1")]
+tags = "Map"
+
+[node name="TouchResponse" parent="Reception" index="0" instance=ExtResource("2")]

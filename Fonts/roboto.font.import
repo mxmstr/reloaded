@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://4mnd54gmjk7x"
+path="res://.godot/imported/roboto.font-1d77abceb8a3ae024c03828c8aa1c232.fontdata"
+
+[deps]
+
+source_file="res://Fonts/roboto.font"
+dest_files=["res://.godot/imported/roboto.font-1d77abceb8a3ae024c03828c8aa1c232.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

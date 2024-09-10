@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://k7jfyxir54lx"]
+
+[ext_resource type="Script" path="res://Scripts/Input.Zoom.gd" id="1"]
+
+[node name="ZoomInput" type="Node"]
+script = ExtResource("1")
+action = "Zoom"

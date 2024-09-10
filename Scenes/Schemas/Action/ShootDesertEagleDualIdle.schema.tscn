@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4qawfom3m4ae"]
+
+[ext_resource type="Animation" uid="uid://ceehaxb6h4tkt" path="res://Animations/Human/Action/Shoot/Beretta/ShootBerettaDual.tres" id="1"]
+[ext_resource type="Animation" uid="uid://b7bfsjoi1crr5" path="res://Animations/Human/Action/Shoot/Beretta/ShootBerettaDual_Down.tres" id="2"]
+[ext_resource type="Animation" uid="uid://bk5shtfl22isk" path="res://Animations/Human/Action/Shoot/Beretta/ShootBerettaDual_Up.tres" id="3"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="4"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/ShootBerettaDual = ExtResource("1")
+anims/ShootBerettaDual_Down = ExtResource("2")
+anims/ShootBerettaDual_Up = ExtResource("3")
+script = ExtResource("4")
+attributes = "{
+	\"*\": {
+		\"layer\": \"MIXED\",
+		\"align_model_to_aim\": true,
+		\"can_use_item\": true
+	}
+}"

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7nap38q1wpbk"]
+
+[ext_resource type="Script" path="res://Scripts/Audio.gd" id="2"]
+[ext_resource type="Animation" uid="uid://cptybn6j7yrgf" path="res://Animations/DefaultAnim.tres" id="3"]
+
+[node name="Audio" type="Node3D"]
+script = ExtResource("2")
+bus = "SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/DefaultAnim = ExtResource("3")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+attenuation_filter_db = 0.0

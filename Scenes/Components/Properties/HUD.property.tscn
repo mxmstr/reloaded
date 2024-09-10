@@ -1,0 +1,170 @@
+[gd_scene load_steps=14 format=3 uid="uid://dv4nx47am1rxy"]
+
+[ext_resource type="Script" path="res://Scripts/Prop.HUD.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dhx77c1ivep2x" path="res://Textures/UI/Crosshair.png" id="2"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/HUD.CenterMenu.tscn" id="3"]
+[ext_resource type="FontFile" uid="uid://4mnd54gmjk7x" path="res://Fonts/roboto.font" id="4"]
+[ext_resource type="Script" path="res://Scripts/FPS.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://dgbvv4wvrvc2c" path="res://Textures/UI/Radar_small.png" id="6"]
+[ext_resource type="FontFile" uid="uid://ncw5gi15q1li" path="res://Fonts/Xolonium-Regular.ttf" id="7"]
+
+[sub_resource type="CanvasItemMaterial" id="1"]
+
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("7")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="5"]
+bg_color = Color(0, 0.517647, 0.796078, 1)
+
+[sub_resource type="StyleBoxFlat" id="6"]
+bg_color = Color(0, 0, 0, 0.556863)
+
+[sub_resource type="StyleBoxFlat" id="3"]
+bg_color = Color(0.796078, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="4"]
+bg_color = Color(0, 0, 0, 0.556863)
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Crosshair" type="TextureRect" parent="."]
+material = SubResource("1")
+offset_right = 13.0
+offset_bottom = 13.0
+pivot_offset = Vector2(6, 6)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("2")
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterMenu" parent="." instance=ExtResource("3")]
+visible = false
+
+[node name="FPS" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color(1, 0, 0, 1)
+custom_fonts/font = ExtResource("4")
+text = "FPS"
+script = ExtResource("5")
+
+[node name="Radar" type="GridContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+size_flags_vertical = 4
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Control" type="Control" parent="Radar"]
+offset_right = 901.0
+offset_bottom = 75.0
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Radar"]
+offset_left = 909.0
+offset_right = 984.0
+offset_bottom = 75.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("6")
+
+[node name="Ammo" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_colors/font_color = Color(0, 1, 0.462745, 1)
+custom_colors/font_color_shadow = Color(0, 0, 0, 1)
+custom_fonts/font = SubResource("2")
+text = "0 | 0
+Unarmed"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Bars" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+size_flags_vertical = 4
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="BulletTime" type="ProgressBar" parent="Bars"]
+offset_top = 502.0
+offset_right = 100.0
+offset_bottom = 527.0
+custom_minimum_size = Vector2(100, 0)
+mouse_filter = 2
+size_flags_horizontal = 0
+custom_colors/font_color = Color(0, 1, 0.462745, 1)
+custom_colors/font_color_shadow = Color(0, 0, 0, 1)
+custom_fonts/font = SubResource("2")
+custom_styles/fg = SubResource("5")
+custom_styles/bg = SubResource("6")
+step = 1.0
+value = 50.0
+rounded = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Health" type="ProgressBar" parent="Bars"]
+offset_top = 535.0
+offset_right = 100.0
+offset_bottom = 560.0
+custom_minimum_size = Vector2(100, 0)
+mouse_filter = 2
+size_flags_horizontal = 0
+custom_colors/font_color = Color(0, 1, 0.462745, 1)
+custom_colors/font_color_shadow = Color(0, 0, 0, 1)
+custom_fonts/font = SubResource("2")
+custom_styles/fg = SubResource("3")
+custom_styles/bg = SubResource("4")
+step = 1.0
+value = 50.0
+rounded = true
+__meta__ = {
+"_editor_description_": ""
+}

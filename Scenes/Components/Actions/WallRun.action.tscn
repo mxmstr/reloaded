@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch5qfgs0ir2xn"]
+
+[ext_resource type="Script" path="res://Scripts/Action.WallRun.gd" id="1"]
+
+[node name="WallRunAction" type="Node"]
+script = ExtResource("1")
+schema = "WallRun"
+state = "WallRun"

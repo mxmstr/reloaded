@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ijxcc42sk75v"]
+
+[ext_resource type="Animation" uid="uid://cr4j2f4c1ffql" path="res://Animations/Human/Movement/Walk.tres" id="1"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1m8cv"]
+_data = {
+"Walk": ExtResource("1")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_1m8cv")
+}

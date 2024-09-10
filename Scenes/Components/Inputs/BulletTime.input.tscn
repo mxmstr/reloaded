@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu1qc8lmptqvt"]
+
+[ext_resource type="Script" path="res://Scripts/Input.BulletTime.gd" id="1"]
+
+[node name="BulletTimeInput" type="Node"]
+script = ExtResource("1")
+action = "BulletTime"

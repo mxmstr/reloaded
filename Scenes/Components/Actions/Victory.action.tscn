@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bup3ckyw1mpqf"]
+
+[ext_resource type="Script" path="res://Scripts/Action.Victory.gd" id="1"]
+
+[node name="VictoryAction" type="Node"]
+script = ExtResource("1")
+state = "Victory"

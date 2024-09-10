@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://5teqifcog50d"]
+
+[ext_resource type="Animation" uid="uid://bmm53saq15do1" path="res://Animations/Human/new_shootdodgebackward.tres" id="1"]
+[ext_resource type="Animation" uid="uid://dxqvuxpak55vv" path="res://Animations/Human/new_shootdodgeforwardright.tres" id="2"]
+[ext_resource type="Animation" uid="uid://bxjm3bxgkhyog" path="res://Animations/Human/new_shootdodgebackwardright.tres" id="3"]
+[ext_resource type="Animation" uid="uid://1smvuwvbv5uw" path="res://Animations/Human/new_shootdodgeleft.tres" id="4"]
+[ext_resource type="Animation" uid="uid://cttyjcvx8lpya" path="res://Animations/Human/new_shootdodgeforwardleft.tres" id="5"]
+[ext_resource type="Animation" uid="uid://chcseh72rmj5j" path="res://Animations/Human/new_shootdodgeforward.tres" id="6"]
+[ext_resource type="Animation" uid="uid://3raayenb52xi" path="res://Animations/Human/new_shootdodgeright.tres" id="7"]
+[ext_resource type="Animation" uid="uid://csi46cqtvebxf" path="res://Animations/Human/new_shootdodgebackwardleft.tres" id="8"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="9"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/new_shootdodgebackward = ExtResource("1")
+anims/new_shootdodgebackwardleft = ExtResource("8")
+anims/new_shootdodgebackwardright = ExtResource("3")
+anims/new_shootdodgeforward = ExtResource("6")
+anims/new_shootdodgeforwardleft = ExtResource("5")
+anims/new_shootdodgeforwardright = ExtResource("2")
+anims/new_shootdodgeleft = ExtResource("4")
+anims/new_shootdodgeright = ExtResource("7")
+script = ExtResource("9")
+__meta__ = {
+"_editor_description_": ""
+}
+attributes = "{
+	\"*\": {
+		\"priority\": 1,
+		\"clip_start\": 0.05,
+		\"layer\": \"ACTION\",
+		\"switch_mode\": \"End\",
+		\"lock_movement\": true,
+		\"lock_stance\": true,
+		\"fp_skeleton_offset\": false,
+		\"camera_mode\": \"FullYaw\",
+		\"align_model_to_aim\": true,
+		\"root_motion_use_model\": true,
+		\"can_use_item\": true,
+		\"endless\": true
+	},
+	\"new_shootdodgeforward\": {
+		\"direction\": 0
+	},
+	\"new_shootdodgeforwardright\": {
+		\"direction\": 1
+	},
+	\"new_shootdodgeright\": {
+		\"direction\": 2
+	},
+	\"new_shootdodgebackwardright\": {
+		\"direction\": 3
+	},
+	\"new_shootdodgebackward\": {
+		\"direction\": 4
+	},
+	\"new_shootdodgebackwardleft\": {
+		\"direction\": 5
+	},
+	\"new_shootdodgeleft\": {
+		\"direction\": 6
+	},
+	\"new_shootdodgeforwardleft\": {
+		\"direction\": 7
+	}
+}"

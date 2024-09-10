@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c85kx6e6jtoa3"]
+
+[ext_resource type="PackedScene" uid="uid://dgr338hruvsy0" path="res://Scenes/Actors/Items/Bullet.tscn" id="1"]
+
+[node name="BulletRifle" instance=ExtResource("1")]
+tags = "Actor Bullet Rifle Pooled Damage:20 Force:4"

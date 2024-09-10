@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://r7tjqlyl6dvt"]
+
+[ext_resource type="Animation" uid="uid://348jd2hpyk0h" path="res://Animations/Human/Action/Reload/ReloadIngram.tres" id="1"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="2"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/ReloadIngram = ExtResource("1")
+script = ExtResource("2")
+attributes = "{
+	\"*\": {
+		\"speed\": 2.0,
+		\"clip_start\": 0.05,
+		\"layer\": \"MIXED\",
+		\"switch_mode\": \"End\",
+		\"time_scaled\": false
+	}
+}"

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://xsf6b2cm80ry"]
+
+[ext_resource type="Script" path="res://Scripts/Link.Factory.gd" id="1"]
+
+[node name="Factory" type="Node"]
+script = ExtResource("1")
+__meta__ = {}
+products = "Items/MP5 Magazine << 12 Items/Bullet9mm
+Items/AmmoBox9mm"

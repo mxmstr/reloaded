@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://dnckvce3gvfcc"]
+
+[ext_resource type="Animation" uid="uid://2jty7elspf2y" path="res://Animations/Human/matrixed_ShootDodgeBackwardRight.tres" id="1"]
+[ext_resource type="Animation" uid="uid://cyb0vrp8ogn8j" path="res://Animations/Human/matrixed_ShootDodgeForward.tres" id="2"]
+[ext_resource type="Animation" uid="uid://dwjubnmq7uhpa" path="res://Animations/Human/matrixed_ShootDodgeForwardLeft.tres" id="3"]
+[ext_resource type="Animation" uid="uid://s2ehrsgb8738" path="res://Animations/Human/matrixed_ShootDodgeLeft.tres" id="4"]
+[ext_resource type="Animation" uid="uid://cls5spexmwxrh" path="res://Animations/Human/matrixed_ShootDodgeBackward.tres" id="5"]
+[ext_resource type="Animation" uid="uid://hger72ugkrku" path="res://Animations/Human/matrixed_ShootDodgeForwardRight.tres" id="6"]
+[ext_resource type="Animation" uid="uid://cmuus0xhi6xyt" path="res://Animations/Human/matrixed_ShootDodgeRight.tres" id="7"]
+[ext_resource type="Animation" uid="uid://bn8qujvfpf1o0" path="res://Animations/Human/matrixed_ShootDodgeBackwardLeft.tres" id="8"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="9"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/matrixed_ShootDodgeBackward = ExtResource("5")
+anims/matrixed_ShootDodgeBackwardLeft = ExtResource("8")
+anims/matrixed_ShootDodgeBackwardRight = ExtResource("1")
+anims/matrixed_ShootDodgeForward = ExtResource("2")
+anims/matrixed_ShootDodgeForwardLeft = ExtResource("3")
+anims/matrixed_ShootDodgeForwardRight = ExtResource("6")
+anims/matrixed_ShootDodgeLeft = ExtResource("4")
+anims/matrixed_ShootDodgeRight = ExtResource("7")
+script = ExtResource("9")
+__meta__ = {
+"_editor_description_": ""
+}
+attributes = "{
+	\"*\": {
+		\"speed\": 1.0,
+		\"clip_start\": 0.05,
+		\"layer\": \"ACTION\",
+		\"switch_mode\": \"End\",
+		\"lock_movement\": true,
+		\"lock_stance\": true,
+		\"fp_skeleton_offset\": false,
+		\"camera_mode\": \"FullYaw\",
+		\"align_model_to_aim\": true,
+		\"root_motion_use_model\": true,
+		\"can_use_item\": true,
+		\"gravity_scale\": 0.8
+	},
+	\"matrixed_ShootDodgeForward\": {
+		\"direction\": 0
+	},
+	\"matrixed_ShootDodgeForwardRight\": {
+		\"direction\": 1
+	},
+	\"matrixed_ShootDodgeRight\": {
+		\"direction\": 2
+	},
+	\"matrixed_ShootDodgeBackwardRight\": {
+		\"direction\": 3
+	},
+	\"matrixed_ShootDodgeBackward\": {
+		\"direction\": 4
+	},
+	\"matrixed_ShootDodgeBackwardLeft\": {
+		\"direction\": 5
+	},
+	\"matrixed_ShootDodgeLeft\": {
+		\"direction\": 6
+	},
+	\"matrixed_ShootDodgeForwardLeft\": {
+		\"direction\": 7
+	}
+}"

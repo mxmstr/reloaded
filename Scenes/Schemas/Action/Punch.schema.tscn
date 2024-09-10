@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy76bvduoa4u"]
+
+[ext_resource type="Animation" uid="uid://btnwj3egtccqr" path="res://Animations/Human/Action/Punch/punch_seraph.tres" id="1"]
+[ext_resource type="Script" path="res://Scripts/Schema.gd" id="2"]
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+anims/punch_seraph_left = ExtResource("1")
+anims/punch_seraph_right = ExtResource("1")
+script = ExtResource("2")
+attributes = "{
+	\"*\": {
+		\"speed\": 1.25,
+		\"layer\": \"MIXED\",
+		\"switch_mode\": \"End\"
+	},
+	\"punch_seraph_right\": {
+		\"clip_start\": 0.01,
+		\"clip_end\": 0.9
+	},
+	\"punch_seraph_left\": {
+		\"clip_start\": 0.9,
+		\"clip_end\": 1.8
+	}
+}"

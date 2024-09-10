@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbyd7cwct1t2k"]
+
+[ext_resource type="Script" path="res://Scripts/Action.gd" id="1"]
+
+[node name="JumpBackwardAction" type="Node"]
+script = ExtResource("1")
+__meta__ = {}
+schema = "JumpBackward"
+state = "JumpBackward"

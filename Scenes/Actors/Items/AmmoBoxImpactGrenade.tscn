@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://g2awsmdiqcue"]
+
+[ext_resource type="PackedScene" uid="uid://cm46gk64h7t5u" path="res://Scenes/Actors/Items/AmmoBox.tscn" id="1"]
+
+[sub_resource type="BoxMesh" id="2"]
+size = Vector3(0.4, 0.4, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="3"]
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 1.0
+
+[sub_resource type="BoxShape3D" id="1"]
+size = Vector3(0.1962, 0.186247, 0.104123)
+
+[node name="AmmoBoxImpactGrenade" instance=ExtResource("1")]
+tags = "Actor Ammo Kind:ImpactGrenade Path3D:Items/ImpactGrenade Amount:4"
+
+[node name="Model" type="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.192727, 0)
+mesh = SubResource("2")
+material/0 = SubResource("3")
+
+[node name="Collision" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.185621, 0)
+shape = SubResource("1")

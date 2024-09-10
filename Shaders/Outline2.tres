@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=2]
+
+[ext_resource path="res://Shaders/Outline.tres" type="Material" id=1]
+
+
+[resource]
+next_pass = ExtResource( 1 )
+flags_transparent = true
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.0
+__meta__ = {
+
+}

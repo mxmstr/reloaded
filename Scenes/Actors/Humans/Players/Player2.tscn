@@ -1,17 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://bjro87a60vmku"]
+[gd_scene load_steps=14 format=3 uid="uid://bjro87a60vmku"]
 
 [ext_resource type="PackedScene" uid="uid://vwy1na38dc2p" path="res://Scenes/Actors/Humans/Human2.tscn" id="1_waqtl"]
 [ext_resource type="PackedScene" uid="uid://ddtxvta74dswn" path="res://Scenes/Components/Inputs/InputContext.tscn" id="2_r0xxq"]
-[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/MoveBackward.input.tscn" id="3_triqi"]
-[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/MoveForward.input.tscn" id="4_nfjvu"]
-[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/MoveHorizontalStop.input.tscn" id="5_al2i1"]
-[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/MoveLeft.input.tscn" id="6_v1rm1"]
-[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/MoveRight.input.tscn" id="7_tqlf6"]
-[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/MoveVerticalStop.input.tscn" id="8_i8hb5"]
-[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/Input.input.tscn" id="9_78xx8"]
-[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/RotateHorizontal.input.tscn" id="10_t4otl"]
-[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/RotateVertical.input.tscn" id="11_7ny4y"]
-[ext_resource type="PackedScene" path="res://Scenes/Components/Inputs/Jump.input.tscn" id="12_0cvu6"]
+[ext_resource type="PackedScene" uid="uid://y56krgjwnb53" path="res://Scenes/Components/Inputs/MoveBackward.input.tscn" id="3_triqi"]
+[ext_resource type="PackedScene" uid="uid://btov4inefuhk" path="res://Scenes/Components/Inputs/MoveForward.input.tscn" id="4_nfjvu"]
+[ext_resource type="PackedScene" uid="uid://d2wl5vuc1lcl0" path="res://Scenes/Components/Inputs/MoveHorizontalStop.input.tscn" id="5_al2i1"]
+[ext_resource type="PackedScene" uid="uid://5m6f18bcrvt7" path="res://Scenes/Components/Inputs/MoveLeft.input.tscn" id="6_v1rm1"]
+[ext_resource type="PackedScene" uid="uid://c2ihci4l3tfp4" path="res://Scenes/Components/Inputs/MoveRight.input.tscn" id="7_tqlf6"]
+[ext_resource type="PackedScene" uid="uid://rh0l4k3h0euk" path="res://Scenes/Components/Inputs/MoveVerticalStop.input.tscn" id="8_i8hb5"]
+[ext_resource type="PackedScene" uid="uid://b44e6x4po101x" path="res://Scenes/Components/Inputs/Input.input.tscn" id="9_78xx8"]
+[ext_resource type="PackedScene" uid="uid://c8mqr3oudgpv5" path="res://Scenes/Components/Inputs/RotateHorizontal.input.tscn" id="10_t4otl"]
+[ext_resource type="PackedScene" uid="uid://d0pnfnxh2onfn" path="res://Scenes/Components/Inputs/RotateVertical.input.tscn" id="11_7ny4y"]
+[ext_resource type="PackedScene" uid="uid://b52pm8t0jperp" path="res://Scenes/Components/Inputs/Jump.input.tscn" id="12_0cvu6"]
+[ext_resource type="PackedScene" uid="uid://ddld6mb8wlb5n" path="res://Scenes/Components/Inputs/PrimaryAction.input.tscn" id="13_b3fcc"]
 
 [node name="Player" instance=ExtResource("1_waqtl")]
 
@@ -50,3 +51,7 @@ positive_input = NodePath("../RotateUpInput")
 negative_input = NodePath("../RotateDownInput")
 
 [node name="JumpInput" parent="InputContext" index="12" instance=ExtResource("12_0cvu6")]
+
+[node name="PrimaryActionInput" parent="InputContext" index="13" instance=ExtResource("13_b3fcc")]
+
+[editable path="CameraRig"]

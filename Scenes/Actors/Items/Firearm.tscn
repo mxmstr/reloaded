@@ -31,7 +31,6 @@ transform = Transform3D(1, -0.000872665, 0, 0.000872665, 1, 0, 0, 0, 1, 0, 0, 0)
 release_speed = 10.0
 release_exclude_parent = true
 max_quantity = 1
-invisible = true
 required_tags = "Bullet"
 
 [node name="AreaStim" parent="." instance=ExtResource("8")]
@@ -63,7 +62,6 @@ shape = SubResource("1")
 [node name="FireAudio" parent="." instance=ExtResource("16")]
 
 [node name="FireProjectileSound" parent="FireAudio" instance=ExtResource("6")]
-tree = NodePath("..")
 
 [node name="Audio" parent="." instance=ExtResource("16")]
 

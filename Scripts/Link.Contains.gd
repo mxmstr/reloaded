@@ -31,8 +31,7 @@ func _is_container(node):
 
 func _try_container(prop):
 	
-	if prop._is_full():
-		return false
+	if prop._is_full(): return false
 	
 	for item_tag in prop.required_tags_dict.keys():
 		if item_tag.length() and not item_tag in to_node.tags_dict.keys():
@@ -85,8 +84,7 @@ static func _get_item_rotation_offset(item, _container_node):
 
 func _ready():
 	
-	if _is_invalid():
-		return
+	if _is_invalid(): return
 	
 	from_behavior = from_node.get_node_or_null('Behavior')
 	
@@ -116,15 +114,12 @@ func _ready():
 			queue_free()
 			return
 	
-	if _is_invalid():
-		return
+	if _is_invalid(): return
 	
 	_deactivate_actor()
-	
 	await get_tree().process_frame
 	
-	if _is_invalid():
-		return
+	if _is_invalid(): return
 	
 	_reparent()
 
@@ -141,15 +136,6 @@ func _deactivate_actor():
 	to_node.visible = not container_node.invisible
 	
 	ActorServer.DisableCollision(to_node)
-	
-	if to_node is Area3D:
-		
-		to_node.monitoring = false
-	
-	if to_node is RigidBody3D:
-		
-		to_node.sleeping = true
-		to_node.freeze = true
 	
 	if to_node is Node:
 		
@@ -182,13 +168,6 @@ func _activate_actor():
 		container_node._apply_launch_attributes(to_node)
 	
 	ActorServer.EnableCollision(to_node)
-	
-	if to_node is Area3D:
-		to_node.monitoring = true
-	
-	if to_node is RigidBody3D:
-		to_node.sleeping = false
-		to_node.freeze = false
 
 func _destroy():
 	

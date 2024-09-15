@@ -4,4 +4,4 @@
 
 [node name="UseItemAction" type="Node"]
 script = ExtResource("1_f5ovf")
-state = "UseReact"
+state = "UseItem"

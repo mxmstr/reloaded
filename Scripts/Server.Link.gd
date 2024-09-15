@@ -45,6 +45,7 @@ func Create(from, to, type, data={}):
 	data.to_node = to
 	
 	var new_link = preloader.get_resource('res://Scenes/Links/' + type + '.link.tscn').instantiate()
+	var old_name = new_link.name
 	
 	for prop in data:
 		new_link.set(prop, data[prop])
@@ -54,22 +55,27 @@ func Create(from, to, type, data={}):
 			return
 	
 	$'/root/Mission/Links'.add_child(new_link)
+	new_link.name = old_name
 	
 	return new_link
 
 func Destroy(from, to, type, data={}):
 	
-	if from:
-		data.from_node = from
-	
-	if to:
-		data.to_node = to
+	#if from:
+		#data.from_node = from
+	#
+	#if to:
+		#data.to_node = to
 	
 	var freed = []
 	
 	for link in $'/root/Mission/Links'.get_children():
 		
 		if not type in link.name:
+			continue
+		
+		if (to != null and to.name != link.to_node.name) || \
+			(from != null and from.name != link.from_node.name):
 			continue
 		
 		var props_match = true

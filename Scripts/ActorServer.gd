@@ -39,9 +39,11 @@ func Create(actor_path, position=null, rotation=null, direction=null, tags={}):
 	else:
 		
 		new_actor = preloader.get_resource(resource_path).instantiate()
+		var old_name = new_actor.name
 		
 		Meta._merge_dir(new_actor.tags_dict, tags)
 		$'/root/Mission/Actors'.add_child(new_actor)
+		new_actor.name = old_name
 		
 		if position:
 			new_actor.transform.origin = position
@@ -95,10 +97,12 @@ func EnableCollision(actor):
 		ProjectileServer.EnableCollision(actor)
 		return
 	
-	var collision = actor.get_node_or_null('Collision')
+	var actor_physics = actor.get_node_or_null('Physics')
 	
-	if collision:
-		collision.call_deferred('set_disabled', false)
+	if actor_physics == null:
+		return
+	
+	actor_physics._enable()
 
 func DisableCollision(actor):
 	
@@ -106,10 +110,12 @@ func DisableCollision(actor):
 		ProjectileServer.DisableCollision(actor)
 		return
 	
-	var collision = actor.get_node_or_null('Collision')
+	var actor_physics = actor.get_node_or_null('Physics')
 	
-	if collision:
-		collision.call_deferred('set_disabled', true)
+	if actor_physics == null:
+		return
+	
+	actor_physics._disable()
 
 func Stim(actor, stim, source=self, intensity=0.0, position=Vector3(), direction=Vector3()):
 	

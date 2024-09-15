@@ -5,6 +5,22 @@ var teleporting = false
 var new_position
 var new_rotation
 
+func _enable():
+	
+	super()
+	
+	if owner is RigidBody3D:
+		owner.sleeping = false
+		owner.freeze = false
+
+func _disable():
+	
+	super()
+	
+	if owner is RigidBody3D:
+		owner.sleeping = true
+		owner.freeze = true
+
 func _get_velocity():
 	
 	return owner.linear_velocity

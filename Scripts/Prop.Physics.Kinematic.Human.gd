@@ -185,6 +185,8 @@ func _step_check(delta, new_velocity):
 
 func _physics_process(delta):
 	
+	if not active: return
+	
 	var bullet_time_active = bullet_time.active if bullet_time != null else false
 	var scaled_delta = delta / Engine.time_scale if bullet_time_active else delta
 	

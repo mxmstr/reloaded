@@ -16,32 +16,34 @@ script = ExtResource("1")
 
 [node name="Links" type="Node" parent="."]
 
-[node name="PVPPlayerFactory" parent="Links" instance=ExtResource("9")]
+[node name="Servers" type="Node" parent="."]
 
-[node name="RespawnMarker1" parent="Links/PVPPlayerFactory" instance=ExtResource("10")]
+[node name="PVPPlayerFactory" parent="Servers" instance=ExtResource("9")]
+
+[node name="RespawnMarker1" parent="Servers/PVPPlayerFactory" instance=ExtResource("10")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6095, 0.772238, -7.05482)
 
-[node name="RespawnMarker2" parent="Links/PVPPlayerFactory" instance=ExtResource("10")]
+[node name="RespawnMarker2" parent="Servers/PVPPlayerFactory" instance=ExtResource("10")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -10.6095, 0.772238, -4.38297)
 
-[node name="RespawnMarker3" parent="Links/PVPPlayerFactory" instance=ExtResource("10")]
+[node name="RespawnMarker3" parent="Servers/PVPPlayerFactory" instance=ExtResource("10")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.66832, 0.772238, -7.05482)
 
-[node name="RespawnMarker4" parent="Links/PVPPlayerFactory" instance=ExtResource("10")]
+[node name="RespawnMarker4" parent="Servers/PVPPlayerFactory" instance=ExtResource("10")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.78309, 0.772238, -4.38297)
 
-[node name="PVPPickupFactory" parent="Links" instance=ExtResource("11")]
+[node name="PVPPickupFactory" parent="Servers" instance=ExtResource("11")]
 
-[node name="PickupMarker1" parent="Links/PVPPickupFactory" instance=ExtResource("2")]
+[node name="PickupMarker1" parent="Servers/PVPPickupFactory" instance=ExtResource("2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3988, 0.238943, -2.28007)
 
-[node name="PickupMarker2" parent="Links/PVPPickupFactory" instance=ExtResource("2")]
+[node name="PickupMarker2" parent="Servers/PVPPickupFactory" instance=ExtResource("2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.93, 0.238943, -2.28007)
 
-[node name="PickupMarker3" parent="Links/PVPPickupFactory" instance=ExtResource("2")]
+[node name="PickupMarker3" parent="Servers/PVPPickupFactory" instance=ExtResource("2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.01974, 0.238943, -2.28007)
 
-[node name="PickupMarker4" parent="Links/PVPPickupFactory" instance=ExtResource("2")]
+[node name="PickupMarker4" parent="Servers/PVPPickupFactory" instance=ExtResource("2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.89097, 0.238943, -2.28007)
 
 [node name="Static" type="Node3D" parent="."]

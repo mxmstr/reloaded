@@ -13,7 +13,7 @@ var stim_data_array = []
 
 func _on_before_move(velocity):
 	
-	if not active or owner.is_queued_for_deletion() or (collision == null and collision.disabled):
+	if not active or not physics.active or owner.is_queued_for_deletion():
 		return
 	
 	var space_state = owner.get_world_3d().direct_space_state

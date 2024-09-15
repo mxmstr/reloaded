@@ -97,10 +97,10 @@ func EnableCollision(actor):
 		ProjectileServer.EnableCollision(actor)
 		return
 	
-	var collision = actor.get_node_or_null('Collision')
+	var actor_physics = actor.get_node_or_null('Physics')
+	if actor_physics == null: return
 	
-	if collision:
-		collision.call_deferred('set_disabled', false)
+	actor_physics._enable()
 
 func DisableCollision(actor):
 	
@@ -108,10 +108,10 @@ func DisableCollision(actor):
 		ProjectileServer.DisableCollision(actor)
 		return
 	
-	var collision = actor.get_node_or_null('Collision')
+	var actor_physics = actor.get_node_or_null('Physics')
+	if actor_physics == null: return
 	
-	if collision:
-		collision.call_deferred('set_disabled', true)
+	actor_physics._disable()
 
 func Stim(actor, stim, source=self, intensity=0.0, position=Vector3(), direction=Vector3()):
 	
@@ -142,9 +142,7 @@ func SetDirection(actor, release_direction):
 		return
 	
 	var actor_physics = actor.get_node_or_null('Physics')
-	
-	if actor_physics == null:
-		return
+	if actor_physics == null: return
 	
 	actor_physics._set_direction(release_direction)
 
@@ -155,9 +153,7 @@ func SetDirectionLocal(actor, release_direction):
 		return
 	
 	var actor_physics = actor.get_node_or_null('Physics')
-	
-	if actor_physics == null:
-		return
+	if actor_physics == null: return
 	
 	actor_physics._set_direction_local(release_direction)
 

@@ -4,7 +4,6 @@ extends 'res://Scripts/Response.gd'
 @onready var right_hand = get_node_or_null('../../RightHandContainer')
 @onready var inventory = get_node_or_null('../../Inventory')
 
-
 func _on_stimulate(stim, data):
 	
 	if stim == 'EmptyReact':

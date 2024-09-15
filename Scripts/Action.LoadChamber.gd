@@ -9,13 +9,10 @@ var tree
 func _process(delta):
 
 	if chamber._is_empty() and not magazine._is_empty():
+		
+		var projectile = magazine._release_front()
+		LinkServer.Create(owner, projectile, 'Contains', { 'container': 'Chamber' } )
 
-		# TODO
-		pass
-#		var projectile = magazine._release_front()
-#		LinkServer.Create(owner, projectile, 'Contains', { 'container': 'Chamber' } )
-#
-#		while not chamber._is_full():
-#
-#			var clone = ActorServer.Create(projectile.system_path)
-#			LinkServer.Create(owner, clone, 'Contains', { 'container': 'Chamber' } )
+		while not chamber._is_full():
+			var clone = ActorServer.Create(projectile.system_path)
+			LinkServer.Create(owner, clone, 'Contains', { 'container': 'Chamber' } )

@@ -4,6 +4,8 @@
 
 [node name="ShootIdleAction" type="Node"]
 script = ExtResource("1_ekc0b")
+can_use_item = true
+can_zoom = true
 layer = 2
 state = "ShootIdle"
 schema = "Shoot"

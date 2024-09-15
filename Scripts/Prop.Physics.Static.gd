@@ -6,10 +6,22 @@ extends 'res://Scripts/Prop.Physics.gd'
 @export var deaccel = 0
 @export var projectile = false
 
-@onready var collision = get_node_or_null('../Collision')
-
 signal before_move
 signal after_move
+
+func _enable():
+	
+	super()
+	
+	if owner is Area3D:
+		owner.monitoring = false
+
+func _disable():
+	
+	super()
+	
+	if owner is Area3D:
+		owner.monitoring = true
 
 func _get_forward_speed():
 	
@@ -32,7 +44,7 @@ func _teleport(new_position=null, new_rotation=null):
 		owner.global_transform.origin = new_position
 	
 	if new_rotation != null:
-		owner.global_transform.basis = Basis(new_rotation.get_euler())
+		owner.global_transform.basis = Basis.from_euler(new_rotation.get_euler())
 
 func _turn(delta):
 	
@@ -46,33 +58,17 @@ func _face(target, angle_delta=0.0):
 	
 	var angle = owner_direction.angle_to(turn_target)
 	
-	if angle_delta == 0 or angle <= angle_delta:
-		
+	if angle_delta == 0 or angle <= angle_delta:		
 		owner.global_transform.look_at(-turn_target)
 	
-	else:
-		
+	else:		
 		turn_target = owner.global_transform.basis.z.lerp(turn_target, angle_delta / angle)
 		owner.global_transform.look_at(owner.global_transform.origin - turn_target)
 
-#func _process(delta):
-#
-#	if collision.disabled:
-#		return
-#
-#	angular_velocity = angular_direction * delta
-#
-#	owner.rotation.y += angular_velocity.x
-#	owner.rotation.x += angular_velocity.y
-#
-#	if projectile:
-#		_set_direction(Vector3(0, 0, 1), true)
-
 func _physics_process(delta):
 	
-	if not process_movement or (collision == null and collision.disabled):
-		return
-		
+	if not active or not process_movement: return
+	
 	angular_velocity = angular_direction * delta
 	
 	owner.rotation.y += angular_velocity.x

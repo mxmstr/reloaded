@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://vwy1na38dc2p"]
+[gd_scene load_steps=19 format=3 uid="uid://vwy1na38dc2p"]
 
 [ext_resource type="PackedScene" uid="uid://db1la83vn4yrk" path="res://Scenes/Actors/CharacterBody.Human.tscn" id="1_1657p"]
 [ext_resource type="PackedScene" uid="uid://b5b1hr6d10ylq" path="res://Scenes/Components/Properties/Locomotion.property.tscn" id="2_e0kb6"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ep8iba5bew2n" path="res://Scenes/Components/Properties/CameraRig.property.tscn" id="2_r0oiu"]
 [ext_resource type="PackedScene" uid="uid://b14wb70au1fv7" path="res://Scenes/Components/Properties/Container.property.tscn" id="3_868j0"]
 [ext_resource type="PackedScene" uid="uid://ferksbhpfiif" path="res://Scenes/Components/Properties/BulletTime.property.tscn" id="3_oveyn"]
+[ext_resource type="PackedScene" uid="uid://c0bnl8tl26uov" path="res://Scenes/Components/Properties/WeaponTargeting.property.tscn" id="4_ok2at"]
 [ext_resource type="PackedScene" uid="uid://bxiymkvnn3vrr" path="res://Scenes/Components/Properties/Stamina.property.tscn" id="4_vnnn8"]
 [ext_resource type="PackedScene" uid="uid://5almq67kg5s2" path="res://Scenes/Components/Properties/AnimLayer.Movement.property.tscn" id="5_1wece"]
 [ext_resource type="PackedScene" uid="uid://dxrq7bjr4hrjg" path="res://Scenes/Components/Actions/Action.Human.action.tscn" id="6_re3n3"]
@@ -110,19 +111,22 @@ required_tags = "ImpactGrenade"
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.256868, 1.93211, 0)
 camera_offset = Vector3(0, 0, 3.75)
 
-[node name="BulletTime" parent="." index="16" instance=ExtResource("3_oveyn")]
+[node name="WeaponTargeting" parent="." index="16" instance=ExtResource("4_ok2at")]
+target_position = Vector3(0, 50, 0)
 
-[node name="Stamina" parent="." index="17" instance=ExtResource("4_vnnn8")]
+[node name="BulletTime" parent="." index="17" instance=ExtResource("3_oveyn")]
 
-[node name="Inventory" parent="." index="18" instance=ExtResource("2_hir4c")]
+[node name="Stamina" parent="." index="18" instance=ExtResource("4_vnnn8")]
 
-[node name="Locomotion" parent="." index="19" instance=ExtResource("2_e0kb6")]
+[node name="Inventory" parent="." index="19" instance=ExtResource("2_hir4c")]
 
-[node name="AnimLayerMovement" parent="." index="20" instance=ExtResource("5_1wece")]
+[node name="Locomotion" parent="." index="20" instance=ExtResource("2_e0kb6")]
+
+[node name="AnimLayerMovement" parent="." index="21" instance=ExtResource("5_1wece")]
 speed = 4.0
 schema = "Locomotion"
 
-[node name="CameraRaycastStim" parent="." index="21" instance=ExtResource("9_igtvc")]
+[node name="CameraRaycastStim" parent="." index="22" instance=ExtResource("9_igtvc")]
 target_position = Vector3(0, 0, -50)
 collision_mask = 21
 auto = false
@@ -130,6 +134,8 @@ path = NodePath("../CameraRig/Camera3D")
 required_tags = ""
 
 [node name="DefaultAction" parent="Behavior" index="1" instance=ExtResource("6_re3n3")]
+can_use_item = true
+can_zoom = true
 state = "Default"
 schema = "DefaultAction"
 

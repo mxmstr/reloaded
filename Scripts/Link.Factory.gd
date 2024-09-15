@@ -1,4 +1,4 @@
-extends 'res://Scripts/Link.gd'
+extends Node
 
 @export var container: String
 @export_multiline var products

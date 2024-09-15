@@ -28,48 +28,18 @@ var align_model = false
 @onready var right_kick = get_node_or_null('../RightKickContainer')
 @onready var left_kick = get_node_or_null('../LeftKickContainer')
 
-func _on_fire(projectile, item):
+func _on_fire(projectile):
 	
-	if not is_instance_valid(projectile):
-		return
-	
-	if projectile._has_tag('Bullet') and perspective.viewmodels.size():
-
-		for viewmodel in perspective.viewmodels:
-
-			if viewmodel.actor == item:
-
-				projectile.visible = false
-
-				await get_tree().process_frame
-
-				if not is_instance_valid(projectile):
-					return
-
-				projectile.visible = true
-
-				if not is_instance_valid(viewmodel) or not is_instance_valid(item):
-					break
-				
-				var offset = projectile.global_transform.origin
-				offset -= item.global_transform.origin
-				projectile.global_transform.origin = viewmodel.global_transform.origin + offset
-
-				break
-	
-	if not is_instance_valid(projectile):
-		return
+	if not is_instance_valid(projectile): return
 	
 	var direction = projectile.global_transform.origin.direction_to(camera_raycast_target.global_transform.origin)
 	var target_pos = projectile.global_transform.origin - direction
 
 	if projectile._has_tag('Grenade'):
-		
 		projectile.get_node('Physics')._set_direction_local(direction * -1)
 		projectile.get_node('Physics').speed = projectile.get_node('Physics').speed
 
-	else:
-		
+	else:		
 		projectile.look_at(target_pos, Vector3.UP)
 
 func _on_punch(projectile):
@@ -81,7 +51,6 @@ func _on_camera_entered(_camera, actor):
 	if _camera == camera and actor.get_node('Stamina').hp > 0:
 		
 		visible_enemies.append(actor)
-		
 		_select_target()
 
 func _on_camera_exited(_camera, actor):
@@ -89,14 +58,13 @@ func _on_camera_exited(_camera, actor):
 	if _camera == camera:
 		
 		visible_enemies.erase(actor)
-		
 		_select_target()
 
 func _on_item_equipped(item):
 	
 	if item._has_tag('Firearm'):
 		
-		item.get_node('Chamber').connect('item_released',Callable(self,'_on_fire').bind(item))
+		item.get_node('Chamber').connect('item_released',Callable(self,'_on_fire'))
 		
 		if item._has_tag('AutoAim'):
 			equipped = true
@@ -107,7 +75,7 @@ func _on_item_equipped(item):
 func _on_lefthand_item_equipped(item):
 	
 	if item._has_tag('Firearm'):
-		item.get_node('Chamber').connect('item_released',Callable(self,'_on_fire').bind(item))
+		item.get_node('Chamber').connect('item_released',Callable(self,'_on_fire'))
 
 func _on_item_dequipped(item):
 	
@@ -116,7 +84,7 @@ func _on_item_dequipped(item):
 		item.get_node('Chamber').disconnect('item_released',Callable(self,'_on_fire'))
 		
 		if item._has_tag('Grenade') and item.get_node('Behavior').current_state == 'FireProjectile':
-			_on_fire(item, null)
+			_on_fire(item)
 	
 	equipped = false
 	targeted_enemy = null
@@ -125,7 +93,6 @@ func _on_item_dequipped(item):
 func _on_lefthand_item_dequipped(item):
 	
 	if is_instance_valid(item) and item._has_tag('Firearm'):
-		
 		item.get_node('Chamber').disconnect('item_released',Callable(self,'_on_fire'))
 
 func _select_target():
@@ -174,7 +141,7 @@ func _ready():
 	right_kick.connect('item_released',Callable(self,'_on_punch'))
 	left_kick.connect('item_released',Callable(self,'_on_punch'))
 	
-	await get_tree().process_frame
+	await owner.get_node('Hitboxes').setup_finished
 	
 	shoulder_bone = owner.get_node('Hitboxes')._get_bone(shoulder_bone_name)
 	
@@ -228,19 +195,16 @@ func _process(delta):
 					PhysicsRayQueryParameters3D.create(shoulder_bone.global_transform.origin, target_pos, collision_mask, [owner])
 					)
 
-				if result:
-					
+				if result:					
 					camera_raycast.move_target = true
 
-				else:
-					
+				else:					
 					locking_on = true
 					camera_raycast.move_target = false
 					target_pos = camera_raycast.global_transform.origin + (camera_raycast.global_transform.origin.direction_to(target_pos).normalized() * 5)
 					camera_raycast_target.global_transform.origin = camera_raycast_target.global_transform.origin.move_toward(target_pos, 100 * delta)
 
-		else:
-			
+		else:			
 			camera_raycast.move_target = true
 		
 		var model_pos = model.global_transform.origin
@@ -256,6 +220,5 @@ func _process(delta):
 				model.look_at(target_pos, Vector3.UP)
 				model.rotate_y(deg_to_rad(180))
 		
-		else:
-			
+		else:			
 			model.rotation = Vector3(0, 0, 0)

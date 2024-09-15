@@ -74,6 +74,8 @@ func _on_ressurected():
 
 func _ready():
 	
+	return
+	
 	owner.connect('ressurected',Callable(self,'_on_ressurected'))
 	
 	BulletTimeServer.connect('started',Callable(self,'_on_bullet_time_started'))

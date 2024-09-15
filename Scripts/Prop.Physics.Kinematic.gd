@@ -11,8 +11,6 @@ extends 'res://Scripts/Prop.Physics.gd'
 
 var kinematic_collision
 
-@onready var collision = get_node_or_null('../Collision')
-
 signal move_and_slide
 
 func _get_collisions():
@@ -66,8 +64,7 @@ func _face(target, angle_delta=0.0):
 
 func _process(delta):
 	
-	if not process_movement or (collision == null and collision.disabled):
-		return
+	if not active or not process_movement: return
 	
 	var new_velocity = angular_direction * delta
 	var deltax = new_velocity.x - angular_velocity.x
@@ -97,7 +94,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	
-	if not process_movement or (collision != null and collision.disabled):
+	if not active or not process_movement:
 		return
 
 	var gravity_direction = Vector3.DOWN * gravity * delta

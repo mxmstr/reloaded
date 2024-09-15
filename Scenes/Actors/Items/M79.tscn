@@ -26,3 +26,9 @@ transform = Transform3D(1, -0.000872665, 0, 0.000872665, 1, 0, 0, 0, 1, 0, 0.031
 release_speed = 40.0
 release_exclude_parent = false
 required_tags = "ImpactGrenade"
+
+[node name="ReloadSound" parent="Audio" index="2"]
+state = ""
+
+[node name="EmptySound" parent="Audio" index="3"]
+state = ""

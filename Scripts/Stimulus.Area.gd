@@ -12,12 +12,27 @@ signal stimulate
 
 func _on_body_entered(body):
 	
-	if collision == null or collision.disabled:
-		return
+	await get_tree().process_frame
+	
+	if not physics.active: return
 
-	if body in physics.collision_exceptions:
-		return
+	if body in physics.collision_exceptions: return
+	
+	for stim_data in stim_data_array:
 
+		var stim_type = stim_data['stim_type']
+		var stim_intensity = stim_data['stim_intensity']
+		
+		ActorServer.Stim(body, stim_type, owner)
+	
+	#call_deferred('_stimulate', body)
+
+func _stimulate(body):
+	
+	if not physics.active: return
+	
+	if not is_instance_valid(body): return
+	
 	for stim_data in stim_data_array:
 
 		var stim_type = stim_data['stim_type']
@@ -42,10 +57,10 @@ func _ready():
 
 func _physics_process(delta):
 	
-	if collision and collision.disabled:
+	if not physics.active:
 		collision_disabled = true
 	
-	elif collision_disabled and collision and not collision.disabled:
+	elif collision_disabled and physics.active:
 		
 		for body in get_overlapping_bodies():
 			_on_body_entered(body)

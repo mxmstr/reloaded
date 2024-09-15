@@ -56,7 +56,7 @@ func _start_state(_name, _data={}):
 
 func _add_animation(animation_name, animation_res):
 	
-	var library = animation_player.get_animation_library(animation_player.get_animation_library_list()[0])
+	var library = call('get_animation_library', call('get_animation_library_list')[0])
 	library.call('add_animation', animation_name, animation_res)
 
 func _set_animation(animation, scale, clip_start, clip_end):

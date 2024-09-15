@@ -42,7 +42,7 @@ func _shoot_array(count):
 		var item_clone = chamber._create_and_launch_item(item.system_path)
 
 func _state_start():
-
+	
 	super()
 	
 	reception._reflect('UseReact')

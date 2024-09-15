@@ -4,6 +4,8 @@
 
 [node name="UseReactAction" type="Node"]
 script = ExtResource("1")
+can_use_item = true
+can_zoom = true
 layer = 2
 state = "UseReact"
 schema = "Shoot"

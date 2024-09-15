@@ -4,6 +4,5 @@
 
 [node name="FireProjectileAction" type="Node"]
 script = ExtResource("1")
-__meta__ = {}
-schema = "FireProjectile"
 state = "FireProjectile"
+schema = "FireProjectile"

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0bnl8tl26uov"]
+
+[ext_resource type="Script" path="res://Scripts/Prop.WeaponTargeting.gd" id="1_hcue4"]
+
+[node name="WeaponTargeting" type="RayCast3D"]
+script = ExtResource("1_hcue4")

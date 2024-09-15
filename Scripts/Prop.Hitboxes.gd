@@ -8,6 +8,8 @@ var bone_to_hitbox = {}
 
 @onready var skeleton = get_node('../Model').get_child(0)
 
+signal setup_finished
+
 func _add_children():
 	
 	for child in source.instantiate().get_child(0).get_children():
@@ -51,3 +53,5 @@ func _ready():
 	await get_tree().process_frame
 	
 	_add_children()
+	
+	emit_signal('setup_finished')

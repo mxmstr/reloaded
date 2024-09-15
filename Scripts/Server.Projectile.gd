@@ -3,28 +3,22 @@ extends Node3D
 var projectiles = []
 var actors
 
-
 func Create(new_actor, position=null, rotation=null, direction=null, tags={}):
 	
 	var projectile = Projectile.new()
-	
-	
 	var new_transform = Transform3D(
 		Basis().from_euler(rotation if rotation != null else Vector3.FORWARD),
 		position if position else Vector3()
 		)
-	
-	
+		
 	var new_model
 	var old_model = new_actor.get_node_or_null('Model')
 	
-#	if old_model:
-#
-#		var old_model_base = old_model.mesh.get_rid()
-#
-#		new_model = RenderingServer.instance_create2(old_model_base, actors.get_world_3d().scenario)
-	
-	
+	if old_model:
+
+		var old_model_base = old_model.mesh.get_rid()
+		new_model = RenderingServer.instance_create2(old_model_base, actors.get_world_3d().scenario)
+		
 	var new_particles
 	var old_particles = new_actor.get_node_or_null('Particles')
 
@@ -58,8 +52,7 @@ func Create(new_actor, position=null, rotation=null, direction=null, tags={}):
 		if old_particles.one_shot:
 			var time = (old_particles.lifetime * 2) / old_particles.speed_scale
 			get_tree().create_timer(time).connect('timeout',Callable(self,'Destroy').bind(projectile))
-	
-	
+		
 #	var new_collision
 #	var old_collision = new_actor.get_node_or_null('Collision')
 #
@@ -75,8 +68,7 @@ func Create(new_actor, position=null, rotation=null, direction=null, tags={}):
 #		PhysicsServer3D.area_add_shape(
 #			physics_shared_area.get_rid(), new_collision, new_transform
 #			)
-	
-	
+		
 	projectile.system_path = new_actor.system_path
 	projectile.transform = new_transform
 	projectile.direction = Vector3(0, 0, 1)
@@ -103,7 +95,6 @@ func Create(new_actor, position=null, rotation=null, direction=null, tags={}):
 	
 	return projectile
 
-
 func Destroy(projectile):
 	
 	projectile.valid = false
@@ -116,11 +107,9 @@ func Destroy(projectile):
 	
 	projectiles.erase(projectile)
 
-
 func SetTag(projectile, key, value):
 	
 	projectile.tags_dict[key] = value
-
 
 func EnableCollision(projectile):
 	
@@ -128,54 +117,44 @@ func EnableCollision(projectile):
 	
 	projectile.collision_disabled = false
 
-
 func DisableCollision(projectile):
 	
 	var index = projectiles.find(projectile)
 	
 	projectile.collision_disabled = true
 
-
 func Stim(projectile, stim, source, intensity, position, direction):
 	
 	Destroy(projectile)
-
 
 func SetDirection(projectile, new_direction):
 	
 	projectile.direction = new_direction
 
-
 func SetDirectionLocal(projectile, new_direction):
 	
 	projectile.direction = projectile.transform.basis * new_direction
-
 
 func SetSpeed(projectile, new_speed):
 	
 	projectile.speed = new_speed
 
-
 func SetAngularDirection(projectile, new_direction):
 	
 	projectile.angular_direction = new_direction
-
 
 func AddCollisionException(projectile, other):
 	
 	projectile.collision_exceptions.append(other)
 
-
 func RemoveCollisionException(projectile, other):
 	
 	projectile.collision_exceptions.remove(other)
-
 
 func _on_node_added(node):
 	
 	if actors == null or not is_instance_valid(actors):
 		actors = get_node_or_null('/root/Mission/Actors')
-
 
 func _on_node_removed(node):
 	
@@ -186,12 +165,10 @@ func _on_node_removed(node):
 		for i in range(0, _projectiles.size()):
 			Destroy(_projectiles[i])
 
-
 func _ready():
 	
 	get_tree().connect('node_added',Callable(self,'_on_node_added'))
 	get_tree().connect('node_removed',Callable(self,'_on_node_removed'))
-
 
 func _physics_process(delta):
 	
@@ -203,8 +180,7 @@ func _physics_process(delta):
 		
 		if not is_instance_valid(projectile):
 			continue
-		
-		
+				
 		if projectile.model:
 			RenderingServer.instance_set_transform(projectile.model, projectile.transform)
 		
@@ -223,8 +199,7 @@ func _physics_process(delta):
 			delta
 			)
 		var new_position = projectile.transform.origin + offset
-		
-		
+				
 		if not projectile.collision_disabled and projectile.collision_mask:
 			
 			var space_state = actors.get_world_3d().direct_space_state

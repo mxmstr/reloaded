@@ -3,7 +3,7 @@ extends 'res://Scripts/Response.gd'
 
 func _on_stimulate(stim, data):
 	
-	if stim == 'Touch':
+	if stim == 'Impact':
 		
 		var shooter = owner._get_tag('Shooter') if owner._has_tag('Shooter') else owner
 		

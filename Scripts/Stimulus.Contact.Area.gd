@@ -14,7 +14,7 @@ var one_shot_frames = 2
 
 func _on_body_shape_entered(body_id, body, body_shape, area_shape):
 	
-	if not active or (collision == null or collision.disabled):
+	if not active or not physics.active:
 		return
 	
 	if body in physics.collision_exceptions:
@@ -69,7 +69,7 @@ func _test_raycast(body):
 #	return true
 
 func _ready():
-
+	
 	var test_json_conv = JSON.new()
 	test_json_conv.parse(stim_data)
 	stim_data_array = test_json_conv.get_data()

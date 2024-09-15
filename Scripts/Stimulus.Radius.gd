@@ -61,7 +61,7 @@ func _validate_within_radius(actor):
 
 func _physics_process(delta):
 	
-	if not active or owner.is_queued_for_deletion() or (collision == null and collision.disabled):
+	if not active or not physics.active or owner.is_queued_for_deletion():
 		return
 	
 	var new_colliders = []

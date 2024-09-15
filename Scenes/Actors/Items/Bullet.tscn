@@ -1,15 +1,19 @@
-[gd_scene load_steps=16 format=3 uid="uid://dgr338hruvsy0"]
+[gd_scene load_steps=17 format=3 uid="uid://dgr338hruvsy0"]
 
 [ext_resource type="PackedScene" uid="uid://xcfmp6kwv8f" path="res://Scenes/Components/Properties/Behavior.property.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://dkxnskk1gqdja" path="res://Textures/particle.png" id="2"]
 [ext_resource type="PackedScene" uid="uid://7oxnw4ryxkrf" path="res://Scenes/Components/Properties/Physics.Static.property.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://o173vl32nsou" path="res://Scenes/Components/Responses/Impact.Bullet.response.tscn" id="4"]
-[ext_resource type="PackedScene" path="res://Scenes/Components/Stimuli/SpaceStateRaycast.stimulus.tscn" id="5"]
-[ext_resource type="PackedScene" path="res://Scenes/Components/Properties/Audio.property.tscn" id="6"]
-[ext_resource type="PackedScene" path="res://Scenes/Components/Properties/Reception.property.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://dlk1de7a75x8d" path="res://Scenes/Components/Stimuli/SpaceStateRaycast.stimulus.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://c7nap38q1wpbk" path="res://Scenes/Components/Properties/Audio.property.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://do8c1niilqjas" path="res://Scenes/Components/Properties/Reception.property.tscn" id="7"]
 [ext_resource type="Script" path="res://Scripts/Actor.gd" id="8"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0sx4e"]
+albedo_color = Color(0.838994, 0.145183, 0.254949, 1)
+
 [sub_resource type="PrismMesh" id="16"]
+material = SubResource("StandardMaterial3D_0sx4e")
 size = Vector3(0.1, 0.1, 0.1)
 
 [sub_resource type="Curve" id="2"]
@@ -39,7 +43,7 @@ size = Vector2(0.05, 0.05)
 
 [sub_resource type="SphereShape3D" id="15"]
 
-[node name="Bullet2" type="Area3D"]
+[node name="Bullet" type="Area3D"]
 collision_layer = 0
 collision_mask = 17
 monitoring = false
@@ -53,6 +57,7 @@ mesh = SubResource("16")
 
 [node name="Particles" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+visible = false
 cast_shadow = 0
 lifetime = 0.6
 visibility_aabb = AABB(-0.193909, -0.932309, -0.371607, 0.387815, 1.86463, 0.743204)
@@ -63,7 +68,6 @@ draw_pass_1 = SubResource("14")
 shape = SubResource("15")
 
 [node name="SpaceStateRaycastStim" parent="." instance=ExtResource("5")]
-stim_type = "Touch"
 raycast_collision_mask = 17
 length = 0.2
 

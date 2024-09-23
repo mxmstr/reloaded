@@ -50,11 +50,11 @@ attributes = "{
 	},
 	\"CrouchLeft\": {
 		\"stance\": \"Crouch\",
-		\"direction\": \"Left\"
+		\"direction\": \"Right\"
 	},
 	\"CrouchRight\": {
 		\"stance\": \"Crouch\",
-		\"direction\": \"Right\"
+		\"direction\": \"Left\"
 	},
 	\"Run\": {
 		\"stance\": \"Stand\",
@@ -66,11 +66,11 @@ attributes = "{
 	},
 	\"StrafeLeft\": {
 		\"stance\": \"Stand\",
-		\"direction\": \"LeftRun\"
+		\"direction\": \"RightRun\"
 	},
 	\"StrafeRight\": {
 		\"stance\": \"Stand\",
-		\"direction\": \"RightRun\"
+		\"direction\": \"LeftRun\"
 	},
 	\"T_sprint\": {
 		\"stance\": \"Stand\",

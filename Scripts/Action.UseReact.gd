@@ -30,15 +30,13 @@ func _ready():
 
 func _play_react_action():
 
-	if not righthand._has_item_with_tag('Firearm'):
-		return false
+	if not righthand._has_item_with_tag('Firearm'): return false
 	
 	var right_name = righthand.items[0].base_name
 	var left_name = '' if lefthand._is_empty() else lefthand.items[0].base_name
 	var dual_wielding = right_name in dual_wield_items and right_name == left_name
 	
-	if not shoot_animations.has(right_name):
-		return false
+	if not shoot_animations.has(right_name): return false
 	
 	var animation_list
 	var prefix

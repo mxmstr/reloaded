@@ -13,6 +13,7 @@ func _on_stimulate(stim, data):
 			behavior._start_state('Reload')
 			
 			if behavior.current_state != 'Reload':
+				
 				inventory._next(true, true)
 				
 				if right_hand._is_empty():

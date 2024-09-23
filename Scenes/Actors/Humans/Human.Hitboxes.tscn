@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://c8sffohrvud6w"]
 
-[ext_resource type="PackedScene" uid="uid://dlkwg7q7m0qsn" path="res://Models/Humans/anderson.blend" id="1"]
+[ext_resource type="PackedScene" uid="uid://dlefqr0wekdal" path="res://Models/Humans/anderson.blend" id="1"]
 [ext_resource type="PackedScene" uid="uid://dlfwuonrirpxf" path="res://Scenes/Actors/Humans/Hitbox.tscn" id="2"]
 [ext_resource type="Script" path="res://Scripts/Actor.gd" id="3"]
 
@@ -59,6 +59,9 @@ size = Vector3(0.355662, 0.116594, 0.190741)
 transform = Transform3D(-1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 0, 0, 0)
 script = ExtResource("3")
 
+[node name="Skeleton3D" parent="." index="0"]
+transform = Transform3D(-1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 0, 0, 0)
+
 [node name="Pelvis" type="BoneAttachment3D" parent="Skeleton3D" index="1"]
 transform = Transform3D(-1, -3.2592e-07, -1.50996e-07, 1.50996e-07, 0, -1, 3.2592e-07, -1, 0, 2.7e-05, 0.949737, 0.00480317)
 bone_name = "Pelvis"
@@ -82,7 +85,7 @@ new_owner = NodePath(".")
 shape = SubResource("2")
 
 [node name="Foot-L" type="BoneAttachment3D" parent="Skeleton3D" index="3"]
-transform = Transform3D(-1, -3.19944e-07, -1.11759e-07, 1.11759e-07, 1.36879e-07, -1, 3.19944e-07, -1, -1.36879e-07, -0.165445, 0.078887, -0.0228544)
+transform = Transform3D(-1, -3.19944e-07, -1.3411e-07, 1.3411e-07, 1.36879e-07, -1, 3.19944e-07, -1, -1.36879e-07, -0.165445, 0.0788869, -0.0228544)
 bone_name = "Foot-L"
 bone_idx = 26
 
@@ -104,7 +107,7 @@ tags = "Hitbox DamageMult:0.5"
 shape = SubResource("16")
 
 [node name="UpLeg-L" type="BoneAttachment3D" parent="Skeleton3D" index="5"]
-transform = Transform3D(-0.996195, 1.24463e-06, -0.0871538, 0.0871538, -2.44252e-13, -0.996195, -1.23989e-06, -1, -1.08474e-07, -0.115171, 0.905627, -0.00779278)
+transform = Transform3D(-0.996195, 1.24463e-06, -0.0871538, 0.0871538, -2.51357e-13, -0.996195, -1.23989e-06, -1, -1.08474e-07, -0.115171, 0.905627, -0.00779278)
 bone_name = "UpLeg-L"
 bone_idx = 24
 
@@ -115,7 +118,7 @@ tags = "Hitbox DamageMult:0.5"
 shape = SubResource("15")
 
 [node name="Foot-R" type="BoneAttachment3D" parent="Skeleton3D" index="6"]
-transform = Transform3D(-1, 6.52236e-08, -1.56462e-07, 1.56462e-07, 3.42198e-08, -1, -6.52237e-08, -1, -3.42199e-08, 0.164541, 0.0819719, -0.0193865)
+transform = Transform3D(-1, 6.52236e-08, -1.49012e-07, 1.49012e-07, 3.42198e-08, -1, -6.52237e-08, -1, -3.42199e-08, 0.164541, 0.0819719, -0.0193865)
 bone_name = "Foot-R"
 bone_idx = 22
 
@@ -160,7 +163,7 @@ tags = "Hitbox DamageMult:0.25"
 shape = SubResource("11")
 
 [node name="LoArm-L" type="BoneAttachment3D" parent="Skeleton3D" index="10"]
-transform = Transform3D(-0.951057, -3.2592e-07, -0.309017, 0.309017, -3.37883e-15, -0.951057, 3.09968e-07, -1, 1.00715e-07, -0.358719, 1.17294, -0.00248981)
+transform = Transform3D(-0.951057, -3.2592e-07, -0.309017, 0.309017, -3.37883e-15, -0.951057, 3.09968e-07, -1, 1.00715e-07, -0.358719, 1.17294, -0.00248982)
 bone_name = "LoArm-L"
 bone_idx = 18
 
@@ -218,7 +221,7 @@ tags = "Hitbox DamageMult:0.5"
 shape = SubResource("6")
 
 [node name="Head" type="BoneAttachment3D" parent="Skeleton3D" index="15"]
-transform = Transform3D(-1, -3.25153e-07, -1.50996e-07, 1.50996e-07, -1.15796e-16, -1, 3.25153e-07, -1, 1.4029e-21, 6.7998e-05, 1.63115, -0.00127314)
+transform = Transform3D(-1, -3.25153e-07, -1.50996e-07, 1.50996e-07, -1.15796e-16, -1, 3.25153e-07, -1, 7.01449e-22, 6.7998e-05, 1.63115, -0.00127314)
 bone_name = "Head"
 bone_idx = 3
 

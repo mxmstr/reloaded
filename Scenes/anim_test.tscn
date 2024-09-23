@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://dtotmh603jlwv"]
+
+[ext_resource type="PackedScene" uid="uid://dlefqr0wekdal" path="res://Models/Humans/anderson.blend" id="1_ofnq4"]
+[ext_resource type="PackedScene" uid="uid://ejt5rcgisadr" path="res://Scenes/Actors/Items/M79.tscn" id="2_6c2d4"]
+[ext_resource type="Animation" uid="uid://cfjj2ltue3ja4" path="res://Animations/Human/Movement/Run.tres" id="3_b3tr5"]
+[ext_resource type="Animation" uid="uid://deynubw2nbexl" path="res://Animations/Human/Action/Shoot/M79/ShootM79.tres" id="4_2fura"]
+[ext_resource type="Animation" uid="uid://cydp4jgh25711" path="res://Animations/Human/Action/Shoot/Beretta/ShootBeretta.tres" id="5_ht7j7"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_61jtv"]
+_data = {
+"Run": ExtResource("3_b3tr5"),
+"ShootBeretta": ExtResource("5_ht7j7"),
+"ShootM79": ExtResource("4_2fura")
+}
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Anderson2" parent="." instance=ExtResource("1_ofnq4")]
+
+[node name="Skeleton3D" parent="Anderson2" index="0"]
+transform = Transform3D(-1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 0, 0, 0)
+bones/0/position = Vector3(2.7e-05, 0.916298, -0.049709)
+bones/0/rotation = Quaternion(6.1845e-08, -0.707107, 0.707107, 1.68615e-07)
+bones/1/rotation = Quaternion(-0.0525402, -0.0257339, -0.190871, 0.97987)
+bones/3/rotation = Quaternion(0.113474, -0.0327107, 0.440856, 0.889775)
+bones/4/position = Vector3(0.000192998, -0.021081, -0.450212)
+bones/4/rotation = Quaternion(-0.000545502, 0, 5.23869e-10, 1)
+bones/5/rotation = Quaternion(0.00194007, 0.00975591, -0.10139, 0.994797)
+bones/6/rotation = Quaternion(0.0293857, 0.00186774, -0.0515397, 0.998237)
+bones/7/rotation = Quaternion(-0.0300903, 0.0315604, 0.16399, 0.985498)
+bones/8/rotation = Quaternion(0.157529, -0.0725241, 0.0760743, 0.981905)
+bones/9/rotation = Quaternion(-0.0174457, 0.026176, -2.10408e-07, 0.999505)
+bones/10/rotation = Quaternion(0.0436192, -1.86442e-09, 5.38934e-09, 0.999048)
+bones/11/rotation = Quaternion(0.0784603, -1.4013e-09, 1.18527e-08, 0.996917)
+bones/12/rotation = Quaternion(0.00430347, -9.31331e-10, -9.31331e-10, 0.999991)
+bones/13/rotation = Quaternion(0.572428, -0.0147709, 0.181839, 0.799402)
+bones/14/rotation = Quaternion(0.724373, 0.387678, 0.173641, 0.54299)
+bones/15/rotation = Quaternion(-0.459719, -0.168632, -0.367927, 0.790475)
+bones/16/rotation = Quaternion(-0.0924284, -0.107932, 0.989381, 0.030543)
+bones/17/rotation = Quaternion(0.445651, 0.248815, 0.0849105, 0.855731)
+bones/18/rotation = Quaternion(0.727948, -0.299484, 0.110256, 0.606832)
+bones/19/rotation = Quaternion(0.0643359, 0.113928, 0.647679, -0.750596)
+bones/20/rotation = Quaternion(0.0726092, -0.0556077, -0.0741607, 0.993044)
+bones/21/rotation = Quaternion(-0.241922, -3.83934e-09, 2.3036e-08, 0.970296)
+bones/22/rotation = Quaternion(0.157452, 0.0864454, -0.193278, 0.964562)
+bones/23/rotation = Quaternion(2.32831e-10, 5.82077e-11, -1.00044e-11, 1)
+bones/24/rotation = Quaternion(0.203323, 0.043002, 0.14046, 0.96803)
+bones/25/rotation = Quaternion(-0.21644, -9.53932e-10, 2.68275e-10, 0.976296)
+bones/26/rotation = Quaternion(0.0159984, -0.0409626, 0.25268, 0.96655)
+bones/27/rotation = Quaternion(0.23469, 2.87424e-09, -3.48802e-09, 0.97207)
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Anderson2/Skeleton3D" index="1"]
+transform = Transform3D(0.859786, 0.0906437, -0.502545, -0.0562801, 0.994945, 0.0831701, 0.507543, -0.0432252, 0.860541, -0.0194717, 1.5161, 0.208093)
+bone_name = "Gun"
+bone_idx = 16
+
+[node name="M79" parent="Anderson2/Skeleton3D/BoneAttachment3D" instance=ExtResource("2_6c2d4")]
+transform = Transform3D(0.990829, 0.0325849, 0.131144, -0.0233736, 0.997193, -0.0711756, -0.133094, 0.0674575, 0.988807, -0.0197744, 0.040097, -0.0348322)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Anderson2/Skeleton3D")
+libraries = {
+"": SubResource("AnimationLibrary_61jtv")
+}
+
+[editable path="Anderson2"]

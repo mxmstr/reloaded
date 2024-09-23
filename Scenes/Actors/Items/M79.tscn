@@ -7,9 +7,7 @@
 size = Vector3(0.0378588, 0.0702915, 0.45521)
 
 [node name="M79" instance=ExtResource("1")]
-tags = "Item Firearm M79 Rank:60 UseAction:FireProjectile FireRate:0.75 Stackable Offset-position:neo_reference_skeleton:Gun:0.000453,-0.03889,-0.053751
- Offset-rotation:neo_reference_skeleton:Gun:-89.435593,-89.997627,89.346985
-"
+tags = "Item Firearm M79 Rank:60 UseAction:FireProjectile FireRate:0.75 Stackable Offset-position:Skeleton3D:Gun:-0.1,0,0 Offset-rotation:Skeleton3D:Gun:0,28.6,24.8 "
 
 [node name="Model" parent="." index="0" instance=ExtResource("2")]
 transform = Transform3D(5.55116e-17, 1.09278e-09, -0.025, 0.025, -1.09278e-09, 7.74447e-18, -1.09278e-09, -0.025, -1.09278e-09, 0, 0, 0)

@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbxsbpi556k2l"]
+
+[ext_resource type="Script" path="res://Scripts/Mission.gd" id="1_mpdr5"]
+[ext_resource type="PackedScene" uid="uid://dk41ua5th2adq" path="res://Scenes/Links/PVPPlayerFactory.link.tscn" id="2_2sl2m"]
+[ext_resource type="PackedScene" uid="uid://b2wxmflugoxsb" path="res://Scenes/Markers/Waypoint2.tscn" id="3_m5dhl"]
+[ext_resource type="PackedScene" uid="uid://ct2dufyllg6e2" path="res://Scenes/Links/PVPPickupFactory.link.tscn" id="4_666og"]
+[ext_resource type="PackedScene" uid="uid://bbqj7a6xlanrf" path="res://Scenes/Markers/PickupMarker.tscn" id="5_xxag4"]
+[ext_resource type="PackedScene" uid="uid://cssv1u1l5jxt2" path="res://Scenes/Maps/Lobby.map.tscn" id="6_u4fjb"]
+
+[node name="Mission" type="Node3D"]
+script = ExtResource("1_mpdr5")
+
+[node name="Actors" type="Node3D" parent="."]
+
+[node name="Markers" type="Node3D" parent="."]
+
+[node name="Links" type="Node" parent="."]
+
+[node name="Servers" type="Node" parent="."]
+
+[node name="PVPPlayerFactory" parent="Servers" instance=ExtResource("2_2sl2m")]
+
+[node name="RespawnMarker1" parent="Servers/PVPPlayerFactory" instance=ExtResource("3_m5dhl")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.159538, 2.00484, -0.989931)
+
+[node name="RespawnMarker2" parent="Servers/PVPPlayerFactory" instance=ExtResource("3_m5dhl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.51231, 2.00484, -0.989931)
+
+[node name="RespawnMarker3" parent="Servers/PVPPlayerFactory" instance=ExtResource("3_m5dhl")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.159538, 2.00484, 1.95125)
+
+[node name="RespawnMarker4" parent="Servers/PVPPlayerFactory" instance=ExtResource("3_m5dhl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.51231, 2.00484, 1.83648)
+
+[node name="PVPPickupFactory" parent="Servers" instance=ExtResource("4_666og")]
+
+[node name="PickupMarker1" parent="Servers/PVPPickupFactory" instance=ExtResource("5_xxag4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.986, 2.0147, -2.77923)
+
+[node name="PickupMarker2" parent="Servers/PVPPickupFactory" instance=ExtResource("5_xxag4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.986, 2.0147, -1.31043)
+
+[node name="PickupMarker3" parent="Servers/PVPPickupFactory" instance=ExtResource("5_xxag4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.986, 2.0147, 0.599829)
+
+[node name="PickupMarker4" parent="Servers/PVPPickupFactory" instance=ExtResource("5_xxag4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.986, 2.0147, 2.7286)
+
+[node name="Static" type="Node3D" parent="."]
+
+[node name="Map" parent="Static" instance=ExtResource("6_u4fjb")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.32576, 11.4249, 0)
+light_energy = 1.356
+omni_range = 20.375
+omni_attenuation = 0.000124771
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3845, 9.04932, -0.160675)
+light_energy = 4.2
+omni_range = 194.289

@@ -1,6 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
 .vscode/
+.raw/
 Sounds/
 Models/
 Textures/

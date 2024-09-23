@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Reloaded"
-run/main_scene="res://Scenes/Default.tscn"
+run/main_scene="res://Scenes/Lobby.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -14,4 +14,4 @@ func _on_stimulate(stim, data):
 		
 		elif magazine._is_empty():
 			audio._start_state('Empty')
-			get_parent()._reflect('EmptyReact')
+			ActorServer.Stim(data.source, 'EmptyReact', owner)

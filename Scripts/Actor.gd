@@ -47,6 +47,9 @@ func _set_player_index(new_player_index):
 	emit_signal('player_index_changed', player_index)
 
 func _parse_tags():
+
+	# remove newlines and returns
+	tags = tags.replace('\n', ' ').replace('\r', ' ')
 	
 	for tag in tags.split(' '):
 		

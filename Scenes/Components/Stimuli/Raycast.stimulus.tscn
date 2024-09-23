@@ -25,4 +25,5 @@ mesh = SubResource("1")
 [node name="Target" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Target"]
+visible = false
 mesh = SubResource("2")

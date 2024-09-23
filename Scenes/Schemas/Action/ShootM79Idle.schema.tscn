@@ -19,8 +19,9 @@ libraries = {
 script = ExtResource("1")
 attributes = "{
 	\"*\": {
-		\"clip_start\": 1.2,
-		\"clip_end\": 1.2,
+		\"clip_start\": 0.1,
+		\"clip_end\": 0.1,
+		\"scale\": 0.0,
 		\"layer\": \"MIXED\",
 		\"align_model_to_aim\": true,
 		\"can_use_item\": true

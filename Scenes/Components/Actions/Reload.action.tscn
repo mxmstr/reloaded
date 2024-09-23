@@ -4,5 +4,6 @@
 
 [node name="ReloadAction" type="Node"]
 script = ExtResource("1")
-__meta__ = {}
+layer = 2
 state = "Reload"
+schema = "Reload"

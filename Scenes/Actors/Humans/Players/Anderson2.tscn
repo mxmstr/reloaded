@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://nomq7ycj37wu"]
+[gd_scene load_steps=8 format=3 uid="uid://nomq7ycj37wu"]
 
 [ext_resource type="PackedScene" uid="uid://bjro87a60vmku" path="res://Scenes/Actors/Humans/Players/Player2.tscn" id="1_xft26"]
-[ext_resource type="PackedScene" uid="uid://dlkwg7q7m0qsn" path="res://Models/Humans/anderson.blend" id="2_clqdo"]
+[ext_resource type="PackedScene" uid="uid://dlefqr0wekdal" path="res://Models/Humans/anderson.blend" id="2_t45ps"]
 [ext_resource type="PackedScene" uid="uid://ck1yo6rk5juxe" path="res://Models/Humans/DefaultHumanCollision.tscn" id="3_nmjdi"]
 [ext_resource type="PackedScene" uid="uid://dfmdyr0ye8xhl" path="res://Scenes/Components/Properties/Hitboxes.property.tscn" id="4_xsma0"]
 [ext_resource type="PackedScene" uid="uid://c8sffohrvud6w" path="res://Scenes/Actors/Humans/Human.Hitboxes.tscn" id="5_ut6vn"]
+[ext_resource type="PackedScene" uid="uid://bumm2l00n6fmq" path="res://Scenes/Components/Responses/EmptyWeaponReact.Human.response.tscn" id="6_ylxv1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x8d6e"]
 resource_local_to_scene = true
@@ -13,7 +14,43 @@ size = Vector3(0.25, 1.8, 0.25)
 [node name="Anderson" instance=ExtResource("1_xft26")]
 tags = "Actor Human Male Team:0 Skeleton3D:Default"
 
-[node name="Model" parent="." index="0" instance=ExtResource("2_clqdo")]
+[node name="Model" parent="." index="0" instance=ExtResource("2_t45ps")]
+
+[node name="Skeleton3D" parent="Model" index="0"]
+transform = Transform3D(-1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 0, 0, 0)
+bones/0/position = Vector3(0.0044436, 0.957806, -0.05969)
+bones/0/rotation = Quaternion(-0.0307508, -0.705327, 0.707305, -0.0358879)
+bones/1/rotation = Quaternion(-0.102234, 0.0120219, -0.221067, 0.969811)
+bones/3/rotation = Quaternion(0.0627556, -0.0329718, 0.173497, 0.98228)
+bones/4/position = Vector3(0.0017131, -0.0179266, -0.464121)
+bones/4/rotation = Quaternion(-0.0031639, -1.86266e-10, 4.58681e-09, 0.999995)
+bones/5/rotation = Quaternion(-0.146179, -0.032158, -0.239529, 0.959283)
+bones/6/rotation = Quaternion(0.148747, -0.0873787, -0.10732, 0.979143)
+bones/7/rotation = Quaternion(-0.163729, 0.0355559, 0.289254, 0.942476)
+bones/8/rotation = Quaternion(0.0339323, -0.116922, 0.24529, 0.961775)
+bones/9/rotation = Quaternion(-0.0567647, -0.0195304, 0.00630709, 0.998177)
+bones/10/rotation = Quaternion(-0.14817, -0.107223, 0.124109, 0.975267)
+bones/11/rotation = Quaternion(-0.0819341, -0.187243, 0.0370999, 0.978187)
+bones/12/rotation = Quaternion(-0.0959731, -1.86744e-10, -3.18512e-09, 0.995384)
+bones/13/position = Vector3(-0.229195, 0.0131946, -0.407133)
+bones/13/rotation = Quaternion(-0.460454, -0.165698, 0.0853384, 0.867896)
+bones/14/rotation = Quaternion(0.847331, 0.0101644, -0.00299699, 0.53096)
+bones/15/rotation = Quaternion(-0.0527583, -0.000205127, 3.98382e-05, 0.998607)
+bones/16/rotation = Quaternion(0, 3.55271e-15, 1, 0)
+bones/17/position = Vector3(0.236369, 0.0116866, -0.400502)
+bones/17/rotation = Quaternion(0.0902026, 0.206572, 0.0609672, 0.972355)
+bones/18/rotation = Quaternion(0.735646, -0.338929, -0.0693785, 0.582357)
+bones/19/rotation = Quaternion(0.0747444, 0.320341, 0.944064, 0.0231786)
+bones/20/rotation = Quaternion(0.455376, -0.0239935, -0.0841533, 0.885988)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/rotation = Quaternion(-0.728215, -1.50818e-09, 1.75061e-09, 0.685348)
+bones/22/rotation = Quaternion(0.0853112, -0.0272324, -0.0600712, 0.994169)
+bones/22/scale = Vector3(1, 1, 1)
+bones/23/rotation = Quaternion(1.30385e-09, 5.326e-10, -4.24922e-10, 1)
+bones/24/rotation = Quaternion(-0.280488, 0.0106625, 0.0192982, 0.959604)
+bones/25/rotation = Quaternion(-0.0554951, -1.02437e-09, 4.65952e-10, 0.998459)
+bones/26/rotation = Quaternion(-0.246541, -0.0353988, 0.121609, 0.96082)
+bones/27/rotation = Quaternion(0.213172, -3.66334e-10, -8.39977e-09, 0.977015)
 
 [node name="Collision" parent="." index="1" instance=ExtResource("3_nmjdi")]
 shape = SubResource("BoxShape3D_x8d6e")
@@ -25,7 +62,9 @@ source = ExtResource("5_ut6vn")
 path = NodePath("../Model/Skeleton3D")
 
 [node name="LeftHandContainer" parent="." index="7"]
-path = NodePath("../Model/Skeleton3D")
 bone_name = "Hand-L"
 
+[node name="EmptyReactResponse" parent="Reception" index="1" instance=ExtResource("6_ylxv1")]
+
 [editable path="Model"]
+[editable path="CameraRig"]
